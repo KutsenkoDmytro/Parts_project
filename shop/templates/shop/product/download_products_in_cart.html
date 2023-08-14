@@ -1,0 +1,29 @@
+<!-- File download template .xls -->
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-body text-center">
+                <h3>
+                    {% trans "Download products into the Cart from file" %}
+                </h3>
+                <hr>
+                <form method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="file" name="file">
+                    </div>
+                       <p>
+                        {% trans "The file must be in .xls format only, containing only 1 letter with the headers of the table 'product' and 'quantity' respectively." %}
+                    </p>
+                    <button type="submit" class="btn btn-primary">{% trans "Download" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

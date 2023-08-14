@@ -1,0 +1,34 @@
+<!-- Template for the page with login form. -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Log-in" %}</h2>
+</div>
+{% endblock header%}
+
+{% block content %}
+<div class="container">
+{% if form.errors %}
+<p>{% trans "Your username and password didn't match.Please try again." %}</p>
+{% else %}
+<p>{% trans "Please, use the following form to log-in:" %}</p>
+{% endif %}
+
+    <form action="{% url 'account:login' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="hidden" name="next" value="{{ next }}"/>
+
+        {% buttons %}
+         <button name="submit" class="btn btn-primary">{% trans 'Log in' %}</button>
+         {% endbuttons %}
+
+    </form>
+    <p><a href="{% url 'account:password_reset' %}">{% trans "Forgotten your password?" %}</a></p>
+
+</div>
+{% endblock content %}

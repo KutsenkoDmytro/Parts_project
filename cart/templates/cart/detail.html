@@ -1,0 +1,117 @@
+<!-- Cart display -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+{% block styles %}
+<!--<link rel="stylesheet" type="text/css" href="{% static 'cart/css/styles.css' %}" >-->
+<style>
+
+    /* Style for table header */
+    th.item-header {
+        background-color: #f2f2f2;
+    }
+</style>
+{% endblock %}
+
+{% block header %}
+<h2>{% trans "Your shopping cart" %}</h2>
+{% endblock header %}
+
+{% block content %}
+<div class="table-responsive">
+<table class="table table-bordered" id="cart-list">
+    <thead>
+    <tr>
+        <th class="item-header">{% trans "Product" %}</th>
+        <th class="item-header">{% trans "Description" %}</th>
+        <th class="item-header">{% trans "Category" %}</th>
+        <th class="item-header">{% trans "Quantity" %}</th>
+        <th class="item-header">{% trans "Action" %}</th>
+        <th class="item-header">{% trans "Price (€)" %}</th>
+        <th class="item-header">{% trans "Cost (€) without VAT" %}</th>
+        <th class="item-header">{% trans "Cost (€) with VAT" %}</th>
+        <th class="item-header">{% trans "Cost (₴) without VAT" %}</th>
+        <th class="item-header">{% trans "Cost (₴) with VAT" %}</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for item in cart %}
+    {% with product=item.product %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.category }}</td>
+                <td>
+                  <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {{ item.update_quantity_form.quantity }}
+                        {{ item.update_quantity_form.update }}
+
+                    <input type="number"  name="quantity" value={{ item.quantity }} min="0" max="100" step="1" >
+
+                      {% csrf_token %}
+                  </form>
+                </td>
+
+        <td><a href="{% url 'cart:cart_remove' product.id%}">{% trans "Remove" %}</a></td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.total_price }}</td>
+        <td>{{ item.cost_with_vat }}</td>
+        <td>{{ item.cost_ua }}</td>
+        <td>{{ item.cost_with_vat_ua }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="total">
+    <p>
+        {% blocktrans with total_price=cart.get_total_price total_cost_with_vat=cart.get_total_cost_with_vat %}
+        Total (€) without VAT: {{total_price}} || with VAT: {{total_cost_with_vat}}
+        {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans with total_cost_ua=cart.get_total_cost_ua total_cost_with_vat_ua=cart.get_total_cost_with_vat_ua %}
+        Total (₴) without VAT: {{total_cost_ua}} || with VAT: {{total_cost_with_vat_ua}}
+        {% endblocktrans %}
+    </p>
+</div>
+
+
+<p class="text-left">
+
+    <a href="{% url 'shop:product_search' %}" class="btn btn-primary">{% trans "Continue shoping" %}</a>
+    <a href="{% url 'orders:draft_order_create' %}" class="btn btn-primary">{% trans "Order draft" %}</a>
+    <a href="{% url 'orders:order_create' %}" class="btn btn-primary">{% trans "Checkout" %} </a>
+</p>
+{% endblock %}
+
+{% block js_stuff %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"></script>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#cart-list').dataTable({
+                "price": [[0, "asc"]],
+                "pageLength": 10,
+                "lengthChange": false,
+                "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"
+            }
+            });
+        });
+
+</script>
+{% endblock js_stuff %}

@@ -1,0 +1,28 @@
+# env\Scripts\activate
+
+# python manage.py runserver
+
+# миграция модели
+# python manage.py makemigrations
+# python manage.py migrate
+
+
+# создать суперюзера
+# python manage.py createsuperuser
+
+# удалить миграции
+# python manage.py migrate MyApp zero
+
+# очистить базу данных
+# python manage.py flush
+
+
+
+
+# ДОКУМЕНТАЦИЯ
+ _____________________________
+
+
+перед запуском в "бойовому режимі" додати типи листів в модель Types of emails
+
+ _____________________________

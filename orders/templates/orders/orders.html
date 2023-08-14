@@ -1,0 +1,144 @@
+<!-- Displays a list of orders. -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'orders/css/styles.css' %}" >
+{% endblock %}
+
+
+{% block header %}
+<h2>{% trans "Orders" %}</h2>
+{% endblock header %}
+
+{% block content %}
+<div class="table-responsive">
+<div class="search-pagination-container">
+    <form class="form-inline" method="GET" action="{% url 'orders:orders' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" type="text" name="search" placeholder="{% trans 'Search' %}" value="{{ request.GET.search }}">
+        </div>
+        <button class="btn btn-default" type="submit">{% trans "Search" %}</button>
+    </form>
+
+    <ul class="pager">
+        {% if page_obj.has_previous %}
+            <li class="previous"><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Previous" %}</a></li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <li class="next"><a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Next" %}</a></li>
+        {% endif %}
+
+    </ul>
+</div>
+
+    <table class="table table-bordered" id='order-list'>
+        <thead>
+        <tr>
+            <th class="item-header">{% trans "Status" %}</th>
+            <th class="item-header">{% trans "Number" %}</th>
+            <th class="item-header">{% trans "Action" %}</th>
+            <th class="item-header">{% trans "Export" %}</th>
+            <th class="item-header">{% trans "Date create" %}</th>
+            <th class="item-header">{% trans "Company" %}</th>
+            <th class="item-header">{% trans "Author" %}</th>
+            <th class="item-header">{% trans "Formed" %}</th>
+            <th class="item-header">{% trans "Total (€) with VAT" %}</th>
+            <th class="item-header">{% trans "Product category" %}</th>
+            <th class="item-header">{% trans "Products in order" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in page_obj %}
+        <tr>
+            <td>{{ item.status }}</td>
+            <td>{{ item.id }}</td>
+            <td>
+                {% if item.status == 'draft' and item.user_id == item.user_in_session_id %}
+                <a href="{% url 'orders:edit_order' item.id %}">{% trans "Edit" %}</a>
+                {% else %}
+                <a href="{% url 'orders:edit_order' item.id %}">{% trans "View" %}</a>
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'orders:excel_create' item.id %}">Excel</a>
+            </td>
+            <td>{{ item.created|date:"d.m.Y" }}</td>
+            <td>{{ item.company__name}}</td>
+            <td>{{ item.first_and_last_name }}</td>
+            <td>{{ item.formed }}</td>
+            <td>{{ item.total_with_VAT }}</td>
+            <td>
+                <!-- Getting a single value of the category of goods for order (the value of the category of the first product). -->
+                {% with category_name=item.products.0.product__category__name %}
+                {{ category_name }}
+                {% endwith %}
+            </td>
+            <td>
+                {% if item.total_products > 10 and item.status == 'order'%}
+                {% blocktrans with total_products=item.total_products %} in order {{ total_products }} items {% endblocktrans %}
+                {% elif item.status == 'order'%}
+
+                <ul>
+                    {% for product in item.products %}
+                    {% if product.ord_quantity > 0 %}
+                    <li>
+                        {% blocktrans with name=product.product__name description=product.product__description ord_quantity=product.ord_quantity %} {{name}} ({{description}}) : {{ ord_quantity }} pcs {% endblocktrans %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">{% trans "No orders yet." %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="pager">
+        {% if page_obj.has_previous %}
+            <li class="previous"><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Previous" %}</a></li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <li class="next"><a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Next" %}</a></li>
+        {% endif %}
+
+        <li class="pagination-info">
+            <span class="current-page">{{ page_obj.number }}</span>
+            /
+            <span class="total-pages">{{ page_obj.paginator.num_pages }}</span>
+        </li>
+    </ul>
+
+</div>
+</div>
+{% endblock content %}
+
+{% block js_stuff %}
+<script src="https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"></script>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<!--<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#order-list').dataTable({
+            "name": [[0, "asc"]],
+            "pageLength": 10,
+            "pagingType": "full_numbers",
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"
+            }
+        });
+    });
+</script>-->
+{% endblock js_stuff %}

@@ -1,0 +1,19 @@
+<!-- Template displayed after the user logs out of their account. -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Logged out" %}</h2>
+</div>
+{% endblock header%}
+
+{% block content %}
+<div class="container">
+    <p>{% trans "You have been successfully logged out. You can" %}
+        <a href="{% url 'account:login' %}">{% trans "log-in again" %}</a>.
+    </p>
+</div>
+{% endblock content %}

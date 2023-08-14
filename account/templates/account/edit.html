@@ -1,0 +1,58 @@
+<!-- Template for editing user profile information. -->
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Edit account" %}</h2>
+</div>
+{% endblock header %}
+
+{% block styles %}
+<style>
+
+    /* Style for table header */
+    th.item-header {
+        background-color: #f2f2f2;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <p>{% trans "You can edit your account using the following form:" %}</p>
+    <form action="." method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form user_form %}
+        {% bootstrap_form profile_form %}
+
+        <!-- Responsive table for better mobile display -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="item-header">№</th>
+                        <th class="item-header">{% trans "Company:" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in profile_item_formset %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ form.id }}{{ form.company }}</td>
+                    </tr>
+                    {% endfor %}
+                    {{ profile_item_formset.management_form }}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Button for submitting changes -->
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">{% trans 'Save changes' %}</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+

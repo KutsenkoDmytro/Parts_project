@@ -1,0 +1,100 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>{% trans "Hello" %}!</h3>
+<p>{% trans "A new order has been formed on the site" %}</p>
+
+<hr>
+<ul>
+    <!--<li>
+        <b>Статус: </b>{{ order.status }}
+    </li>-->
+    <li>
+        <b>{% trans "WEB-order number" %}: </b>{{ order.id }}
+    </li>
+
+    <li>
+        <b>{% trans "Created" %}: </b>{{ order.created|date:'Y.m.d'|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "Updated" %}: </b>{{ order.updated|date:'Y.m.d'|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "User" %}: </b>{{ order.user|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "First and last name" %}: </b>{{ order.first_and_last_name }}
+    </li>
+    <li>
+        <b>{% trans "Email" %}: </b>{{ order.email }}
+    </li>
+    <li>
+        <b>{% trans "Company" %}: </b>{{ order.company.name|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "EDRPOU code" %}: </b>{{ order.edrpou_code }}
+    </li>
+    <li>
+        <b>{% trans "Formed" %}: </b>{{ order.formed }}
+    </li>
+    <li>
+        <b>{% trans "Stock" %}: </b>{{ order.stock.name|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "Signatory of documents" %}: </b>{{ order.signatory_of_documents.get_full_name|default_if_none:"None" }}
+    </li>
+    <li>
+        <b>{% trans "VIN code" %}: </b>{{ order.VIN_code }}
+    </li>
+    <li>
+        <b>{% trans "Address" %}: </b>{{ order.address }}
+    </li>
+    <li>
+        <b>{% trans "Services description" %}: </b>{{ order.services_description }}
+    </li>
+    <li>
+        <b>{% trans "Comments" %}: </b>{{ order.comments }}
+    </li>
+    <li>
+        <b>{% trans "Total cost (€) without VAT" %}: </b>{{ order.get_total_cost }}
+    </li>
+    <li>
+        <b>{% trans "Total cost (€) with VAT" %}: </b>{{ order.get_total_cost_with_vat }}
+    </li>
+</ul>
+<p><b>
+    {% trans "Products" %}:
+</b></p>
+<table>
+    <tr>
+        <th>№</th>
+        <th>{% trans "Category" %}</th>
+        <th>{% trans "Description" %}</th>
+        <th>{% trans "Product" %}</th>
+        <th>{% trans "Quantity" %}</th>
+        <th>{% trans "Price" %}</th>
+        <th>{% trans "Cost (€) without VAT" %}</th>
+        <th>{% trans "Cost (€) with VAT" %}</th>
+    </tr>
+    {% for item in products_in_order %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ item.product.category.name }}</td>
+        <td>{{ item.product.description }}</td>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.ord_quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.ord_get_cost }}</td>
+        <td>{{ item.ord_get_cost_with_vat }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

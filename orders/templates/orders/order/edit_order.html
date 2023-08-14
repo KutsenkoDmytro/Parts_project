@@ -1,0 +1,222 @@
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+{% load l10n %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'orders/css/styles.css' %}" >
+{% endblock %}
+
+{% block header %}
+<h2>
+    {% if order.status == 'order' %}
+    {% blocktrans with id=order.id%} Order №{{id}} {% endblocktrans %}
+    {% else %}
+    {% blocktrans with id=order.id%} Order draft №{{id}} {% endblocktrans %}
+    {% endif %}
+</h2>
+{% endblock header %}
+
+{% block subheader %}
+<div class="page-header divider-subheader">
+    <h3>{% trans "Info:" %}</h3>
+</div>
+{% endblock subheader %}
+
+{% block content %}
+
+<p>{% blocktrans with created=created|date:"d.m.Y"%}Created: {{created}}{% endblocktrans %}
+    <br>{% blocktrans with updated=updated|date:"d.m.Y"%}Updated: {{updated}}{% endblocktrans %}</p>
+
+<p>
+    {% blocktrans with confirmation_date=confirmation_date|date:"d.m.Y" rate=euro_rate %} NBU exchange rate ({{confirmation_date}}): {{rate}} {% endblocktrans %}
+</p>
+
+<div class="table-responsive">
+    <form action="." method="post" class="form form-horizontal">
+        {% csrf_token %}
+
+        {% for field in order_form %}
+        <div class="form-group row">
+            <label for="{{ field.id_for_label }}"
+                   class="col-md-2 col-sm-3 col-form-label text-md-left">{{ field.label }}</label>
+            <div class="col-md-9 col-sm-9">
+                {{ field }}
+                {% if field.errors %}
+                <div class="invalid-feedback">
+                    {{ field.errors.as_text }}
+                </div>
+                {% endif %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <div class="page-header divider-subheader">
+            <h3>{% trans "Products:" %}</h3>
+        </div>
+
+        {% localize off %}
+        <table>
+            <thead>
+            <tr>
+                <th class="product-item-header">№</th>
+                <th style="display: none;">{% trans "Product ID" %}</th>
+                <th class="product-item-header">{% trans "Product" %}</th>
+                <th class="product-item-header">{% trans "Description" %}</th>
+                <th class="product-item-header">{% trans "Price (€)" %}</th>
+                <th class="pre-cost-header">{% trans "Pre-quantity" %}</th>
+                <th class="pre-cost-header">{% trans "Pre-cost (€) without VAT" %}
+                </th>
+                <th class="pre-cost-header">{% trans "Pre-cost (€) with VAT" %}
+                </th>
+                <th class="pre-cost-header">{% trans "Pre-cost (₴) without VAT" %}
+                </th>
+                <th class="pre-cost-header">{% trans "Pre-cost (₴) with VAT" %}
+                </th>
+                <th class="order-cost-header">{% trans "Order quantity" %}</th>
+                <th class="order-cost-header">{% trans "Order cost (€) without VAT" %}
+                </th>
+                <th class="order-cost-header">{% trans "Order cost (€) with VAT" %}
+                </th>
+                <th class="order-cost-header">{% trans "Order cost (₴) without VAT" %}
+                </th>
+                <th class="order-cost-header">{% trans "Order cost (₴) with VAT" %}
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for form in order_item_formset %}
+            <tr>
+                <td class="form-field">{{ forloop.counter }}</td>
+                <td style="display: none;">{{ form.id }}{{ form.product }}</td>
+                <td class="form-field-prod">{{ form.id }}{{ form.product_name }}</td>
+                <td class="form-field-prod">{{ form.id }}{{ form.product_description }}</td>
+                <td class="form-field">{{ form.price}}</td>
+                <td class="form-field">{{ form.pre_quantity }}</td>
+                <td class="form-field">{{ form.pre_cost }}</td>
+                <td class="form-field">{{ form.pre_cost_with_vat }}</td>
+                <td class="form-field">{{ form.pre_cost_ua }}</td>
+                <td class="form-field">{{ form.pre_cost_with_vat_ua }}</td>
+
+                <td>{{ form.ord_quantity }}
+                <script>
+                    $(document).ready(function() {
+                        var vatRate = parseFloat(1.2);
+                        var euroRate = parseFloat({{euro_rate}});
+
+                        $("#id_{{ form.prefix }}-ord_quantity").on("change", function() {
+                            var quantity = parseInt($(this).val()); // Convert string value to number
+                            var price = parseFloat("{{ form.price.value }}");
+
+                            var cost = quantity * price;
+                            var costWithVat = cost * vatRate;
+                            var costUA = cost * euroRate
+                            var costWithVatUA = cost  * vatRate * euroRate;
+
+                            // To update the values in a table
+                            $(this).closest("tr").find(".ord_cost").text(cost.toFixed(2));
+                            $(this).closest("tr").find(".ord_cost_with_vat").text(costWithVat.toFixed(2));
+                            $(this).closest("tr").find(".ord_cost_ua").text(costUA.toFixed(2));
+                            $(this).closest("tr").find(".ord_cost_with_vat_ua").text(costWithVatUA.toFixed(2));
+
+                            updateTotal();
+                        });
+
+                        function updateTotal() {
+                            // Update the total and total_with_vat values
+                            var total = 0;
+
+                            // We go through all the rows of the table and sum up the values of ord_cost
+                            $("tbody tr").each(function() {
+                                var ord_cost = parseFloat($(this).find(".ord_cost").text());
+
+                                if (!isNaN(ord_cost)) {
+                                    total += ord_cost;
+                                }
+                            });
+
+                            // Calculate and update the value of total_with_vat
+                            var vatRate = parseFloat(1.2);
+                            var euroRate = parseFloat({{euro_rate}});
+                            var total_with_vat = total * vatRate;
+                            var total_ua = total *  euroRate;
+                            var total_with_vat_ua = total_with_vat * euroRate;
+
+                            // Update the values on the page
+                            $("#total").text(total.toFixed(2));
+                            $("#total_with_vat").text(total_with_vat.toFixed(2));
+                            $("#total_ua").text(total_ua.toFixed(2));
+                            $("#total_with_vat_ua").text(total_with_vat_ua.toFixed(2));
+
+                        }
+
+                        // Call the updateTotal() function after loading the page and after changing the quantity.
+                        $("#id_{{ form.prefix }}-ord_quantity").on("change", updateTotal);
+                    });
+                    </script>
+
+                </td>
+                <td class="ord_cost">{{ form.ord_cost }}</td>
+                <input type="hidden" name="{{ form.prefix }}-ord_cost"
+                       value="{{ form.ord_cost.value }}">
+                <td class="ord_cost_with_vat">{{ form.ord_cost_with_vat }}</td>
+                <input type="hidden" name="{{ form.prefix }}-ord_cost_with_vat"
+                       value="{{ form.ord_cost_with_vat.value }}">
+                <td class="ord_cost_ua">{{ form.ord_cost_ua }}</td>
+                <input type="hidden" name="{{ form.prefix }}-ord_cost_ua"
+                       value="{{ form.ord_cost_ua.value }}">
+                <td class="ord_cost_with_vat_ua">{{ form.ord_cost_with_vat_ua }}
+                </td>
+                <input type="hidden"
+                       name="{{ form.prefix }}-ord_cost_with_vat_ua"
+                       value="{{ form.ord_cost_with_vat_ua.value }}">
+            </tr>
+            {% endfor %}
+            {{ order_item_formset.management_form }}
+            </tbody>
+        </table>
+        {% endlocalize %}
+
+        <p>
+        <p>{% trans "Total (€) without VAT: " %}<span
+                id="total">{{ total }}</span> || {% trans "with VAT: " %}<span id="total_with_vat">{{ total_with_vat }}</span>
+            <br>
+            {% trans "Total (₴) without VAT: " %}<span id="total_ua">{{ total_ua }}</span> || {% trans "with VAT: " %}<span id="total_with_vat_ua">{{ total_with_vat_ua }}</span>
+        </p>
+
+        </p>
+        <br>
+        <br>
+
+        {% if order.status == 'draft' and order.user == user_in_session %}
+
+        <div id="fixed-button-container-left">
+            <button type="button" id="quantity-from-template"
+                    class="btn btn-success">{% trans "Quantity from Template" %}
+            </button>
+            <button type="submit" class="btn btn-primary">{% trans "Save" %}
+            </button>
+            </p>
+        </div>
+        {% endif %}
+
+    </form>
+</div>
+
+{% endblock %}
+
+{% block js_stuff %}
+<!-- Include the jQuery library -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'orders/js/create_edit_order_header.js' %}"></script>
+<script src="{% static 'orders/js/quantity-from-template.js' %}"></script>
+<script src="{% static 'orders/js/textarea_size.js' %}"></script>
+<script src="{% static 'orders/js/button-submit.js' %}"></script>
+
+{% endblock js_stuff %}

@@ -1,0 +1,124 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+
+
+{% block styles %}
+<style>
+/* Style for table header */
+    th.item-header {
+        background-color: #f2f2f2;
+    }
+
+.pager {
+    display: flex; /* Використовуйте flex-контейнер для розміщення елементів в рядок */
+    align-items: center; /* Вирівнюйте елементи вертикально по центру */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager li {
+    margin: 0 5px; /* Додайте бажаний відступ між елементами */
+}
+
+.pager li.previous,
+.pager li.next {
+    display: inline-block;
+}
+
+/* Стилі для контейнера pagination-info */
+.pagination-info {
+    display: flex; /* Використовуйте flex-контейнер для розміщення інформації про сторінки */
+    align-items: center; /* Вирівнюйте елементи вертикально по центру */
+    font-size: 10px; /* Зменшіть розмір шрифту для інформації про сторінки */
+}
+
+
+
+
+</style>
+{% endblock %}
+
+{% block header %}
+<h2>{% trans "Search products" %}</h2>
+{% endblock header %}
+
+{% block content %}
+<div class="table-responsive">
+
+{% if query %}
+    <p>{% blocktrans %}Showing results for: {{ query }}{% endblocktrans %}</p>
+{% endif %}
+
+<div id="main" class="product-list">
+
+
+    <!-- Добавляем форму для поиска -->
+        <form class="form-inline" method="GET" action="{% url 'shop:product_search' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <select class="form-control" name="category">
+                    <option value="">{% trans "All" %}</option>
+                    {% for category in categories %}
+                        <option value="{{ category.slug }}" {% if category.slug == request.GET.category %}selected{% endif %}>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="search" placeholder="{% trans 'Search' %}" value="{{ request.GET.search }}">
+            </div>
+            <button class="btn btn-default" type="submit">{% trans "Search" %}</button>
+        </form>
+
+
+    <table class="table table-bordered" id="pr-list">
+        <thead>
+            <tr>
+                <th class="item-header" >{% trans "Product name" %}</th>
+                <th class="item-header" >{% trans "Description" %}</th>
+                <th class="item-header" >{% trans "Category" %}</th>
+                <th class="item-header" >{% trans "Customer price (€)" %}</th>
+                <th class="item-header" data-sortable="true">{% trans "Customer price (₴)" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in page_obj %}
+                <tr>
+                    <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.price_coef}}</td>
+                    <td>{{ product.price_ua}}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">{% trans "No results found." %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Добавляем пагинацию (вывод значений определенными частями) -->
+    <ul class="pager">
+    {% if page_obj.has_previous %}
+        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Previous" %}</a></li>
+    {% endif %}
+
+    {% if page_obj.has_next %}
+        <li class="next"><a href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{% trans "Next" %}</a></li>
+    {% endif %}
+
+    <!-- Додайте клас "pagination-info" для відображення інформації про сторінки -->
+    <li class="pagination-info">
+        <span class="current-page">{{ page_obj.number }}</span>
+        /
+        <span class="total-pages">{{ page_obj.paginator.num_pages }}</span>
+    </li>
+</ul>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

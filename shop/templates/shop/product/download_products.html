@@ -1,0 +1,29 @@
+<!-- File download template .xls -->
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-body text-center">
+                <h3>
+                    {% trans "Download products into the model Product from file" %}
+                </h3>
+                <hr>
+                <form method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="file" name="file" id="file" >
+                    </div>
+                    <p>
+                         {% trans "The file must be in .xls format only, contain only 1 sheet with table headers: 'id' (empty if the product is new; fill in when changing one of the attributes), 'category', 'name', 'slug' (corresponds to the value 'name'), 'description', 'price', 'is_deleted' ('True' if the product is marked for deletion)." %}
+                    </p>
+
+                    <button type="submit" class="btn btn-primary">{% trans "Download" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

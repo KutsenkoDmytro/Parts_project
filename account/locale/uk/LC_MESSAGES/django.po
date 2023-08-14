@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\account\models.py:11
+msgid "role name"
+msgstr "назва ролі"
+
+#: .\account\models.py:13 .\account\models.py:54 .\account\models.py:86
+msgid "is_deleted"
+msgstr "помітка на видалення"
+
+#: .\account\models.py:15 .\account\models.py:88
+msgid "date added"
+msgstr "додано"
+
+#: .\account\models.py:29
+msgid "user"
+msgstr "користувач"
+
+#: .\account\models.py:32
+msgid "holding"
+msgstr "холдинг"
+
+#: .\account\models.py:36
+msgid "role"
+msgstr "роль"
+
+#: .\account\models.py:38
+msgid "position"
+msgstr "посада"
+
+#: .\account\models.py:48
+msgid "profile"
+msgstr "профіль"
+
+#: .\account\models.py:52
+msgid "company"
+msgstr "компанія"
+
+#: .\account\models.py:69
+msgid "template name"
+msgstr "назва"
+
+#: .\account\models.py:74
+msgid "user company"
+msgstr "компанія"
+
+#: .\account\models.py:77
+msgid "stock"
+msgstr "склад"
+
+#: .\account\models.py:82
+msgid "responsible person"
+msgstr "відповідальна особа"
+
+#: .\account\models.py:84
+msgid "adress"
+msgstr "адреса"
+
+#: .\account\templates\account\edit.html:8
+msgid "Edit account"
+msgstr "Редагування облікового запису"
+
+#: .\account\templates\account\edit.html:24
+msgid "You can edit your account using the following form:"
+msgstr ""
+"Ви можете редагувати свій обліковий запис за допомогою наступної форми:"
+
+#: .\account\templates\account\edit.html:36
+msgid "Company:"
+msgstr "Компанії:"
+
+#: .\account\templates\account\edit.html:53
+#: .\account\templates\order_template\edit.html:21
+msgid "Save changes"
+msgstr "Зберегти зміни"
+
+#: .\account\templates\account\login.html:8
+#: .\account\templates\registration\login.html:9
+msgid "Log-in"
+msgstr "Вхід"
+
+#: .\account\templates\account\login.html:17
+msgid "register here"
+msgstr "зареєструйтесь тут"
+
+#: .\account\templates\account\login.html:25
+#: .\account\templates\registration\login.html:27
+msgid "Log in"
+msgstr "Ввійти"
+
+#: .\account\templates\account\register.html:9
+#: .\account\templates\account\register.html:25
+msgid "Create an account"
+msgstr "Створити обліковий запис"
+
+#: .\account\templates\account\register.html:17
+msgid "Please, sign up using the following form:"
+msgstr "Будь ласка, зареєструйтеся, скориставшись формою:"
+
+#: .\account\templates\account\register_done.html:9
+#, python-format
+msgid "Welcome %(first_name)s!"
+msgstr "Вітаємо %(first_name)s!"
+
+#: .\account\templates\account\register_done.html:15
+msgid "Your account has been successfully created. Now you can"
+msgstr "Ваш обліковий запис успішно створено. Тепер Ви можете"
+
+#: .\account\templates\account\register_done.html:16
+msgid "log in"
+msgstr "ввійти"
+
+#: .\account\templates\order_template\create.html:10
+msgid "Create a new set of order details"
+msgstr "Cтворення нового набору реквізитів замовлення"
+
+#: .\account\templates\order_template\create.html:21
+msgid "Create"
+msgstr "Створити"
+
+#: .\account\templates\order_template\edit.html:10
+msgid "Edit set of order details"
+msgstr "Редагування набору реквізитів замовлення"
+
+#: .\account\templates\order_template\template_list.html:9
+msgid "Sets of order details"
+msgstr "Набори реквізитів замовлення"
+
+#: .\account\templates\order_template\template_list.html:29
+msgid "Number"
+msgstr "Номер"
+
+#: .\account\templates\order_template\template_list.html:30
+msgid "Name"
+msgstr "Назва"
+
+#: .\account\templates\order_template\template_list.html:31
+msgid "Action"
+msgstr "Дії"
+
+#: .\account\templates\order_template\template_list.html:32
+msgid "Date added"
+msgstr "Додано"
+
+#: .\account\templates\order_template\template_list.html:33
+msgid "Company"
+msgstr "Компанія"
+
+#: .\account\templates\order_template\template_list.html:34
+msgid "Stock"
+msgstr "Склад"
+
+#: .\account\templates\order_template\template_list.html:35
+msgid "Responsible person"
+msgstr "Відповідальна особа"
+
+#: .\account\templates\order_template\template_list.html:36
+msgid "Address"
+msgstr "Адреса"
+
+#: .\account\templates\order_template\template_list.html:44
+msgid "Edit"
+msgstr "Редагувати"
+
+#: .\account\templates\order_template\template_list.html:55
+msgid "No sets of order details yet."
+msgstr "Наборів реквізитів замовлень поки немає."
+
+#: .\account\templates\registration\logged_out.html:9
+msgid "Logged out"
+msgstr "Вихід з системи"
+
+#: .\account\templates\registration\logged_out.html:15
+msgid "You have been successfully logged out. You can"
+msgstr "Ви успішно вийшли з системи. Ви можете"
+
+#: .\account\templates\registration\logged_out.html:16
+msgid "log-in again"
+msgstr "ввійти знову"
+
+#: .\account\templates\registration\login.html:16
+msgid "Your username and password didn't match.Please try again."
+msgstr "Ваші ім'я користувача та/або пароль не збігаються. Спробуйте ще раз."
+
+#: .\account\templates\registration\login.html:18
+msgid "Please, use the following form to log-in:"
+msgstr "Будь ласка, використовуйте наступну форму для входу:"
+
+#: .\account\templates\registration\login.html:31
+#: .\account\templates\registration\password_reset_form.html:13
+msgid "Forgotten your password?"
+msgstr "Забули пароль?"
+
+#: .\account\templates\registration\password_change_done.html:7
+msgid "Password changed"
+msgstr "Пароль змінено"
+
+#: .\account\templates\registration\password_change_done.html:13
+msgid "Your password has been successfully changed."
+msgstr "Ваш пароль успішно змінено."
+
+#: .\account\templates\registration\password_change_form.html:8
+msgid "Change you password"
+msgstr "Зміна паролю"
+
+#: .\account\templates\registration\password_change_form.html:14
+msgid "Use the form below to change your password."
+msgstr "Скористайтеся формою нижче, щоб змінити пароль."
+
+#: .\account\templates\registration\password_change_form.html:20
+msgid "Change"
+msgstr "Змінити"
+
+#: .\account\templates\registration\password_reset_complete.html:8
+msgid "Password reset"
+msgstr "Скидання паролю"
+
+#: .\account\templates\registration\password_reset_complete.html:14
+msgid "Your password has been set. You can"
+msgstr "Ваш пароль встановлено. Ви можете"
+
+#: .\account\templates\registration\password_reset_complete.html:15
+msgid "log in now"
+msgstr "ввійти зараз"
+
+#: .\account\templates\registration\password_reset_confirm.html:9
+#: .\account\templates\registration\password_reset_done.html:7
+#: .\account\templates\registration\password_reset_form.html:7
+msgid "Reset your password"
+msgstr "Скидання паролю"
+
+#: .\account\templates\registration\password_reset_confirm.html:17
+msgid "Please enter your new password twice:"
+msgstr "Будь ласка, введіть Ваш новий пароль двічі:"
+
+#: .\account\templates\registration\password_reset_confirm.html:23
+msgid "Change my password"
+msgstr "Змінити пароль"
+
+#: .\account\templates\registration\password_reset_confirm.html:29
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Посилання для скидання пароля стало недійсним, можливо, тому, що воно вже "
+"буловикористано. Будь ласка, надішліть запит на скидання нового пароля."
+
+#: .\account\templates\registration\password_reset_done.html:13
+msgid "We've emailed you instructions for setting your password."
+msgstr ""
+"Ми надіслали Вам інструкції щодо встановлення паролю на електронну пошту."
+
+#: .\account\templates\registration\password_reset_done.html:14
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with."
+msgstr ""
+"Якщо Ви не отримали електронного листа, переконайтеся, що Ви ввели адресу, з "
+"якою зареєструвалися."
+
+#: .\account\templates\registration\password_reset_email.html:3
+#, python-format
+msgid ""
+"\n"
+"Someone asked for password reset for email %(email)s. Follow the link "
+"below:\n"
+msgstr ""
+"\n"
+"Хтось запросив скидання пароля для електронної пошти %(email)s. Слідуйте за "
+"посиланням нижче:\n"
+
+#: .\account\templates\registration\password_reset_email.html:7
+#, python-format
+msgid ""
+"\n"
+"Your username, in case you've forgotten: %(get_username)s"
+msgstr ""
+"\n"
+"Ваше ім'я користувача, у разі якщо Ви його забули: %(get_username)s"
+
+#: .\account\templates\registration\password_reset_form.html:14
+msgid "Enter your e-mail address to obtain a new password."
+msgstr "Введіть свою адресу електронної пошти, щоб отримати новий пароль."
+
+#: .\account\templates\registration\password_reset_form.html:20
+msgid "Send e-mail"
+msgstr "Надіслати лист"
+
+#: .\account\views.py:92
+msgid "The profile has been successfully updated!"
+msgstr "Ваш профіль успішно оновлено!"
+
+#: .\account\views.py:95
+msgid "Error updating profile!"
+msgstr "Помилка оновлення облікового запису!"
+
+#: .\account\views.py:162
+msgid "A new set of order details has been successfully created!"
+msgstr "Новий набір реквізитів замовлення успішно сформовано!"
+
+#: .\account\views.py:175
+msgid ""
+"Error creating set of order details. The name you entered may already be in "
+"use!"
+msgstr ""
+"Помилка створення набору реквізитів замовлення. Можливо, введене ім'я вже "
+"використовується"

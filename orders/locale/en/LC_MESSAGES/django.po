@@ -1,0 +1,493 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\orders\forms.py:26 .\orders\forms.py:100 .\orders\models.py:25
+msgid "status"
+msgstr ""
+
+#: .\orders\models.py:20
+msgid "user"
+msgstr ""
+
+#: .\orders\models.py:29
+msgid "template"
+msgstr ""
+
+#: .\orders\models.py:31
+msgid "first and last name"
+msgstr ""
+
+#: .\orders\models.py:32
+msgid "e-mail"
+msgstr ""
+
+#: .\orders\models.py:33
+msgid "formed"
+msgstr ""
+
+#: .\orders\models.py:36
+msgid "company"
+msgstr ""
+
+#: .\orders\models.py:38 .\orders\views.py:562
+msgid "edrpou code"
+msgstr ""
+
+#: .\orders\models.py:41
+msgid "stock"
+msgstr ""
+
+#: .\orders\models.py:45
+msgid "signatory of documents"
+msgstr ""
+
+#: .\orders\models.py:47
+msgid "address"
+msgstr ""
+
+#: .\orders\models.py:49
+msgid "services description"
+msgstr ""
+
+#: .\orders\models.py:51
+msgid "comments"
+msgstr ""
+
+#: .\orders\models.py:56 .\orders\views.py:567
+msgid "VIN code"
+msgstr ""
+
+#: .\orders\models.py:57
+msgid "rate"
+msgstr ""
+
+#: .\orders\models.py:58
+msgid "created"
+msgstr ""
+
+#: .\orders\models.py:59
+msgid "updated"
+msgstr ""
+
+#: .\orders\models.py:93
+msgid "order"
+msgstr ""
+
+#: .\orders\models.py:96
+msgid "product"
+msgstr ""
+
+#: .\orders\models.py:98
+msgid "price"
+msgstr ""
+
+#: .\orders\models.py:99
+msgid "pre quantity"
+msgstr ""
+
+#: .\orders\models.py:100
+msgid "order quantity"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:28
+msgid "Checkout"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:30
+msgid "Order draft"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:40
+#: .\orders\templates\orders\order\edit_order.html:74
+msgid "Info:"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:66
+msgid "Place order"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:66
+msgid "Create draft"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:77
+#: .\orders\templates\orders\order\edit_order.html:109
+msgid "Products:"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:89
+#: .\orders\templates\orders\order\edit_order.html:118 .\orders\views.py:585
+msgid "Product"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:90
+#: .\orders\templates\orders\order\edit_order.html:119 .\orders\views.py:585
+msgid "Description"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:91
+msgid "Quantity"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:92
+#: .\orders\templates\orders\order\edit_order.html:120 .\orders\views.py:585
+msgid "Price (€)"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:93
+msgid "Cost (€) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:94
+msgid "Cost (€) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:95
+msgid "Cost (₴) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:96
+msgid "Cost (₴) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:118
+#, python-format
+msgid ""
+"\n"
+"        Total (€) without VAT: %(total_price)s || with VAT: "
+"%(total_cost_with_vat)s\n"
+"        "
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:123
+#, python-format
+msgid ""
+"\n"
+"        Total (₴) without VAT: %(total_cost_ua)s || with VAT: "
+"%(total_cost_with_vat_ua)s\n"
+"        "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:65
+#, python-format
+msgid " Order №%(id)s "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:67
+#, python-format
+msgid " Order draft №%(id)s "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:80
+#, python-format
+msgid "Created: %(created)s"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:81
+#, python-format
+msgid "Updated: %(updated)s"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:84
+#, python-format
+msgid " NBU exchange rate (%(confirmation_date)s): %(rate)s "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:117
+msgid "Product ID"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:121
+msgid "Pre-quantity"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:122
+msgid "Pre-cost (€) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:124
+msgid "Pre-cost (€) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:126
+msgid "Pre-cost (₴) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:128
+msgid "Pre-cost (₴) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:130
+msgid "Order quantity"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:131
+msgid "Order cost (€) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:133
+msgid "Order cost (€) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:135
+msgid "Order cost (₴) without VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:137
+msgid "Order cost (₴) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:236
+msgid "Total (€) without VAT: "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:237
+#: .\orders\templates\orders\order\edit_order.html:239
+msgid "with VAT: "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:239
+msgid "Total (₴) without VAT: "
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:250
+msgid "Quantity from Template"
+msgstr ""
+
+#: .\orders\templates\orders\order\edit_order.html:252
+msgid "Save"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:47
+msgid "Orders"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:56
+#: .\orders\templates\orders\orders.html:58
+msgid "Search"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:63
+#: .\orders\templates\orders\orders.html:142
+msgid "Previous"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:67
+#: .\orders\templates\orders\orders.html:146
+msgid "Next"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:76 .\orders\views.py:549
+msgid "Status"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:77
+msgid "Number"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:78
+msgid "Action"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:79
+msgid "Export"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:80
+msgid "Date create"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:81 .\orders\views.py:561
+msgid "Company"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:82
+msgid "Author"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:83 .\orders\views.py:563
+msgid "Formed"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:84
+msgid "Total (€) with VAT"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:85
+msgid "Product category"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:86
+msgid "Products in order"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:96
+msgid "Edit"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:98
+msgid "View"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:117
+#, python-format
+msgid " in order %(total_products)s items "
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:124
+#, python-format
+msgid " %(name)s (%(description)s) : %(ord_quantity)s pcs "
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:134
+msgid "No orders yet."
+msgstr ""
+
+#: .\orders\views.py:70 .\orders\views.py:474
+msgid "The order has been successfully formed. Your order number:"
+msgstr ""
+
+#: .\orders\views.py:71 .\orders\views.py:475
+msgid "Thanks!"
+msgstr ""
+
+#: .\orders\views.py:79 .\orders\views.py:138
+msgid ""
+"Error: All items in your cart must belong to the same category! Categories "
+"in your order:"
+msgstr ""
+
+#: .\orders\views.py:85 .\orders\views.py:482
+msgid "Error when placing or editing an order, check the form data!"
+msgstr ""
+
+#: .\orders\views.py:131
+msgid "The draft order has been successfully formed. Number:"
+msgstr ""
+
+#: .\orders\views.py:144
+msgid ""
+"There was an error while placing or editing the draft order, check the form "
+"data!"
+msgstr ""
+
+#: .\orders\views.py:523
+msgid "Attribute"
+msgstr ""
+
+#: .\orders\views.py:523
+msgid "Value"
+msgstr ""
+
+#: .\orders\views.py:550
+msgid "WEB-order number"
+msgstr ""
+
+#: .\orders\views.py:551
+msgid "Created"
+msgstr ""
+
+#: .\orders\views.py:553
+msgid "Updated"
+msgstr ""
+
+#: .\orders\views.py:555
+msgid "Exchange rate date"
+msgstr ""
+
+#: .\orders\views.py:557
+msgid "Rate (€)"
+msgstr ""
+
+#: .\orders\views.py:558
+msgid "User"
+msgstr ""
+
+#: .\orders\views.py:559
+msgid "First and last name"
+msgstr ""
+
+#: .\orders\views.py:564
+msgid "Stock"
+msgstr ""
+
+#: .\orders\views.py:565
+msgid "Signatory of documents"
+msgstr ""
+
+#: .\orders\views.py:568
+msgid "Address"
+msgstr ""
+
+#: .\orders\views.py:569
+msgid "Services description"
+msgstr ""
+
+#: .\orders\views.py:570
+msgid "Comments"
+msgstr ""
+
+#: .\orders\views.py:585
+msgid "Category"
+msgstr ""
+
+#: .\orders\views.py:586
+msgid "Pre quantity"
+msgstr ""
+
+#: .\orders\views.py:587
+msgid "Pre cost (€) without VAT"
+msgstr ""
+
+#: .\orders\views.py:588
+msgid "Pre cost (€) with VAT"
+msgstr ""
+
+#: .\orders\views.py:589
+msgid "Pre cost (₴) without VAT"
+msgstr ""
+
+#: .\orders\views.py:590
+msgid "Pre cost (₴) with VAT"
+msgstr ""
+
+#: .\orders\views.py:590
+msgid "Ord quantity"
+msgstr ""
+
+#: .\orders\views.py:591
+msgid "Ord cost (€) without VAT"
+msgstr ""
+
+#: .\orders\views.py:592
+msgid "Ord cost (€) with VAT"
+msgstr ""
+
+#: .\orders\views.py:593
+msgid "Ord cost (₴) without VAT"
+msgstr ""
+
+#: .\orders\views.py:594
+msgid "Ord cost (₴) with VAT"
+msgstr ""
+
+#: .\orders\views.py:660
+msgid "Total"
+msgstr ""

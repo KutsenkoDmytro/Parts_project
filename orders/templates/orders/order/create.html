@@ -1,0 +1,127 @@
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'orders/css/styles.css' %}" >
+{% endblock %}
+
+
+{% block header %}
+<div class="container">
+    <h2>{% if form.status.value == 'order' %}
+        {% trans "Checkout" %}
+        {% else %}
+        {% trans "Order draft" %}
+        {% endif %}
+    </h2>
+</div>
+{% endblock header %}
+
+
+{% block subheader %}
+<div class="container">
+    <div class="page-header divider-subheader">
+        <h3>{% trans "Info:" %}</h3>
+    </div>
+</div>
+{% endblock subheader %}
+
+{% block content %}
+<div class="container">
+    <div class="table-responsive">
+    <form action="." method="post" class="form form-horizontal">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group row">
+                <label for="{{ field.id_for_label }}" class="col-md-2 col-sm-3 col-form-label text-md-left">{{ field.label }}</label>
+                <div class="col-md-9 col-sm-9">
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="invalid-feedback">
+                            {{ field.errors.as_text }}
+                        </div>
+                    {% endif %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div id="fixed-button-container-left">
+    <p><input type="submit" class="btn btn-primary" value="{% if form.status.value == 'order' %}{% trans 'Place order' %}{% else %}{% trans 'Create draft' %}{% endif %}">
+    </p>
+</div>
+</div>
+    </form>
+</div>
+{% endblock content %}
+
+{% block subheader2 %}
+<div class="container">
+    <div class="page-header divider-subheader">
+        <h3>{% trans "Products:" %}</h3>
+    </div>
+</div>
+{% endblock subheader2 %}
+
+{% block content2 %}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="item-header">№ </th>
+                    <th class="item-header">{% trans "Product" %}</th>
+                    <th class="item-header">{% trans "Description" %}</th>
+                    <th class="item-header">{% trans "Quantity" %}</th>
+                    <th class="item-header">{% trans "Price (€)" %}</th>
+                    <th class="item-header">{% trans "Cost (€) without VAT" %}</th>
+                    <th class="item-header">{% trans "Cost (€) with VAT" %}</th>
+                    <th class="item-header">{% trans "Cost (₴) without VAT" %}</th>
+                    <th class="item-header">{% trans "Cost (₴) with VAT" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.description }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.total_price }}</td>
+                    <td>{{ item.cost_with_vat }}</td>
+                    <td>{{ item.cost_ua }}</td>
+                    <td>{{ item.cost_with_vat_ua }}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    <p>
+        {% blocktrans with total_price=cart.get_total_price total_cost_with_vat=cart.get_total_cost_with_vat %}
+        Total (€) without VAT: {{total_price}} || with VAT: {{total_cost_with_vat}}
+        {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans with total_cost_ua=cart.get_total_cost_ua total_cost_with_vat_ua=cart.get_total_cost_with_vat_ua %}
+        Total (₴) without VAT: {{total_cost_ua}} || with VAT: {{total_cost_with_vat_ua}}
+        {% endblocktrans %}
+    </p>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+{% endblock content2%}
+
+{% block js_stuff %}
+<!-- Include the jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'orders/js/create_edit_order_header.js' %}"></script>
+<script src="{% static 'orders/js/textarea_size.js' %}"></script>
+
+{% endblock js_stuff %}

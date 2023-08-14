@@ -1,0 +1,315 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\shop\models.py:15
+msgid "category name"
+msgstr ""
+
+#: .\shop\models.py:17
+msgid "category slug"
+msgstr ""
+
+#: .\shop\models.py:36 .\shop\models.py:75
+msgid "category"
+msgstr ""
+
+#: .\shop\models.py:38
+msgid "product name"
+msgstr ""
+
+#: .\shop\models.py:40
+msgid "product slug"
+msgstr ""
+
+#: .\shop\models.py:43
+msgid "description"
+msgstr ""
+
+#: .\shop\models.py:45
+msgid "price"
+msgstr ""
+
+#: .\shop\models.py:48 .\shop\models.py:82
+msgid "is deleted"
+msgstr ""
+
+#: .\shop\models.py:49 .\shop\models.py:83
+msgid "created"
+msgstr ""
+
+#: .\shop\models.py:50 .\shop\models.py:84
+msgid "updated"
+msgstr ""
+
+#: .\shop\models.py:78
+msgid "holdind"
+msgstr ""
+
+#: .\shop\models.py:80
+msgid "value"
+msgstr ""
+
+#: .\shop\templates\shop\base.html:12
+msgid "Parts project"
+msgstr ""
+
+#: .\shop\templates\shop\errors_notification.html:8
+#: .\shop\templates\shop\errors_notification.html:13
+#, python-format
+msgid "%(message)s"
+msgstr ""
+
+#: .\shop\templates\shop\footer.html:9
+msgid "Documentation"
+msgstr ""
+
+#: .\shop\templates\shop\footer.html:11
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\shop\templates\shop\footer.html:13
+msgid "Contacts"
+msgstr ""
+
+#: .\shop\templates\shop\index.html:8
+msgid "STATUS"
+msgstr ""
+
+#: .\shop\templates\shop\index.html:17
+msgid "BROADCAST MESSAGES"
+msgstr ""
+
+#: .\shop\templates\shop\index.html:26
+msgid "Date"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:26
+#, python-format
+msgid "Wellcome, %(name)s"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:28
+msgid "Settings menu"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:30
+msgid "Edit profile"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:31
+msgid "Change password"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:33
+msgid "Administration"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:34
+msgid "Edit products"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:43
+msgid "Language"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:55
+msgid "Logout"
+msgstr ""
+
+#: .\shop\templates\shop\navbar.html:57
+msgid "Log-in"
+msgstr ""
+
+#: .\shop\templates\shop\product\detail.html:23
+#, python-format
+msgid "Customer price (EUR) %(coef)s"
+msgstr ""
+
+#: .\shop\templates\shop\product\detail.html:25
+#, python-format
+msgid "Customer price (UAH) %(price_ua)s"
+msgstr ""
+
+#: .\shop\templates\shop\product\detail.html:32
+msgid "Add to cart"
+msgstr ""
+
+#: .\shop\templates\shop\product\download_products.html:11
+msgid "Download products into the model Product from file"
+msgstr ""
+
+#: .\shop\templates\shop\product\download_products.html:20
+msgid ""
+"The file must be in .xls format only, contain only 1 sheet with table "
+"headers: 'id' (empty if the product is new; fill in when changing one of the "
+"attributes), 'category', 'name', 'slug' (corresponds to the value 'name'), "
+"'description', 'price', 'is_deleted' ('True' if the product is marked for "
+"deletion)."
+msgstr ""
+
+#: .\shop\templates\shop\product\download_products.html:23
+#: .\shop\templates\shop\product\download_products_in_cart.html:22
+msgid "Download"
+msgstr ""
+
+#: .\shop\templates\shop\product\download_products_in_cart.html:11
+msgid "Download products into the Cart from file"
+msgstr ""
+
+#: .\shop\templates\shop\product\download_products_in_cart.html:20
+msgid ""
+"The file must be in .xls format only, containing only 1 letter with the "
+"headers of the table 'product' and 'quantity' respectively."
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:45
+msgid "Search products"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:52
+#, python-format
+msgid "Showing results for: %(query)s"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:63
+msgid "All"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:70
+#: .\shop\templates\shop\product\search.html:72
+msgid "Search"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:79
+msgid "Name"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:80
+msgid "Description"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:81
+msgid "Category"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:82
+msgid "Customer price (€)"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:83
+msgid "Customer price (₴)"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:97
+msgid "No results found."
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:106
+msgid "Previous"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:110
+msgid "Next"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:15
+msgid "Home"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:23
+msgid "Products"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:32
+msgid "Orders"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:41
+msgid "Sets of order details"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:44
+msgid "Go to list"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:45
+msgid "Create new"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:57
+msgid "Your cart"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:58
+#, python-format
+msgid " %(total_items)s ptc., € %(total_price)s "
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:61
+msgid "Go to cart"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:62 .\shop\templates\shop\sidebar.html:74
+msgid "Download products to the cart"
+msgstr ""
+
+#: .\shop\templates\shop\sidebar.html:71
+msgid "Your cart is empty."
+msgstr ""
+
+#: .\shop\views.py:140 .\shop\views.py:159
+msgid "File not selected!"
+msgstr ""
+
+#: .\shop\views.py:149
+msgid "The download was successful!"
+msgstr ""
+
+#: .\shop\views.py:151
+msgid "Error loading!"
+msgstr ""
+
+#: .\shop\views.py:193
+msgid "Your cart has reached the maximum limit in"
+msgstr ""
+
+#: .\shop\views.py:194
+msgid "products. From file .xls downloaded"
+msgstr ""
+
+#: .\shop\views.py:195
+msgid "from"
+msgstr ""
+
+#: .\shop\views.py:196
+msgid "products"
+msgstr ""
+
+#: .\shop\views.py:197
+msgid "Please proceed to checkout (drafts) or empty your cart! "
+msgstr ""
+
+#: .\shop\views.py:201
+msgid "Products have been successfully added to your shopping cart!"
+msgstr ""
+
+#: .\shop\views.py:204
+msgid "An error occurred while downloading the file!"
+msgstr ""

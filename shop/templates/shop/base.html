@@ -1,0 +1,104 @@
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+{% load cache %}
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>{% trans "Parts project" %}</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/styles.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    {% block styles %}
+    {% endblock %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <style>
+        .divider-header {
+            border-bottom: 1px solid #f58320;
+            margin-bottom: 10px;
+        }
+
+        .divider-subheader {
+            border-bottom: 1px solid #337ab7;
+            margin-bottom: 10px;
+        }
+
+        .navbar-toggle {
+            background-color: #000;
+        }
+
+        .align-top {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .navbar-header {
+            float: left;
+        }
+
+        .navbar-default {
+            background-image: linear-gradient(to right, rgba(205, 205, 205, 0), rgba(205, 205, 205, 0.6));
+            border: none;
+        }
+
+        .wrapper-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .footer .btn {
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+
+{% include 'shop/navbar.html' %}
+{% include 'shop/sidebar.html' %}
+
+<div class="container-fluid">
+    <div class="wrapper-content">
+        {% include 'shop/errors_notification.html' %}
+    </div>
+    {% block indexcontent %}{% endblock indexcontent %}
+
+
+    <div class="page-header divider-header">
+        {% block header %}{% endblock header %}
+    </div>
+
+
+    <div>
+        {% block subheader %}{% endblock subheader %}
+        {% block content %}{% endblock content %}
+
+        {% block subheader2 %}{% endblock subheader2 %}
+        {% block content2 %}{% endblock content2 %}
+    </div>
+    <div>
+        {% block footer %}{% endblock footer %}
+    </div>
+</div>
+
+<div id="js">
+    {% block js_stuff %}{% endblock js_stuff %}
+</div>
+
+</body>
+</html>
+

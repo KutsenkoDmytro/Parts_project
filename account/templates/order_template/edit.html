@@ -1,0 +1,31 @@
+<!-- Template for editing a set of order details -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Edit set of order details" %}</h2>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <form action="." method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form template_form %}
+
+        {% buttons %}
+         <button name="submit" class="btn btn-primary">{% trans "Save changes" %}</button>
+         {% endbuttons %}
+    </form>
+</div>
+{% endblock content %}
+
+{% block js_stuff %}
+<!-- Include jQuery library and custom scripts for dynamic behavior -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'order_template/js/create_edit.js' %}"></script>
+{% endblock js_stuff %}

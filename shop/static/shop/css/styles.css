@@ -1,0 +1,50 @@
+/* Styles for base */
+
+/* Style for the header dividers */
+.divider-header {
+  border-bottom: 1px solid #f58320;
+  margin-bottom: 10px; /* Changed from padding-bottom */
+}
+
+.divider-subheader {
+  border-bottom: 1px solid #337ab7;
+  margin-bottom: 10px; /* Changed from padding-bottom */
+}
+
+/* Navbar button style */
+.navbar-toggle {
+  background-color: #000; /* Changed color to black */
+}
+
+/* Adjusted alignment class */
+.align-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navbar-header {
+  float: left;
+}
+
+.navbar-default {
+  background-image: linear-gradient(to right, rgba(205, 205, 205, 0), rgba(205, 205, 205, 0.6));
+  border: none;
+}
+
+/* Content wrapper style */
+.wrapper-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Display dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Button style in footer */
+.footer .btn {
+  border: none;
+}

@@ -1,0 +1,64 @@
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed align-top"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar"></button>
+            <a class="navbar-brand" href="{% url 'shop:index' %}">
+                <img src="{% static 'shop/images/astra-logo-2.png' %}"
+                     alt="Your Image" class="img-responsive img-fluid hidden-xs"
+                     style="max-width: 200px;">
+            </a>
+            </a>
+
+        </div>
+        <ul class="nav navbar-nav">
+
+        </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a>{% blocktrans with name=request.user.first_name %}Wellcome, {{ name }}{% endblocktrans %}</a></li>
+                <li class="dropdown"><a class="dropdown-toggle"
+                                        data-toggle="dropdown" href="#">{% trans "Settings menu" %}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'account:edit' %}">{% trans "Edit profile" %}</a></li>
+                        <li><a href="{% url 'account:password_change' %}">{% trans "Change password" %}</a></li>
+                        {% if user.is_authenticated and user.is_staff %}
+                        <li><a href="{% url 'admin:index' %}">{% trans "Administration" %}</a></li>
+                        <li><a href="{% url 'shop:download_products' %}">{% trans "Edit products" %}</a></li>
+                        {% endif %}
+                    </ul>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+
+                <li class="dropdown"><a class="dropdown-toggle"
+                                        data-toggle="dropdown" href="#">{% trans "Language" %}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+
+                        {% for language in languages %}
+                        <li><a href="/{{ language.code }}/"
+                               class="language-link{% if language.code == LANGUAGE_CODE %} active{% endif %}">
+                            {{ language.name_local }}
+                        </a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'account:logout' %}">{% trans "Logout" %}</a></li>
+                {% else %}
+                <li><a href="{% url 'account:login' %}">{% trans "Log-in" %}</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>

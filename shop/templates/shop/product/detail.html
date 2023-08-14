@@ -1,0 +1,45 @@
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+
+{% block header %}
+<div class="container">
+
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-body text-center">
+    <h2>{{ product.name }}</h2>
+    <hr>
+    <h2>
+        {{product.category}}
+    </h2>
+    <p>
+        {% blocktrans with coef=product.price_coef %}Customer price (EUR) {{ coef }}{% endblocktrans %}
+        <br>
+        {% blocktrans with price_ua=product.price_ua%}Customer price (UAH) {{ price_ua }}{% endblocktrans %}
+    </p>
+    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+
+        {% buttons %}
+        <button name="submit" class="btn btn-primary">{% trans 'Add to cart' %}
+        </button>
+        {% endbuttons %}
+
+    </form>
+    {{ product.description|linebreaks }}
+
+
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

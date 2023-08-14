@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\system_emails\models.py:8
+msgid "email type name"
+msgstr ""
+
+#: .\system_emails\models.py:9
+msgid "is active"
+msgstr ""
+
+#: .\system_emails\models.py:10 .\system_emails\models.py:27
+msgid "created"
+msgstr ""
+
+#: .\system_emails\models.py:11 .\system_emails\models.py:28
+msgid "updated"
+msgstr ""
+
+#: .\system_emails\models.py:22
+msgid "type"
+msgstr ""
+
+#: .\system_emails\models.py:25
+msgid "order"
+msgstr ""
+
+#: .\system_emails\models.py:26
+msgid "email"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:10
+msgid "Hello"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:11
+msgid "A new order has been formed on the site"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:19
+msgid "WEB-order number"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:23
+msgid "Created"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:26
+msgid "Updated"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:29
+msgid "User"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:32
+msgid "First and last name"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:35
+msgid "Email"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:38
+msgid "Company"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:41
+msgid "EDRPOU code"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:44
+msgid "Formed"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:47
+msgid "Stock"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:50
+msgid "Signatory of documents"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:53
+msgid "VIN code"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:56
+msgid "Address"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:59
+msgid "Services description"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:62
+msgid "Comments"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:65
+msgid "Total cost (€) without VAT"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:68
+msgid "Total cost (€) with VAT"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:72
+msgid "Products"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:77
+msgid "Category"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:78
+msgid "Description"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:79
+msgid "Product"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:80
+msgid "Quantity"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:81
+msgid "Price"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:82
+msgid "Cost (€) without VAT"
+msgstr ""
+
+#: .\system_emails\templates\order_notification_admin.html:83
+msgid "Cost (€) with VAT"
+msgstr ""

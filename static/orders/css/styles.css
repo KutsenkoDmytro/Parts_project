@@ -1,0 +1,92 @@
+/* Style for table header */
+    th.item-header {
+        background-color: #f2f2f2;
+    }
+     #fixed-button-container-left {
+        position: fixed;
+        bottom: 20px;
+        z-index: 1000;
+    }
+
+/* Style for table in edit_order template */
+    td.form-field,
+    td.ord_cost,
+    td.ord_cost_with_vat,
+    td.ord_cost_ua,
+    td.ord_cost_with_vat_ua {
+        max-width: 85px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: top;
+        border: 1px solid #dddddd;
+    }
+    td.form-field-prod {
+        max-width: 115px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: top;
+        border: 1px solid #dddddd;
+    }
+
+    th.product-item-header {
+      background-color: #f2f2f2;
+      color: #333333;
+      border: 1px solid #dddddd;
+      vertical-align: top;
+
+    }
+    th.pre-cost-header {
+      background-color: #f2dede;
+      color: #a94442;
+      border: 1px solid #dddddd;
+      vertical-align: top;
+
+    }
+
+    th.order-cost-header {
+      background-color: #dff0d8;
+      color: #567656;
+      border: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    #fixed-button-container-left {
+            position: fixed;
+            bottom: 20px;
+            z-index: 1000;
+        }
+
+
+/* Style for table in orders template */
+
+    .pager {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+
+    .pager li {
+        margin: 0 5px;
+    }
+
+    .pager li.previous,
+    .pager li.next {
+        display: inline-block;
+    }
+
+    /* pagination-info */
+    .pagination-info {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+    }
+    .search-pagination-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }

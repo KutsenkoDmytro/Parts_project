@@ -1,0 +1,33 @@
+<!-- Template for creating a set of order details -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Create a new set of order details" %}</h2>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <form action="." method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+     <button name="submit" class="btn btn-primary">{% trans "Create" %}</button>
+     {% endbuttons %}
+
+  </form>
+</div>
+{% endblock content %}
+
+{% block js_stuff %}
+<!-- Include jQuery library and custom scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'order_template/js/create_edit.js' %}"></script>
+<script src="{% static 'order_template/js/textarea_size.js' %}"></script>
+{% endblock js_stuff %}

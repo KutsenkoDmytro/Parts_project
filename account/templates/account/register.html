@@ -1,0 +1,31 @@
+<!-- Template for user registration -->
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Create an account" %}</h2>
+</div>
+{% endblock header %}
+
+{% block content %}
+{% if user.is_authenticated and user.is_staff %}
+<div class="container">
+
+    <p>{% trans "Please, sign up using the following form:" %}</p>
+
+    <form action="." method="post" class="form">
+        {% csrf_token %}
+
+        {% bootstrap_form user_form %}
+
+        {% buttons %}
+        <button name="submit" class="btn btn-primary">{% trans 'Create an account' %}
+        </button>
+        {% endbuttons %}
+    </form>
+</div>
+{% endif %}
+{% endblock content %}

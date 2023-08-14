@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+#: .\shop\models.py:15
+msgid "category name"
+msgstr "категорія"
+
+#: .\shop\models.py:17
+msgid "category slug"
+msgstr "слаг категорії"
+
+#: .\shop\models.py:36 .\shop\models.py:75
+msgid "category"
+msgstr "категорія"
+
+#: .\shop\models.py:38
+msgid "product name"
+msgstr "товар"
+
+#: .\shop\models.py:40
+msgid "product slug"
+msgstr "слаг товару"
+
+#: .\shop\models.py:43
+msgid "description"
+msgstr "назва"
+
+#: .\shop\models.py:45
+msgid "price"
+msgstr "ціна"
+
+#: .\shop\models.py:48 .\shop\models.py:82
+msgid "is deleted"
+msgstr "помітка на видалення"
+
+#: .\shop\models.py:49 .\shop\models.py:83
+msgid "created"
+msgstr "сформовано"
+
+#: .\shop\models.py:50 .\shop\models.py:84
+msgid "updated"
+msgstr "оновлено"
+
+#: .\shop\models.py:78
+msgid "holdind"
+msgstr "холдинг"
+
+#: .\shop\models.py:80
+msgid "value"
+msgstr "значення"
+
+#: .\shop\templates\shop\base.html:12
+msgid "Parts project"
+msgstr "Проект запасних частин"
+
+#: .\shop\templates\shop\errors_notification.html:8
+#: .\shop\templates\shop\errors_notification.html:13
+#, python-format
+msgid "%(message)s"
+msgstr ""
+
+#: .\shop\templates\shop\footer.html:9
+msgid "Documentation"
+msgstr "Документація"
+
+#: .\shop\templates\shop\footer.html:11
+msgid "Privacy Policy"
+msgstr "Політика конфіденційності"
+
+#: .\shop\templates\shop\footer.html:13
+msgid "Contacts"
+msgstr "Контакти"
+
+#: .\shop\templates\shop\index.html:8
+msgid "STATUS"
+msgstr "СТАТУС"
+
+#: .\shop\templates\shop\index.html:17
+msgid "BROADCAST MESSAGES"
+msgstr "ЗАГАЛЬНІ ПОВІДОМЛЕННЯ"
+
+#: .\shop\templates\shop\index.html:26
+msgid "Date"
+msgstr "Дата"
+
+#: .\shop\templates\shop\navbar.html:26
+#, python-format
+msgid "Wellcome, %(name)s"
+msgstr "Вітаємо, %(name)s"
+
+#: .\shop\templates\shop\navbar.html:28
+msgid "Settings menu"
+msgstr "Меню налаштувань"
+
+#: .\shop\templates\shop\navbar.html:30
+msgid "Edit profile"
+msgstr "Редагування профілю"
+
+#: .\shop\templates\shop\navbar.html:31
+msgid "Change password"
+msgstr "Зміна паролю"
+
+#: .\shop\templates\shop\navbar.html:33
+msgid "Administration"
+msgstr "Адміністрування"
+
+#: .\shop\templates\shop\navbar.html:34
+msgid "Edit products"
+msgstr "Редагування товарів"
+
+#: .\shop\templates\shop\navbar.html:43
+msgid "Language"
+msgstr "Мова"
+
+#: .\shop\templates\shop\navbar.html:55
+msgid "Logout"
+msgstr "Вихід"
+
+#: .\shop\templates\shop\navbar.html:57
+msgid "Log-in"
+msgstr "Вхід"
+
+#: .\shop\templates\shop\product\detail.html:23
+#, python-format
+msgid "Customer price (EUR) %(coef)s"
+msgstr "Ціна клієнта (євро) %(coef)s"
+
+#: .\shop\templates\shop\product\detail.html:25
+#, python-format
+msgid "Customer price (UAH) %(price_ua)s"
+msgstr "Ціна клієнта (грн) %(price_ua)s"
+
+#: .\shop\templates\shop\product\detail.html:32
+msgid "Add to cart"
+msgstr "Додати в кошик"
+
+#: .\shop\templates\shop\product\download_products.html:11
+msgid "Download products into the model Product from file"
+msgstr "Завантаження товарів до моделі Товари з файлу .xls"
+
+#: .\shop\templates\shop\product\download_products.html:20
+msgid ""
+"The file must be in .xls format only, contain only 1 sheet with table "
+"headers: 'id' (empty if the product is new; fill in when changing one of the "
+"attributes), 'category', 'name', 'slug' (corresponds to the value 'name'), "
+"'description', 'price', 'is_deleted' ('True' if the product is marked for "
+"deletion)."
+msgstr ""
+"Файл повинен бути виключно в .xls форматі, містити тільки 1 лист з заголовками "
+"таблиці: 'id' (порожній, якщо товар новий; заповніть при зміні одного з "
+"атрибутів), 'category', 'name', 'slug' (відповідає значенню 'name'), "
+"'description', 'price', 'is_deleted' ('True', якщо товар позначено на "
+"видалення)."
+
+#: .\shop\templates\shop\product\download_products.html:23
+#: .\shop\templates\shop\product\download_products_in_cart.html:22
+msgid "Download"
+msgstr "Завантажити"
+
+#: .\shop\templates\shop\product\download_products_in_cart.html:11
+msgid "Download products into the Cart from file"
+msgstr "Завантаження товарів до кошика з файлу .xls"
+
+#: .\shop\templates\shop\product\download_products_in_cart.html:20
+msgid ""
+"The file must be in .xls format only, containing only 1 letter with the "
+"headers of the table 'product' and 'quantity' respectively."
+msgstr ""
+"Файл повинен бути виключно в .xls форматі, містити тільки 1 лист з "
+"заголовками таблиці 'product' і 'quantity' відповідно."
+
+#: .\shop\templates\shop\product\search.html:45
+msgid "Search products"
+msgstr "Пошук товарів"
+
+#: .\shop\templates\shop\product\search.html:52
+#, python-format
+msgid "Showing results for: %(query)s"
+msgstr "Відображені результати для: %(query)s"
+
+#: .\shop\templates\shop\product\search.html:63
+msgid "All"
+msgstr "Всі"
+
+#: .\shop\templates\shop\product\search.html:70
+#: .\shop\templates\shop\product\search.html:72
+msgid "Search"
+msgstr "Пошук"
+
+#: .\shop\templates\shop\product\search.html:79
+msgid "Product name"
+msgstr "Товар"
+
+#: .\shop\templates\shop\product\search.html:80
+msgid "Description"
+msgstr "Назва"
+
+#: .\shop\templates\shop\product\search.html:81
+msgid "Category"
+msgstr "Категорія"
+
+#: .\shop\templates\shop\product\search.html:82
+msgid "Customer price (€)"
+msgstr "Ціна клієнта (€)"
+
+#: .\shop\templates\shop\product\search.html:83
+msgid "Customer price (₴)"
+msgstr "Ціна клієнта (₴)"
+
+#: .\shop\templates\shop\product\search.html:97
+msgid "No results found."
+msgstr "Результатів не знайдено."
+
+#: .\shop\templates\shop\product\search.html:106
+msgid "Previous"
+msgstr "Попередня"
+
+#: .\shop\templates\shop\product\search.html:110
+msgid "Next"
+msgstr "Наступна"
+
+#: .\shop\templates\shop\sidebar.html:15
+msgid "Home"
+msgstr "Головна"
+
+#: .\shop\templates\shop\sidebar.html:23
+msgid "Products"
+msgstr "Товари"
+
+#: .\shop\templates\shop\sidebar.html:32
+msgid "Orders"
+msgstr "Замовлення"
+
+#: .\shop\templates\shop\sidebar.html:41
+msgid "Sets of order details"
+msgstr "Набори реквізитів замовлень"
+
+#: .\shop\templates\shop\sidebar.html:44
+msgid "Go to list"
+msgstr "Перейти до списку"
+
+#: .\shop\templates\shop\sidebar.html:45
+msgid "Create new"
+msgstr "Створити новий"
+
+#: .\shop\templates\shop\sidebar.html:57
+msgid "Your cart"
+msgstr "Кошик"
+
+#: .\shop\templates\shop\sidebar.html:58
+#, python-format
+msgid " %(total_items)s ptc., € %(total_price)s "
+msgstr " %(total_items)s шт., € %(total_price)s "
+
+#: .\shop\templates\shop\sidebar.html:61
+msgid "Go to cart"
+msgstr "Перейти до кошика"
+
+#: .\shop\templates\shop\sidebar.html:62 .\shop\templates\shop\sidebar.html:74
+msgid "Download products to the cart"
+msgstr "Завантажити товари до кошика"
+
+#: .\shop\templates\shop\sidebar.html:71
+msgid "Your cart is empty."
+msgstr "Кошик порожній"
+
+#: .\shop\views.py:140 .\shop\views.py:159
+msgid "File not selected!"
+msgstr "Файл не вибрано!"
+
+#: .\shop\views.py:149
+msgid "The download was successful!"
+msgstr "Завантаження пройшло успішно!"
+
+#: .\shop\views.py:151
+msgid "Error loading!"
+msgstr "Помилка завантаження!"
+
+#: .\shop\views.py:193
+msgid "Your cart has reached the maximum limit in"
+msgstr "Ваш кошик досяг максимального ліміту в"
+
+#: .\shop\views.py:194
+msgid "products. From file .xls downloaded"
+msgstr "товарів. З файлу .xls завантажено"
+
+#: .\shop\views.py:195
+msgid "from"
+msgstr "з"
+
+#: .\shop\views.py:196
+msgid "products"
+msgstr "товарів"
+
+#: .\shop\views.py:197
+msgid "Please proceed to checkout (drafts) or empty your cart! "
+msgstr "Будь ласка, перейдіть до оформлення замовлення (чернетки) або очистіть кошик! "
+
+#: .\shop\views.py:201
+msgid "Products have been successfully added to your shopping cart!"
+msgstr "Товари успішно додано до кошика!"
+
+#: .\shop\views.py:204
+msgid "An error occurred while downloading the file!"
+msgstr "Під час завантаження файлу сталася помилка!"

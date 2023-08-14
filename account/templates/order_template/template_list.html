@@ -1,0 +1,71 @@
+<!-- Order details list template -->
+
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'order_template/css/styles.css' %}" >
+{% endblock %}
+
+{% block header %}
+    <h2>{% trans "Sets of order details" %}</h2>
+{% endblock header %}
+
+
+{% block content %}
+<div class="table-responsive">
+{% if user_templates %}
+    <table class="table table-bordered" id="template-list">
+        <thead>
+            <tr>
+                <th class="item-header">{% trans "Number" %}</th>
+                <th class="item-header">{% trans "Name" %}</th>
+                <th class="item-header">{% trans "Action" %}</th>
+                <th class="item-header">{% trans "Date added" %}</th>
+                <th class="item-header">{% trans "Company" %}</th>
+                <th class="item-header">{% trans "Stock" %}</th>
+                <th class="item-header">{% trans "Responsible person" %}</th>
+                <th class="item-header">{% trans "Address" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for template in user_templates %}
+            <tr>
+                <td>{{ template.id }}</td>
+                <td >{{ template.name }}</td>
+                <td><a href="{% url 'account:edit_template' template.id %}">{% trans "Edit" %}</a></td>
+                <td>{{ template.date_added|date:"d.m.Y" }}</td>
+                <td>{{ template.user_company }}</td>
+                <td>{{ template.stock.name }}</td>
+                <td>{{ template.responsible_person }}</td>
+                <td>{{ template.address }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{% trans "No sets of order details yet." %}</p>
+{% endif %}
+
+ </div>
+{% endblock content %}
+
+{% block js_stuff %}
+<script src="https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#template-list').dataTable({
+            "name": [[0, "asc"]],
+            "pageLength": 10,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Ukrainian.json"
+            }
+        });
+    });
+</script>
+{% endblock %}

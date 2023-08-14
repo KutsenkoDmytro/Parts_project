@@ -1,0 +1,509 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\orders\forms.py:26 .\orders\forms.py:100 .\orders\models.py:25
+msgid "status"
+msgstr "cтатус"
+
+#: .\orders\models.py:20
+msgid "user"
+msgstr "користувач"
+
+#: .\orders\models.py:29
+msgid "template"
+msgstr "шаблон"
+
+#: .\orders\models.py:31
+msgid "first and last name"
+msgstr "ім'я та прізвище"
+
+#: .\orders\models.py:32
+msgid "e-mail"
+msgstr "електронна адреса"
+
+#: .\orders\models.py:33
+msgid "formed"
+msgstr "сформував"
+
+#: .\orders\models.py:36
+msgid "company"
+msgstr "компанія"
+
+#: .\orders\models.py:38 .\orders\views.py:562
+msgid "edrpou code"
+msgstr "код ЄДРПОУ"
+
+#: .\orders\models.py:41
+msgid "stock"
+msgstr "склад"
+
+#: .\orders\models.py:45
+msgid "signatory of documents"
+msgstr "підписант документів"
+
+#: .\orders\models.py:47
+msgid "address"
+msgstr "адреса"
+
+#: .\orders\models.py:49
+msgid "services description"
+msgstr "опис сервісних послуг"
+
+#: .\orders\models.py:51
+msgid "comments"
+msgstr "коментарі"
+
+#: .\orders\models.py:56 .\orders\views.py:567
+msgid "VIN code"
+msgstr "серійний номер"
+
+#: .\orders\models.py:57
+msgid "rate"
+msgstr "курс"
+
+#: .\orders\models.py:58
+msgid "created"
+msgstr "сформовано"
+
+#: .\orders\models.py:59
+msgid "updated"
+msgstr "оновлено"
+
+#: .\orders\models.py:93
+msgid "order"
+msgstr "замовлення"
+
+#: .\orders\models.py:96
+msgid "product"
+msgstr "товар"
+
+#: .\orders\models.py:98
+msgid "price"
+msgstr "ціна"
+
+#: .\orders\models.py:99
+msgid "pre quantity"
+msgstr "попередня кількість"
+
+#: .\orders\models.py:100
+msgid "order quantity"
+msgstr "замовлена кількість"
+
+#: .\orders\templates\orders\order\create.html:28
+msgid "Checkout"
+msgstr "Замовлення"
+
+#: .\orders\templates\orders\order\create.html:30
+msgid "Order draft"
+msgstr "Чернетка замовлення"
+
+#: .\orders\templates\orders\order\create.html:40
+#: .\orders\templates\orders\order\edit_order.html:74
+msgid "Info:"
+msgstr "Відомості:"
+
+#: .\orders\templates\orders\order\create.html:66
+msgid "Place order"
+msgstr "Створити замовлення"
+
+#: .\orders\templates\orders\order\create.html:66
+msgid "Create draft"
+msgstr "Створити чернетку"
+
+#: .\orders\templates\orders\order\create.html:77
+#: .\orders\templates\orders\order\edit_order.html:109
+msgid "Products:"
+msgstr "Товари:"
+
+#: .\orders\templates\orders\order\create.html:89
+#: .\orders\templates\orders\order\edit_order.html:118 .\orders\views.py:585
+msgid "Product"
+msgstr "Товар"
+
+#: .\orders\templates\orders\order\create.html:90
+#: .\orders\templates\orders\order\edit_order.html:119 .\orders\views.py:585
+msgid "Description"
+msgstr "Назва"
+
+#: .\orders\templates\orders\order\create.html:91
+msgid "Quantity"
+msgstr "Кількість"
+
+#: .\orders\templates\orders\order\create.html:92
+#: .\orders\templates\orders\order\edit_order.html:120 .\orders\views.py:585
+msgid "Price (€)"
+msgstr "Ціна (€"
+
+#: .\orders\templates\orders\order\create.html:93
+msgid "Cost (€) without VAT"
+msgstr "Вартість (€) без ПДВ"
+
+#: .\orders\templates\orders\order\create.html:94
+msgid "Cost (€) with VAT"
+msgstr "Вартість (€) з ПДВ"
+
+#: .\orders\templates\orders\order\create.html:95
+msgid "Cost (₴) without VAT"
+msgstr "Вартість (₴) без ПДВ"
+
+#: .\orders\templates\orders\order\create.html:96
+msgid "Cost (₴) with VAT"
+msgstr "Вартість (₴) з ПДВ"
+
+#: .\orders\templates\orders\order\create.html:118
+#, python-format
+msgid ""
+"\n"
+"        Total (€) without VAT: %(total_price)s || with VAT: "
+"%(total_cost_with_vat)s\n"
+"        "
+msgstr ""
+"\n"
+"        Загальна сума (€) без ПДВ: %(total_price)s || з ПДВ: "
+"%(total_cost_with_vat)s\n"
+"        "
+
+#: .\orders\templates\orders\order\create.html:123
+#, python-format
+msgid ""
+"\n"
+"        Total (₴) without VAT: %(total_cost_ua)s || with VAT: "
+"%(total_cost_with_vat_ua)s\n"
+"        "
+msgstr ""
+"\n"
+"        Загальна сума (₴) без ПДВ: %(total_cost_ua)s || з ПДВ: "
+"%(total_cost_with_vat_ua)s\n"
+"        "
+
+#: .\orders\templates\orders\order\edit_order.html:65
+#, python-format
+msgid " Order №%(id)s "
+msgstr " Замовлення №%(id)s "
+
+#: .\orders\templates\orders\order\edit_order.html:67
+#, python-format
+msgid " Order draft №%(id)s "
+msgstr " Чернетка замовлення №%(id)s "
+
+#: .\orders\templates\orders\order\edit_order.html:80
+#, python-format
+msgid "Created: %(created)s"
+msgstr "Створено: %(created)s"
+
+#: .\orders\templates\orders\order\edit_order.html:81
+#, python-format
+msgid "Updated: %(updated)s"
+msgstr "Оновлено: %(updated)s"
+
+#: .\orders\templates\orders\order\edit_order.html:84
+#, python-format
+msgid " NBU exchange rate (%(confirmation_date)s): %(rate)s "
+msgstr " Курс НБУ (%(confirmation_date)s): %(rate)s "
+
+#: .\orders\templates\orders\order\edit_order.html:117
+msgid "Product ID"
+msgstr "ID товару"
+
+#: .\orders\templates\orders\order\edit_order.html:121
+msgid "Pre-quantity"
+msgstr "Попередня кількість"
+
+#: .\orders\templates\orders\order\edit_order.html:122
+msgid "Pre-cost (€) without VAT"
+msgstr "Попередня вартість (€) без ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:124
+msgid "Pre-cost (€) with VAT"
+msgstr "Попередня вартість (€) з ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:126
+msgid "Pre-cost (₴) without VAT"
+msgstr "Попередня вартість (₴) без ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:128
+msgid "Pre-cost (₴) with VAT"
+msgstr "Попередня вартість (₴) з ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:130
+msgid "Order quantity"
+msgstr "Кількість замовлено"
+
+#: .\orders\templates\orders\order\edit_order.html:131
+msgid "Order cost (€) without VAT"
+msgstr "Вартість замовлено (€) без ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:133
+msgid "Order cost (€) with VAT"
+msgstr "Вартість замовлено (€) з ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:135
+msgid "Order cost (₴) without VAT"
+msgstr "Вартість замовлено (₴) без ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:137
+msgid "Order cost (₴) with VAT"
+msgstr "Вартість замовлено (₴) з ПДВ"
+
+#: .\orders\templates\orders\order\edit_order.html:236
+msgid "Total (€) without VAT: "
+msgstr "Всього (€) без ПДВ: "
+
+#: .\orders\templates\orders\order\edit_order.html:237
+#: .\orders\templates\orders\order\edit_order.html:239
+msgid "with VAT: "
+msgstr "з ПДВ: "
+
+#: .\orders\templates\orders\order\edit_order.html:239
+msgid "Total (₴) without VAT: "
+msgstr "Разом (₴) без ПДВ: "
+
+#: .\orders\templates\orders\order\edit_order.html:250
+msgid "Quantity from Template"
+msgstr "Кількість з шаблону"
+
+#: .\orders\templates\orders\order\edit_order.html:252
+msgid "Save"
+msgstr "Зберегти"
+
+#: .\orders\templates\orders\orders.html:47
+msgid "Orders"
+msgstr "Замовлення"
+
+#: .\orders\templates\orders\orders.html:56
+#: .\orders\templates\orders\orders.html:58
+msgid "Search"
+msgstr "Пошук"
+
+#: .\orders\templates\orders\orders.html:63
+#: .\orders\templates\orders\orders.html:142
+msgid "Previous"
+msgstr "Попередня"
+
+#: .\orders\templates\orders\orders.html:67
+#: .\orders\templates\orders\orders.html:146
+msgid "Next"
+msgstr "Наступна"
+
+#: .\orders\templates\orders\orders.html:76 .\orders\views.py:549
+msgid "Status"
+msgstr "Статус"
+
+#: .\orders\templates\orders\orders.html:77
+msgid "Number"
+msgstr "Номер"
+
+#: .\orders\templates\orders\orders.html:78
+msgid "Action"
+msgstr "Дії"
+
+#: .\orders\templates\orders\orders.html:79
+msgid "Export"
+msgstr "Експорт"
+
+#: .\orders\templates\orders\orders.html:80
+msgid "Date create"
+msgstr "Сформовано"
+
+#: .\orders\templates\orders\orders.html:81 .\orders\views.py:561
+msgid "Company"
+msgstr "Компанія"
+
+#: .\orders\templates\orders\orders.html:82
+msgid "Author"
+msgstr "Автор"
+
+#: .\orders\templates\orders\orders.html:83 .\orders\views.py:563
+msgid "Formed"
+msgstr "Сформував"
+
+#: .\orders\templates\orders\orders.html:84
+msgid "Total (€) with VAT"
+msgstr "Всього (€) з ПДВ"
+
+#: .\orders\templates\orders\orders.html:85
+msgid "Product category"
+msgstr "Категорія товарів"
+
+#: .\orders\templates\orders\orders.html:86
+msgid "Products in order"
+msgstr "Товари в замовленні"
+
+#: .\orders\templates\orders\orders.html:96
+msgid "Edit"
+msgstr "Редагувати"
+
+#: .\orders\templates\orders\orders.html:98
+msgid "View"
+msgstr "Переглянути"
+
+#: .\orders\templates\orders\orders.html:117
+#, python-format
+msgid " in order %(total_products)s items "
+msgstr " в замовленні %(total_products)s товар(-ів) "
+
+#: .\orders\templates\orders\orders.html:124
+#, python-format
+msgid " %(name)s (%(description)s) : %(ord_quantity)s pcs "
+msgstr " %(name)s (%(description)s) : %(ord_quantity)s шт. "
+
+#: .\orders\templates\orders\orders.html:134
+msgid "No orders yet."
+msgstr "Замовлень поки що немає."
+
+#: .\orders\views.py:70 .\orders\views.py:474
+msgid "The order has been successfully formed. Your order number:"
+msgstr "Замовлення успішно сформовано. Номер Вашого замовлення:"
+
+#: .\orders\views.py:71 .\orders\views.py:475
+msgid "Thanks!"
+msgstr "Дякуємо!"
+
+#: .\orders\views.py:79 .\orders\views.py:138
+msgid ""
+"Error: All items in your cart must belong to the same category! Categories "
+"in your order:"
+msgstr ""
+"Помилка: Усі товари у вашому кошику повинні належати до однієї категорії! "
+"Категорії у вашому замовленні:"
+
+#: .\orders\views.py:85 .\orders\views.py:482
+msgid "Error when placing or editing an order, check the form data!"
+msgstr ""
+"Помилка при оформленні або редагуванні замовлення, перевірте дані форми!"
+
+#: .\orders\views.py:131
+msgid "The draft order has been successfully formed. Number:"
+msgstr "Чернетку замовлення успішно сформовано. Номер:"
+
+#: .\orders\views.py:144
+msgid ""
+"There was an error while placing or editing the draft order, check the form "
+"data!"
+msgstr ""
+"Сталася помилка під час розміщення або редагування чернетки замовлення, "
+"перевірте дані форми!"
+
+#: .\orders\views.py:523
+msgid "Attribute"
+msgstr "Атрибут"
+
+#: .\orders\views.py:523
+msgid "Value"
+msgstr "Значення"
+
+#: .\orders\views.py:550
+msgid "WEB-order number"
+msgstr "Номер WEB-замовлення"
+
+#: .\orders\views.py:551
+msgid "Created"
+msgstr "Сформовано"
+
+#: .\orders\views.py:553
+msgid "Updated"
+msgstr "Оновлено"
+
+#: .\orders\views.py:555
+msgid "Exchange rate date"
+msgstr "Дата курсу"
+
+#: .\orders\views.py:557
+msgid "Rate (€)"
+msgstr "Курс (€)"
+
+#: .\orders\views.py:558
+msgid "User"
+msgstr "Користувач"
+
+#: .\orders\views.py:559
+msgid "First and last name"
+msgstr "Ім'я та прізвище"
+
+#: .\orders\views.py:564
+msgid "Stock"
+msgstr "Склад"
+
+#: .\orders\views.py:565
+msgid "Signatory of documents"
+msgstr "Підписант документів"
+
+#: .\orders\views.py:568
+msgid "Address"
+msgstr "Адреса"
+
+#: .\orders\views.py:569
+msgid "Services description"
+msgstr "Опис сервісних послуг"
+
+#: .\orders\views.py:570
+msgid "Comments"
+msgstr "Коментарі"
+
+#: .\orders\views.py:585
+msgid "Category"
+msgstr "Категорія"
+
+#: .\orders\views.py:586
+msgid "Pre quantity"
+msgstr "Попередня кількість"
+
+#: .\orders\views.py:587
+msgid "Pre cost (€) without VAT"
+msgstr "Попередня вартість (€) без ПДВ"
+
+#: .\orders\views.py:588
+msgid "Pre cost (€) with VAT"
+msgstr "Попередня вартість (€) з ПДВ"
+
+#: .\orders\views.py:589
+msgid "Pre cost (₴) without VAT"
+msgstr "Попередня вартість (₴) без ПДВ"
+
+#: .\orders\views.py:590
+msgid "Pre cost (₴) with VAT"
+msgstr "Попередня вартість (₴) з ПДВ"
+
+#: .\orders\views.py:590
+msgid "Ord quantity"
+msgstr "Кількість замовлено"
+
+#: .\orders\views.py:591
+msgid "Ord cost (€) without VAT"
+msgstr "Вартість замовлено (€) без ПДВ"
+
+#: .\orders\views.py:592
+msgid "Ord cost (€) with VAT"
+msgstr "Вартість замовлено (€) з ПДВ"
+
+#: .\orders\views.py:593
+msgid "Ord cost (₴) without VAT"
+msgstr "Вартість замовлено (₴) без ПДВ"
+
+#: .\orders\views.py:594
+msgid "Ord cost (₴) with VAT"
+msgstr "Вартість замовлено (₴) з ПДВ"
+
+#: .\orders\views.py:660
+msgid "Total"
+msgstr "Всього"
