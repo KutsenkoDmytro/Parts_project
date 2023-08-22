@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,110 +49,110 @@ msgstr "замовлення"
 msgid "email"
 msgstr "електронна адреса"
 
-#: .\system_emails\templates\order_notification_admin.html:10
+#: .\system_emails\templates\order_notification_admin.html:25
 msgid "Hello"
 msgstr "Доброго дня"
 
-#: .\system_emails\templates\order_notification_admin.html:11
+#: .\system_emails\templates\order_notification_admin.html:26
 msgid "A new order has been formed on the site"
 msgstr "На сайті сформовано нове замовлення"
 
-#: .\system_emails\templates\order_notification_admin.html:19
+#: .\system_emails\templates\order_notification_admin.html:34
 msgid "WEB-order number"
 msgstr "Номер WEB-замовлення"
 
-#: .\system_emails\templates\order_notification_admin.html:23
+#: .\system_emails\templates\order_notification_admin.html:38
 msgid "Created"
 msgstr "Створено"
 
-#: .\system_emails\templates\order_notification_admin.html:26
+#: .\system_emails\templates\order_notification_admin.html:41
 msgid "Updated"
 msgstr "Оновлено"
 
-#: .\system_emails\templates\order_notification_admin.html:29
+#: .\system_emails\templates\order_notification_admin.html:44
 msgid "User"
 msgstr "Користувач"
 
-#: .\system_emails\templates\order_notification_admin.html:32
+#: .\system_emails\templates\order_notification_admin.html:47
 msgid "First and last name"
 msgstr "Ім'я та прізвище"
 
-#: .\system_emails\templates\order_notification_admin.html:35
+#: .\system_emails\templates\order_notification_admin.html:50
 msgid "Email"
 msgstr "Електронна адреса"
 
-#: .\system_emails\templates\order_notification_admin.html:38
+#: .\system_emails\templates\order_notification_admin.html:53
 msgid "Company"
 msgstr "Компанія"
 
-#: .\system_emails\templates\order_notification_admin.html:41
+#: .\system_emails\templates\order_notification_admin.html:56
 msgid "EDRPOU code"
 msgstr "Код ЄДРПОУ"
 
-#: .\system_emails\templates\order_notification_admin.html:44
+#: .\system_emails\templates\order_notification_admin.html:59
 msgid "Formed"
 msgstr "Сформував"
 
-#: .\system_emails\templates\order_notification_admin.html:47
+#: .\system_emails\templates\order_notification_admin.html:62
 msgid "Stock"
 msgstr "Склад"
 
-#: .\system_emails\templates\order_notification_admin.html:50
+#: .\system_emails\templates\order_notification_admin.html:65
 msgid "Signatory of documents"
 msgstr "Підписант документів"
 
-#: .\system_emails\templates\order_notification_admin.html:53
+#: .\system_emails\templates\order_notification_admin.html:68
 msgid "VIN code"
 msgstr "Серійний №"
 
-#: .\system_emails\templates\order_notification_admin.html:56
+#: .\system_emails\templates\order_notification_admin.html:71
 msgid "Address"
 msgstr "Адреса"
 
-#: .\system_emails\templates\order_notification_admin.html:59
+#: .\system_emails\templates\order_notification_admin.html:74
 msgid "Services description"
 msgstr "Опис сервісних послуг"
 
-#: .\system_emails\templates\order_notification_admin.html:62
+#: .\system_emails\templates\order_notification_admin.html:77
 msgid "Comments"
 msgstr "Коментарі"
 
-#: .\system_emails\templates\order_notification_admin.html:65
+#: .\system_emails\templates\order_notification_admin.html:80
 msgid "Total cost (€) without VAT"
 msgstr "Всього (€) без ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:68
+#: .\system_emails\templates\order_notification_admin.html:83
 msgid "Total cost (€) with VAT"
 msgstr "Всього (€) з ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:72
+#: .\system_emails\templates\order_notification_admin.html:87
 msgid "Products"
 msgstr "Товари"
 
-#: .\system_emails\templates\order_notification_admin.html:77
+#: .\system_emails\templates\order_notification_admin.html:92
 msgid "Category"
 msgstr ""
 
-#: .\system_emails\templates\order_notification_admin.html:78
+#: .\system_emails\templates\order_notification_admin.html:93
 msgid "Description"
 msgstr "Назва"
 
-#: .\system_emails\templates\order_notification_admin.html:79
+#: .\system_emails\templates\order_notification_admin.html:94
 msgid "Product"
 msgstr "Товар"
 
-#: .\system_emails\templates\order_notification_admin.html:80
+#: .\system_emails\templates\order_notification_admin.html:95
 msgid "Quantity"
 msgstr "Кількість"
 
-#: .\system_emails\templates\order_notification_admin.html:81
+#: .\system_emails\templates\order_notification_admin.html:96
 msgid "Price"
 msgstr "Ціна"
 
-#: .\system_emails\templates\order_notification_admin.html:82
+#: .\system_emails\templates\order_notification_admin.html:97
 msgid "Cost (€) without VAT"
 msgstr "Вартість (€) без ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:83
+#: .\system_emails\templates\order_notification_admin.html:98
 msgid "Cost (€) with VAT"
 msgstr "Вартість (€) з ПДВ"

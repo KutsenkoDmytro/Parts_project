@@ -2,7 +2,7 @@ import os
 import sys
 import xlrd
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'test_project.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'parts_project.settings'
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),
                                              '..')))
@@ -14,7 +14,7 @@ from shop.models import Product
 
 
 class UploadingProducts(object):
-    '''Для обновления или добавления товаров в таблицу "Товары".'''
+    '''Оновлення або додавання продуктів до моделі "Товари".'''
     foreign_key_fields = ['category']
     model = Product
 
@@ -43,8 +43,9 @@ class UploadingProducts(object):
         self.s = s
 
         headers = self.getting_headers()
+        existing_product_ids = set(Product.objects.values_list('id', flat=True))
 
-        product_bulk_list = list()
+        #product_bulk_list = list()
         for row in range(1, s.nrows):
             row_dict = {}
             for column in range(s.ncols):
@@ -53,6 +54,9 @@ class UploadingProducts(object):
 
                 if field_name == 'id' and not value:
                     continue
+
+                #if field_name == 'price' and ',' in value:
+                #    value = value.replace(',', '.')
 
                 if field_name in self.foreign_key_fields:
                     related_model = self.getting_related_model(field_name)
@@ -63,16 +67,29 @@ class UploadingProducts(object):
 
                 row_dict[field_name] = value
 
+            # Отримання значення id для пошуку або оновлення
+            product_id = row_dict.pop('id', None)
 
-            product_bulk_list.append(self.model(**row_dict))
+            if product_id in existing_product_ids:
+                # Оновити існуючий запис
+                Product.objects.filter(id=product_id).update(**row_dict)
+            else:
 
-        Product.objects.bulk_create(product_bulk_list)
+                # Створити новий запис
+                new_product = Product.objects.create(**row_dict)
+                # Додаємо id в список
+                #existing_product_ids.add(new_product.id)
+
+
+            #product_bulk_list.append(self.model(**row_dict))
+            #Product.objects.create(**row_dict)
+        #Product.objects.bulk_create(product_bulk_list)
 
         return True
 
 
 class UploadingCart(object):
-    '''Для последубщей загрузки товаров в "Корзину".'''
+    '''Для завантаження товару в «Кошик».'''
     model = Product
 
     def __init__(self, data):
@@ -89,10 +106,10 @@ class UploadingCart(object):
         return headers
 
     def parsing(self):
-        result_dict = {'data': []}  # Добавляем новый ключ в словарь result_dict
-        error_messages = []  # Создаем список для ошибок значений product
+        result_dict = {'data': []}  # Додаємо новий ключ в словник result_dict
+        error_messages = []  # Створюємо список для помилок значень product
         uploaded_file = self.uploaded_file
-        # Проверяем, открыт ли файл нужного формата .xls.
+        # Перевіряємо, чи відкрито файл потрібного формату .xls.
         try:
             wb = xlrd.open_workbook(file_contents=uploaded_file.read())
         except xlrd.XLRDError as e:
@@ -133,7 +150,7 @@ class UploadingCart(object):
             if row_dict:
                 result_dict['data'].append(row_dict)
 
-        # Добавляем сообщение об ошибке в словарь result_dict, если таковое имеется
+        # Додаємо повідомлення про помилку в словник result_dict, якщо воно є.
         if error_messages:
             result_dict['error'] = ", ".join(error_messages)
         return result_dict

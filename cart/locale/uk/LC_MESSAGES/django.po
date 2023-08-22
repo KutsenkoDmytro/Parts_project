@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,55 +21,55 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:29
+#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:34
 msgid "Quantity"
 msgstr "Кількість"
 
-#: .\cart\templates\cart\detail.html:18
+#: .\cart\templates\cart\detail.html:23
 msgid "Your shopping cart"
 msgstr "Кошик покупок"
 
-#: .\cart\templates\cart\detail.html:26
+#: .\cart\templates\cart\detail.html:31
 msgid "Product"
 msgstr "Товар"
 
-#: .\cart\templates\cart\detail.html:27
+#: .\cart\templates\cart\detail.html:32
 msgid "Description"
 msgstr "Назва"
 
-#: .\cart\templates\cart\detail.html:28
+#: .\cart\templates\cart\detail.html:33
 msgid "Category"
 msgstr "Категорія"
 
-#: .\cart\templates\cart\detail.html:30
+#: .\cart\templates\cart\detail.html:35
 msgid "Action"
 msgstr "Дії"
 
-#: .\cart\templates\cart\detail.html:31
+#: .\cart\templates\cart\detail.html:36
 msgid "Price (€)"
 msgstr "Ціна (€)"
 
-#: .\cart\templates\cart\detail.html:32
+#: .\cart\templates\cart\detail.html:37
 msgid "Cost (€) without VAT"
 msgstr "Вартість (€) без ПДВ"
 
-#: .\cart\templates\cart\detail.html:33
+#: .\cart\templates\cart\detail.html:38
 msgid "Cost (€) with VAT"
 msgstr "Вартість (€) з ПДВ"
 
-#: .\cart\templates\cart\detail.html:34
+#: .\cart\templates\cart\detail.html:39
 msgid "Cost (₴) without VAT"
 msgstr "Вартість (₴) без ПДВ"
 
-#: .\cart\templates\cart\detail.html:35
+#: .\cart\templates\cart\detail.html:40
 msgid "Cost (₴) with VAT"
 msgstr "Вартість (₴) з ПДВ"
 
-#: .\cart\templates\cart\detail.html:58
+#: .\cart\templates\cart\detail.html:63
 msgid "Remove"
 msgstr "Видалити"
 
-#: .\cart\templates\cart\detail.html:73
+#: .\cart\templates\cart\detail.html:78
 #, python-format
 msgid ""
 "\n"
@@ -82,7 +82,7 @@ msgstr ""
 "%(total_cost_with_vat)s\n"
 "        "
 
-#: .\cart\templates\cart\detail.html:78
+#: .\cart\templates\cart\detail.html:83
 #, python-format
 msgid ""
 "\n"
@@ -95,15 +95,15 @@ msgstr ""
 "%(total_cost_with_vat_ua)s\n"
 "        "
 
-#: .\cart\templates\cart\detail.html:87
+#: .\cart\templates\cart\detail.html:92
 msgid "Continue shoping"
 msgstr "Продовжити покупки"
 
-#: .\cart\templates\cart\detail.html:88
+#: .\cart\templates\cart\detail.html:93
 msgid "Order draft"
 msgstr "Чернетка замовлення"
 
-#: .\cart\templates\cart\detail.html:89
+#: .\cart\templates\cart\detail.html:94
 msgid "Checkout"
 msgstr "Замовлення"
 

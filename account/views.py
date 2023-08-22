@@ -9,6 +9,7 @@ from django.http import JsonResponse, HttpResponseRedirect, Http404
 from django.db import IntegrityError
 from django.utils.translation import gettext as _
 
+
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, \
     ProfileEditForm, ProfileItemFormSet, CreateOrderItemTemplateForm
 from .models import Profile, UserCompany, OrderItemTemplate, Stock, Company, \
@@ -69,10 +70,10 @@ def register(request):
 @login_required
 def edit(request):
     '''Обробка змін, внесених користувачем в обліковий запис.'''
-
+    user_profile = get_object_or_404(Profile,user=request.user)
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user, data=request.POST)
-        profile_form = ProfileEditForm(instance=request.user.profile,
+        profile_form = ProfileEditForm(instance=user_profile,
                                        data=request.POST)
         profile_item_formset = ProfileItemFormSet(
             instance=request.user.profile,
@@ -96,7 +97,7 @@ def edit(request):
 
     else:
         user_form = UserEditForm(instance=request.user)
-        profile_form = ProfileEditForm(instance=request.user.profile)
+        profile_form = ProfileEditForm(instance=user_profile)
         user_companies = request.user.profile.usercompany_set.filter(
             is_deleted=False)
 
@@ -248,9 +249,6 @@ def edit_template(request, template_id):
                                                  'user_company__profile__user'),
         pk=template_id)
 
-    # Перевірка того, що шаблон належить поточному користувачу.
-    if template.user_company.profile.user != request.user:
-        raise Http404
 
     if request.method == 'POST':
         template_form = CreateOrderItemTemplateForm(request.POST,

@@ -3,7 +3,7 @@ from .models import EmailType,EmailSendingFact
 
 # Register your models here.
 
-admin.site.register(EmailType)
+
 
 
 
@@ -16,3 +16,12 @@ class EmailSendingFactAdmin(admin.ModelAdmin):
         model = EmailSendingFact
 
 admin.site.register(EmailSendingFact, EmailSendingFactAdmin)
+
+
+class EmailTypeAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EmailType._meta.fields]
+
+    class Meta:
+        model = EmailType
+
+admin.site.register(EmailType, EmailTypeAdmin)

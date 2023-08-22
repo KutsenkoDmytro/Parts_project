@@ -3,6 +3,7 @@
 {% load static %}
 
 
+
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -26,7 +27,7 @@
                 <li><a>{% blocktrans with name=request.user.first_name %}Wellcome, {{ name }}{% endblocktrans %}</a></li>
                 <li class="dropdown"><a class="dropdown-toggle"
                                         data-toggle="dropdown" href="#">{% trans "Settings menu" %}<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-white">
                         <li><a href="{% url 'account:edit' %}">{% trans "Edit profile" %}</a></li>
                         <li><a href="{% url 'account:password_change' %}">{% trans "Change password" %}</a></li>
                         {% if user.is_authenticated and user.is_staff %}

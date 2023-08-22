@@ -1,0 +1,21 @@
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+
+{% block header %}
+<div class="container">
+    <h2>{% trans "Message dated" %} {{ entry.created|date:"d.m.Y H:i" }}</h2>
+</div>
+{% endblock header %}
+
+
+{% block content %}
+<div class="container">
+    <p>{{ entry.text|linebreaks }}</p>
+    <a href="{% url 'shop:index' %}" class="btn btn-primary">{% trans "Return" %}</a>
+</div>
+{% endblock content %}
+
+
+

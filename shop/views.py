@@ -1,17 +1,22 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from utils.uploadings import UploadingProducts, UploadingCart
 from django.contrib import messages
 from django.core.paginator import Paginator
 from utils.rates import get_current_euro_exchange_rate
-from django.contrib.auth.decorators import login_required,user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.cache import cache
-from management_area.models import  Entry, MainEntry
+from management_area.models import Entry, MainEntry
 from django.db.models import Max
 from django.utils.translation import gettext_lazy as _
+from django.http import Http404
 
-from .models import Category, Product, Coefficient
+from .models import Category, Product, Coefficient,Profile
 from cart.forms import CartAddProductForm
 from cart.cart import Cart
+import traceback
+
+
 
 @login_required
 def index(request):
@@ -32,6 +37,7 @@ def index(request):
 
 
 @login_required
+
 def product_search(request):
     '''Обробляє пошуковий запит і відображає результати.'''
     query_search = request.GET.get('search')
@@ -56,15 +62,17 @@ def product_search(request):
     page_obj = paginator.get_page(page_number)
 
     # Отримуємо профіль користувача та коефіцієнти, для всіх продуктів на сторінці.
-    user_profile = user.profile
+
+    user_profile = get_object_or_404(Profile, user=user)
+
     coefficients = Coefficient.objects.filter(
         category__in=[product.category for product in page_obj.object_list],
         holding=user_profile.holding
     ).select_related('category')
 
-
     # Створюємо словник коефіцієнтів за категоріями для подальшого використання у циклі.
-    coefficient_by_category = {coefficient.category_id: coefficient for coefficient in coefficients}
+    coefficient_by_category = {coefficient.category_id: coefficient for
+                               coefficient in coefficients}
 
     # Кешування курсу євро НБУ.
     rate = cache.get('current_euro_exchange_rate')
@@ -76,8 +84,10 @@ def product_search(request):
     for product in page_obj.object_list:
         coefficient = coefficient_by_category.get(product.category_id)
         if coefficient:
-            product.price_coef = round(product.price * coefficient.value,2)
+            product.price_coef = round(product.price * coefficient.value, 2)
             product.price_ua = round(product.price_coef * rate, 2)
+        else:
+            raise Http404("Coefficient not found for product category.")
 
     return render(request, 'shop/product/search.html', {
         'query': query_search,
@@ -86,16 +96,17 @@ def product_search(request):
         'category': query_category,  # Передаємо обрану категорію у шаблон
     })
 
-
     # Створюємо словник коефіцієнтів за категоріями для подальшого використання у циклі.
-    coefficient_by_category = {coefficient.category_id: coefficient for coefficient in coefficients}
+    coefficient_by_category = {coefficient.category_id: coefficient for
+                               coefficient in coefficients}
 
     # Додаємо цикл, щоб обчислити price_coef для кожного продукту на сторінці.
     for product in page_obj.object_list:
         coefficient = coefficient_by_category.get(product.category_id)
         if coefficient:
-            product.price_coef = round(product.price * coefficient.value,2)
-            product.price_ua = round(product.price_coef * get_current_euro_exchange_rate(), 2)
+            product.price_coef = round(product.price * coefficient.value, 2)
+            product.price_ua = round(
+                product.price_coef * get_current_euro_exchange_rate(), 2)
 
     return render(request, 'shop/product/search.html', {
         'query': query_search,
@@ -103,6 +114,7 @@ def product_search(request):
         'categories': categories,
         'category': query_category,  # Передаємо обрану категорію у шаблон.
     })
+
 
 @login_required
 def product_detail(request, id, slug):
@@ -141,15 +153,20 @@ def download_products(request):
             return render(request,
                           'shop/product/download_products.html',
                           locals())
+        try:
+            file = request.FILES['file']
+            uploading_file = UploadingProducts({'file': file})
 
-        file = request.FILES['file']
-        uploading_file = UploadingProducts({'file': file})
-
-        if uploading_file:
-            messages.success(request, _('The download was successful!'))
-        else:
-            messages.error(request, _('Error loading!'))
+            if uploading_file:
+                messages.success(request, _('The download was successful!'))
+            else:
+                messages.error(request, _('Error loading!'))
+        except Exception as e:
+            # Вивести докладну інформацію про виняток у консолі та в логах помилок
+            traceback.print_exc()
+            messages.error(request, f'An error occurred: {str(e)}')
     return render(request, 'shop/product/download_products.html', locals())
+
 
 @login_required
 def download_products_in_cart(request):
@@ -194,13 +211,29 @@ def download_products_in_cart(request):
                 ms_part_2 = _('products. From file .xls downloaded')
                 ms_part_3 = _('from')
                 ms_part_4 = _('products')
-                ms_part_5 = _('Please proceed to checkout (drafts) or empty your cart! ')
+                ms_part_5 = _(
+                    'Please proceed to checkout (drafts) or empty your cart! ')
                 error_message = f'{ms_part_1} {product_limit} {ms_part_2} {download_items} {ms_part_3} {len(result_dict["data"])} {ms_part_4}.\n {ms_part_5}'
-                messages.error(request,error_message)
+                messages.error(request, error_message)
             else:
-                messages.success(request, _('Products have been successfully added to your shopping cart!'))
+                messages.success(request,
+                                 _('Products have been successfully added to your shopping cart!'))
 
         else:
-            messages.error(request, _('An error occurred while downloading the file!'))
+            messages.error(request,
+                           _('An error occurred while downloading the file!'))
 
-    return render(request, 'shop/product/download_products_in_cart.html', locals())
+    return render(request, 'shop/product/download_products_in_cart.html',
+                  locals())
+
+
+@login_required
+def add_one_to_cart(request, product_id):
+    '''Додає один товар до корзини.'''
+    product = get_object_or_404(Product, id=product_id)
+    quantity = 1
+
+    cart = Cart(request)
+    cart.add(product=product, quantity=quantity)
+
+    return redirect(reverse('cart:cart_detail'))

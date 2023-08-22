@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,47 +139,47 @@ msgstr ""
 msgid "Edit set of order details"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:9
+#: .\account\templates\order_template\template_list.html:14
 msgid "Sets of order details"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:29
+#: .\account\templates\order_template\template_list.html:24
 msgid "Number"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:30
+#: .\account\templates\order_template\template_list.html:25
 msgid "Name"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:31
+#: .\account\templates\order_template\template_list.html:26
 msgid "Action"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:32
+#: .\account\templates\order_template\template_list.html:27
 msgid "Date added"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:33
+#: .\account\templates\order_template\template_list.html:28
 msgid "Company"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:34
+#: .\account\templates\order_template\template_list.html:29
 msgid "Stock"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:35
+#: .\account\templates\order_template\template_list.html:30
 msgid "Responsible person"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:36
+#: .\account\templates\order_template\template_list.html:31
 msgid "Address"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:44
+#: .\account\templates\order_template\template_list.html:39
 msgid "Edit"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:55
+#: .\account\templates\order_template\template_list.html:50
 msgid "No sets of order details yet."
 msgstr ""
 
@@ -293,19 +293,19 @@ msgstr ""
 msgid "Send e-mail"
 msgstr ""
 
-#: .\account\views.py:92
+#: .\account\views.py:93
 msgid "The profile has been successfully updated!"
 msgstr ""
 
-#: .\account\views.py:95
+#: .\account\views.py:96
 msgid "Error updating profile!"
 msgstr ""
 
-#: .\account\views.py:162
+#: .\account\views.py:163
 msgid "A new set of order details has been successfully created!"
 msgstr ""
 
-#: .\account\views.py:175
+#: .\account\views.py:176
 msgid ""
 "Error creating set of order details. The name you entered may already be in "
 "use!"

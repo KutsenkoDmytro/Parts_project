@@ -46,7 +46,7 @@ class MainEntryAdmin(SummernoteModelAdmin):
 admin.site.register(MainEntry, MainEntryAdmin)
 
 
-class EntryAdmin(SummernoteModelAdmin):
+class EntryAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Entry._meta.fields]
 
     class Meta:

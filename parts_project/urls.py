@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-from django.urls import include
+from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = i18n_patterns(
     path('', include(('shop.urls', 'shop'), namespace='shop')),
     path('summernote/', include('django_summernote.urls')),
     path('api/', include('orders.api.urls', namespace='api')),
+    path('management_area/', include(('management_area.urls','management_area'), namespace='management_area')),
 )
 
 if settings.DEBUG:
@@ -35,4 +36,6 @@ if settings.DEBUG:
     urlpatterns = [
         path("__debug__/", include("debug_toolbar.urls")),
     ] + urlpatterns
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

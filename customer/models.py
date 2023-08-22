@@ -22,7 +22,7 @@ class Company(models.Model):
     holding = models.ForeignKey(Holding, related_name='companies_holding',
                                 on_delete=models.PROTECT)
     name = models.CharField(max_length=200)
-    edrpou_code = models.IntegerField()
+    edrpou_code = models.CharField(max_length=8)
     is_deleted = models.BooleanField(default=False)
     date_added = models.DateTimeField(auto_now_add=True)
 

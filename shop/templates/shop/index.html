@@ -2,10 +2,11 @@
 {% load i18n %}
 
 
+
 {% block indexcontent %}
 {% if main_entry %}
          <div class="page-header divider-header">
-             <h4>{% trans "STATUS" %}</h4>
+             <h4><strong>{% trans "STATUS" %}</strong></h4>
          </div>
         {{ main_entry.text|safe }}
     {% else %}
@@ -14,7 +15,7 @@
 {% endblock indexcontent %}
 {% block header %}
 
-<h4>{% trans "BROADCAST MESSAGES" %}</h4>
+<h4><strong>{% trans "BROADCAST MESSAGES" %}</strong></h4>
 {% endblock header %}
 
 {% block content %}
@@ -23,14 +24,25 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4>
-           {% trans "Date" %}: {{ entry.created|date:"d.m.Y" }}
+            {% trans "Date" %}: {{ entry.created|date:"d.m.Y H:i" }}
+
         </h4>
+
     </div>
     <div class="panel-body">
-        {{ entry.text|safe }}
-    </div>
-</div> <!-- panel -->
+    {% if entry.text|wordcount > 50 %}
+        {{ entry.text|linebreaks|truncatewords:50 }}
+
+            <p><a href="{% url 'management_area:entry_detail' entry.id %}">{% trans "read more" %}</a></p>
+
+    {% else %}
+        {{ entry.text|linebreaks }}
+    {% endif %}
+</div>
+
 {% empty %}
+
+<p>{% trans "No entries yet." %}<p>
 <!-- Content if there are other messages (entries) on the home page -->
 {% endfor %}
 {% endblock content %}

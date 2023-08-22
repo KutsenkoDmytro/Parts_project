@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "company"
 msgstr ""
 
-#: .\orders\models.py:38 .\orders\views.py:562
+#: .\orders\models.py:38 .\orders\views.py:583 .\orders\views.py:778
 msgid "edrpou code"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "comments"
 msgstr ""
 
-#: .\orders\models.py:56 .\orders\views.py:567
+#: .\orders\models.py:56 .\orders\views.py:588 .\orders\views.py:783
 msgid "VIN code"
 msgstr ""
 
@@ -106,68 +106,71 @@ msgstr ""
 msgid "order quantity"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:28
+#: .\orders\templates\orders\order\create.html:14
 msgid "Checkout"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:30
+#: .\orders\templates\orders\order\create.html:16
 msgid "Order draft"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:40
-#: .\orders\templates\orders\order\edit_order.html:74
+#: .\orders\templates\orders\order\create.html:26
+#: .\orders\templates\orders\order\edit_order.html:24
 msgid "Info:"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:66
+#: .\orders\templates\orders\order\create.html:52
 msgid "Place order"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:66
+#: .\orders\templates\orders\order\create.html:52
 msgid "Create draft"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:77
-#: .\orders\templates\orders\order\edit_order.html:109
+#: .\orders\templates\orders\order\create.html:63
+#: .\orders\templates\orders\order\edit_order.html:59
 msgid "Products:"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:89
-#: .\orders\templates\orders\order\edit_order.html:118 .\orders\views.py:585
+#: .\orders\templates\orders\order\create.html:75
+#: .\orders\templates\orders\order\edit_order.html:68 .\orders\views.py:607
+#: .\orders\views.py:803 .\orders\views.py:869
 msgid "Product"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:90
-#: .\orders\templates\orders\order\edit_order.html:119 .\orders\views.py:585
+#: .\orders\templates\orders\order\create.html:76
+#: .\orders\templates\orders\order\edit_order.html:69 .\orders\views.py:608
+#: .\orders\views.py:804 .\orders\views.py:870
 msgid "Description"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:91
+#: .\orders\templates\orders\order\create.html:77
 msgid "Quantity"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:92
-#: .\orders\templates\orders\order\edit_order.html:120 .\orders\views.py:585
+#: .\orders\templates\orders\order\create.html:78
+#: .\orders\templates\orders\order\edit_order.html:70 .\orders\views.py:608
+#: .\orders\views.py:804 .\orders\views.py:870
 msgid "Price (€)"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:93
+#: .\orders\templates\orders\order\create.html:79
 msgid "Cost (€) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:94
+#: .\orders\templates\orders\order\create.html:80
 msgid "Cost (€) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:95
+#: .\orders\templates\orders\order\create.html:81
 msgid "Cost (₴) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:96
+#: .\orders\templates\orders\order\create.html:82
 msgid "Cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:118
+#: .\orders\templates\orders\order\create.html:104
 #, python-format
 msgid ""
 "\n"
@@ -176,7 +179,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:123
+#: .\orders\templates\orders\order\create.html:109
 #, python-format
 msgid ""
 "\n"
@@ -185,309 +188,316 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:65
+#: .\orders\templates\orders\order\edit_order.html:15
 #, python-format
 msgid " Order №%(id)s "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:67
+#: .\orders\templates\orders\order\edit_order.html:17
 #, python-format
 msgid " Order draft №%(id)s "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:80
+#: .\orders\templates\orders\order\edit_order.html:30
 #, python-format
 msgid "Created: %(created)s"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:81
+#: .\orders\templates\orders\order\edit_order.html:31
 #, python-format
 msgid "Updated: %(updated)s"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:84
+#: .\orders\templates\orders\order\edit_order.html:34
 #, python-format
 msgid " NBU exchange rate (%(confirmation_date)s): %(rate)s "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:117
+#: .\orders\templates\orders\order\edit_order.html:67
 msgid "Product ID"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:121
+#: .\orders\templates\orders\order\edit_order.html:71
 msgid "Pre-quantity"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:122
+#: .\orders\templates\orders\order\edit_order.html:72
 msgid "Pre-cost (€) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:124
+#: .\orders\templates\orders\order\edit_order.html:74
 msgid "Pre-cost (€) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:126
+#: .\orders\templates\orders\order\edit_order.html:76
 msgid "Pre-cost (₴) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:128
+#: .\orders\templates\orders\order\edit_order.html:78
 msgid "Pre-cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:130
+#: .\orders\templates\orders\order\edit_order.html:80
 msgid "Order quantity"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:131
+#: .\orders\templates\orders\order\edit_order.html:81
 msgid "Order cost (€) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:133
+#: .\orders\templates\orders\order\edit_order.html:83
 msgid "Order cost (€) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:135
+#: .\orders\templates\orders\order\edit_order.html:85
 msgid "Order cost (₴) without VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:137
+#: .\orders\templates\orders\order\edit_order.html:87
 msgid "Order cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:236
+#: .\orders\templates\orders\order\edit_order.html:186
 msgid "Total (€) without VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:237
-#: .\orders\templates\orders\order\edit_order.html:239
+#: .\orders\templates\orders\order\edit_order.html:187
+#: .\orders\templates\orders\order\edit_order.html:189
 msgid "with VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:239
+#: .\orders\templates\orders\order\edit_order.html:189
 msgid "Total (₴) without VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:250
+#: .\orders\templates\orders\order\edit_order.html:200
 msgid "Quantity from Template"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:252
+#: .\orders\templates\orders\order\edit_order.html:202
 msgid "Save"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:47
+#: .\orders\templates\orders\orders.html:14
 msgid "Orders"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:56
-#: .\orders\templates\orders\orders.html:58
+#: .\orders\templates\orders\orders.html:23
+#: .\orders\templates\orders\orders.html:25
 msgid "Search"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:63
-#: .\orders\templates\orders\orders.html:142
+#: .\orders\templates\orders\orders.html:30
+#: .\orders\templates\orders\orders.html:117
 msgid "Previous"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:67
-#: .\orders\templates\orders\orders.html:146
+#: .\orders\templates\orders\orders.html:34
+#: .\orders\templates\orders\orders.html:121
 msgid "Next"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:76 .\orders\views.py:549
+#: .\orders\templates\orders\orders.html:43 .\orders\views.py:569
+#: .\orders\views.py:764
 msgid "Status"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:77
+#: .\orders\templates\orders\orders.html:44
 msgid "Number"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:78
+#: .\orders\templates\orders\orders.html:45
 msgid "Action"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:79
+#: .\orders\templates\orders\orders.html:46
 msgid "Export"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:80
+#: .\orders\templates\orders\orders.html:47
 msgid "Date create"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:81 .\orders\views.py:561
+#: .\orders\templates\orders\orders.html:48 .\orders\views.py:582
+#: .\orders\views.py:777
 msgid "Company"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:82
+#: .\orders\templates\orders\orders.html:49
 msgid "Author"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:83 .\orders\views.py:563
+#: .\orders\templates\orders\orders.html:50 .\orders\views.py:584
+#: .\orders\views.py:779
 msgid "Formed"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:84
+#: .\orders\templates\orders\orders.html:51
 msgid "Total (€) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:85
+#: .\orders\templates\orders\orders.html:52
 msgid "Product category"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:86
+#: .\orders\templates\orders\orders.html:53
 msgid "Products in order"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:96
+#: .\orders\templates\orders\orders.html:63
 msgid "Edit"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:98
+#: .\orders\templates\orders\orders.html:65
 msgid "View"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:117
+#: .\orders\templates\orders\orders.html:76
+msgid "detail"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:92
 #, python-format
 msgid " in order %(total_products)s items "
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:124
+#: .\orders\templates\orders\orders.html:99
 #, python-format
 msgid " %(name)s (%(description)s) : %(ord_quantity)s pcs "
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:134
+#: .\orders\templates\orders\orders.html:109
 msgid "No orders yet."
 msgstr ""
 
-#: .\orders\views.py:70 .\orders\views.py:474
+#: .\orders\views.py:72 .\orders\views.py:491
 msgid "The order has been successfully formed. Your order number:"
 msgstr ""
 
-#: .\orders\views.py:71 .\orders\views.py:475
+#: .\orders\views.py:73 .\orders\views.py:492
 msgid "Thanks!"
 msgstr ""
 
-#: .\orders\views.py:79 .\orders\views.py:138
+#: .\orders\views.py:82 .\orders\views.py:145
 msgid ""
 "Error: All items in your cart must belong to the same category! Categories "
 "in your order:"
 msgstr ""
 
-#: .\orders\views.py:85 .\orders\views.py:482
+#: .\orders\views.py:89 .\orders\views.py:500
 msgid "Error when placing or editing an order, check the form data!"
 msgstr ""
 
-#: .\orders\views.py:131
+#: .\orders\views.py:137
 msgid "The draft order has been successfully formed. Number:"
 msgstr ""
 
-#: .\orders\views.py:144
+#: .\orders\views.py:152
 msgid ""
 "There was an error while placing or editing the draft order, check the form "
 "data!"
 msgstr ""
 
-#: .\orders\views.py:523
+#: .\orders\views.py:538 .\orders\views.py:733
 msgid "Attribute"
 msgstr ""
 
-#: .\orders\views.py:523
+#: .\orders\views.py:538 .\orders\views.py:733
 msgid "Value"
 msgstr ""
 
-#: .\orders\views.py:550
+#: .\orders\views.py:570 .\orders\views.py:765
 msgid "WEB-order number"
 msgstr ""
 
-#: .\orders\views.py:551
+#: .\orders\views.py:571 .\orders\views.py:766
 msgid "Created"
 msgstr ""
 
-#: .\orders\views.py:553
+#: .\orders\views.py:573 .\orders\views.py:768
 msgid "Updated"
 msgstr ""
 
-#: .\orders\views.py:555
+#: .\orders\views.py:575 .\orders\views.py:770
 msgid "Exchange rate date"
 msgstr ""
 
-#: .\orders\views.py:557
+#: .\orders\views.py:577 .\orders\views.py:772
 msgid "Rate (€)"
 msgstr ""
 
-#: .\orders\views.py:558
+#: .\orders\views.py:578 .\orders\views.py:773
 msgid "User"
 msgstr ""
 
-#: .\orders\views.py:559
+#: .\orders\views.py:579 .\orders\views.py:774
 msgid "First and last name"
 msgstr ""
 
-#: .\orders\views.py:564
+#: .\orders\views.py:585 .\orders\views.py:780
 msgid "Stock"
 msgstr ""
 
-#: .\orders\views.py:565
+#: .\orders\views.py:586 .\orders\views.py:781
 msgid "Signatory of documents"
 msgstr ""
 
-#: .\orders\views.py:568
+#: .\orders\views.py:590 .\orders\views.py:785
 msgid "Address"
 msgstr ""
 
-#: .\orders\views.py:569
+#: .\orders\views.py:591 .\orders\views.py:786
 msgid "Services description"
 msgstr ""
 
-#: .\orders\views.py:570
+#: .\orders\views.py:592 .\orders\views.py:787
 msgid "Comments"
 msgstr ""
 
-#: .\orders\views.py:585
+#: .\orders\views.py:607 .\orders\views.py:803 .\orders\views.py:869
 msgid "Category"
 msgstr ""
 
-#: .\orders\views.py:586
+#: .\orders\views.py:609 .\orders\views.py:871
 msgid "Pre quantity"
 msgstr ""
 
-#: .\orders\views.py:587
+#: .\orders\views.py:610 .\orders\views.py:872
 msgid "Pre cost (€) without VAT"
 msgstr ""
 
-#: .\orders\views.py:588
+#: .\orders\views.py:611 .\orders\views.py:873
 msgid "Pre cost (€) with VAT"
 msgstr ""
 
-#: .\orders\views.py:589
+#: .\orders\views.py:612 .\orders\views.py:874
 msgid "Pre cost (₴) without VAT"
 msgstr ""
 
-#: .\orders\views.py:590
+#: .\orders\views.py:613 .\orders\views.py:875
 msgid "Pre cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\views.py:590
+#: .\orders\views.py:614 .\orders\views.py:805
 msgid "Ord quantity"
 msgstr ""
 
-#: .\orders\views.py:591
+#: .\orders\views.py:615 .\orders\views.py:806
 msgid "Ord cost (€) without VAT"
 msgstr ""
 
-#: .\orders\views.py:592
+#: .\orders\views.py:616 .\orders\views.py:807
 msgid "Ord cost (€) with VAT"
 msgstr ""
 
-#: .\orders\views.py:593
+#: .\orders\views.py:617 .\orders\views.py:808
 msgid "Ord cost (₴) without VAT"
 msgstr ""
 
-#: .\orders\views.py:594
+#: .\orders\views.py:618 .\orders\views.py:809
 msgid "Ord cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\views.py:660
+#: .\orders\views.py:700 .\orders\views.py:857 .\orders\views.py:927
 msgid "Total"
 msgstr ""

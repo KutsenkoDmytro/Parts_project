@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,55 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:29
+#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:34
 msgid "Quantity"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:18
+#: .\cart\templates\cart\detail.html:23
 msgid "Your shopping cart"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:26
+#: .\cart\templates\cart\detail.html:31
 msgid "Product"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:27
+#: .\cart\templates\cart\detail.html:32
 msgid "Description"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:28
+#: .\cart\templates\cart\detail.html:33
 msgid "Category"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:30
+#: .\cart\templates\cart\detail.html:35
 msgid "Action"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:31
+#: .\cart\templates\cart\detail.html:36
 msgid "Price (€)"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:32
+#: .\cart\templates\cart\detail.html:37
 msgid "Cost (€) without VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:33
+#: .\cart\templates\cart\detail.html:38
 msgid "Cost (€) with VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:34
+#: .\cart\templates\cart\detail.html:39
 msgid "Cost (₴) without VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:35
+#: .\cart\templates\cart\detail.html:40
 msgid "Cost (₴) with VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:58
+#: .\cart\templates\cart\detail.html:63
 msgid "Remove"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:73
+#: .\cart\templates\cart\detail.html:78
 #, python-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:78
+#: .\cart\templates\cart\detail.html:83
 #, python-format
 msgid ""
 "\n"
@@ -84,15 +84,15 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:87
+#: .\cart\templates\cart\detail.html:92
 msgid "Continue shoping"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:88
+#: .\cart\templates\cart\detail.html:93
 msgid "Order draft"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:89
+#: .\cart\templates\cart\detail.html:94
 msgid "Checkout"
 msgstr ""
 

@@ -1,10 +1,25 @@
 {% load i18n %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'system_emails/css/styles.css' %}">
+    <style>
+     .bordered-table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    .bordered-table th, .bordered-table td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    </style>
 </head>
 <body>
 <h3>{% trans "Hello" %}!</h3>
@@ -71,7 +86,7 @@
 <p><b>
     {% trans "Products" %}:
 </b></p>
-<table>
+<table class="bordered-table">
     <tr>
         <th>№</th>
         <th>{% trans "Category" %}</th>
@@ -83,6 +98,7 @@
         <th>{% trans "Cost (€) with VAT" %}</th>
     </tr>
     {% for item in products_in_order %}
+    {% if item.ord_quantity > 0 %}
     <tr>
         <td>{{ forloop.counter }}</td>
         <td>{{ item.product.category.name }}</td>
@@ -93,6 +109,7 @@
         <td>{{ item.ord_get_cost }}</td>
         <td>{{ item.ord_get_cost_with_vat }}</td>
     </tr>
+    {% endif %}
     {% endfor %}
 </table>
 

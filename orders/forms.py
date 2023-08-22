@@ -4,6 +4,7 @@ from utils.rates import get_current_euro_exchange_rate
 from django.utils.translation import gettext_lazy as _
 from django.core.cache import cache
 
+
 from django import forms
 from .models import Order, OrderItem, OrderStatus, Stock, Company, Product, OrderItemTemplate, Employee, Technique
 from account.models import UserCompany
@@ -103,6 +104,8 @@ class OrderForm(forms.ModelForm):
         self.request = kwargs.pop('request', None)
         super().__init__(*args, **kwargs)
 
+
+
         if self.instance.status == OrderStatus.ORDER.value or self.instance.status == OrderStatus.DRAFT.value and self.instance.user != self.request.user:
             for field in self.fields.values():
                 field.widget.attrs['readonly'] = True
@@ -114,6 +117,8 @@ class OrderForm(forms.ModelForm):
             for name, field in self.fields.items():
                 if name in fields_to_disable:
                     field.widget.attrs['readonly'] = True
+
+
 
         # Задаємо правила та обмеження для полів.
         # Редагування існуючих замовлень залишаємо без обмеження 'is_deleted'.

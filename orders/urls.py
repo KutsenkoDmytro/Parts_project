@@ -20,5 +20,7 @@ urlpatterns = [
     # Сторінка для редагування замовлення.
     path('edit_order/<int:order_id>/', views.edit_order, name='edit_order'),
     # Сторінка для вивантаження замовлення в excel.
-    path('excel_create/<int:order_id>/', views.excel_create, name='excel_create')
+    path('excel_create/<int:order_id>/', views.excel_create, name='excel_create'),
+    # Сторінка для вивантаження замовлення (детально) в excel.
+    path('excel_detail/<int:order_id>/', views.excel_detail, name='excel_detail'),
 ]

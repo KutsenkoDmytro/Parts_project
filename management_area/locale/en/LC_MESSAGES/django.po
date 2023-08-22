@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 17:57+0300\n"
+"POT-Creation-Date: 2023-08-22 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,4 +32,12 @@ msgstr ""
 
 #: .\management_area\models.py:12
 msgid "updated"
+msgstr ""
+
+#: .\management_area\templates\entry\entry_detail.html:8
+msgid "Message dated"
+msgstr ""
+
+#: .\management_area\templates\entry\entry_detail.html:16
+msgid "Return"
 msgstr ""

@@ -8,6 +8,8 @@ from  import_export.admin import ImportExportActionModelAdmin
 from import_export import resources
 from import_export import fields
 from import_export.widgets import ForeignKeyWidget
+from django.utils.translation import gettext_lazy as _
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -25,11 +27,14 @@ class ProductResource(resources.ModelResource):
 @admin.register(Product)
 class ProductAdmin(ImportExportActionModelAdmin):
     resource_class = ProductResource
-    list_display = list_display = ['id','name','slug','description', 'price','category', 'is_deleted', 'created', 'updated']
-    list_filter = ['category']
+    list_display =  ['id','name','slug','description', 'price','category', 'is_deleted', 'created', 'updated']
+    list_filter = ['category','is_deleted']
     list_editable = ['price']
+    search_fields = ['id', 'name', 'slug', 'description',
+                     'category__name',]
     ordering = ['-id']
     prepopulated_fields = {'slug': ('name',)}
+
 
 #@admin.register(Product)
 #class ProductAdmin(admin.ModelAdmin):
@@ -45,3 +50,8 @@ class CoefficientAdmin(admin.ModelAdmin):
     list_filter = ['category','holding']
     list_editable = ['value']
     ordering = ['-id']
+
+
+#Headings in the admin site.
+admin.site.site_title = _('Parts Project administration')
+admin.site.site_header = _('Parts Project administration')

@@ -11,9 +11,19 @@
   margin-bottom: 10px; /* Changed from padding-bottom */
 }
 
-/* Navbar button style */
-.navbar-toggle {
-  background-color: #000; /* Changed color to black */
+.navbar-default .navbar-toggle {
+    background-color: #F58320;
+    border-color: #F58320;
+}
+
+.navbar-default .navbar-toggle:active {
+    background-color: #F58320;
+    border-color: #F58320;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #F58320;
+    border-color: #F58320;
 }
 
 /* Adjusted alignment class */
@@ -32,6 +42,13 @@
   border: none;
 }
 
+@media (max-width: 767px) {
+    .navbar-collapse.collapse ul.dropdown-menu {
+        background-image: linear-gradient(to right, rgba(205, 205, 205, 0), rgba(205, 205, 205, 0.6));
+    }
+}
+
+
 /* Content wrapper style */
 .wrapper-content {
   flex: 1;
@@ -48,3 +65,37 @@
 .footer .btn {
   border: none;
 }
+
+
+/* New styles for buttons and icons */
+.button-with-icon svg {
+    vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+    .button-with-icon .button-text {
+        display: none;
+    }
+
+    /* Styles for small screens */
+    .custom-dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-with-icon .button-text {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    /* Styles for large screens */
+    .custom-dropdown-menu {
+        right: auto;
+        left: 0;
+    }
+}
+
+
+

@@ -25,12 +25,14 @@ class SendingEmail(object):
         #    email = EMAIL_ADMIN
 
         target_emails = [email, EMAIL_ADMIN]
+        if order.email:
+            self.reply_to_emails.append(order.email)
 
         vars = {
         }
 
         if type_id == 1:  # admin notification
-            subject = 'Новый заказ'
+            subject = 'New order'
             vars['order_fields'] = model_to_dict(
                 order)  # model_to_dict (instance, fields=[], exclude=[])
             vars['order'] = order
@@ -44,7 +46,7 @@ class SendingEmail(object):
                 vars)
 
         elif type_id == 2: # customer notification
-            subject = 'Ваш заказ получен!'
+            subject = 'Your order has been received!'
             message = get_template('order_notification_customer.html').render(
                 vars)
 
