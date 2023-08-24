@@ -92,5 +92,6 @@ class OrderItemTemplate(models.Model):
         verbose_name = 'order item template'
         verbose_name_plural = 'order item templates'
 
+
     def __str__(self):
         return self.name

@@ -2,3 +2,4 @@ pp_env/
 __pycache__/
 *.sqlite3
 pp_cache/*
+parts_project/settings.py
