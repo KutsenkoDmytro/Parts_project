@@ -2,7 +2,15 @@
 {% load i18n %}
 {% load static %}
 
-
+{% block styles %}
+<style>
+@media (max-width: 767px) {
+    .navbar-collapse.collapse ul.dropdown-menu {
+        background-image: linear-gradient(to right, rgba(205, 205, 205, 0), rgba(205, 205, 205, 0.6));
+    }
+}
+</style>
+{% endblock %}
 
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
