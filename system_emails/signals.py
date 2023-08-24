@@ -3,11 +3,11 @@ from django.dispatch import receiver
 from .models import EmailType
 
 @receiver(post_migrate)
-def create_default_roles(sender, **kwargs):
+def create_default_etype(sender, **kwargs):
 
     if sender.name == 'system_emails':
-        default_roles = ['Administrator and user','User']
+        default_etype = ['Administrator and user','User']
 
 
-        for role in default_roles:
-            EmailType.objects.get_or_create(name=role, is_active=True)
+        for type in default_etype:
+            EmailType.objects.get_or_create(name=type, is_active=True)
