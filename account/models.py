@@ -53,6 +53,9 @@ class UserCompany(models.Model):
     is_deleted = models.BooleanField(default=False,
                                      verbose_name=_('is_deleted'))
 
+    def company_id(self):
+        return self.id
+
     class Meta:
         ordering = ('company',)
         verbose_name = 'user company'
@@ -65,8 +68,7 @@ class UserCompany(models.Model):
 
 class OrderItemTemplate(models.Model):
     '''Визначає набори реквізитів для замовлень користувачів.'''
-    name = models.CharField(max_length=200, unique=True,
-                            verbose_name=_('template name'))
+    name = models.CharField(max_length=200, verbose_name=_('template name'))
 
     user_company = models.ForeignKey(UserCompany,
                                      related_name='orders_item_templates_user_company',
@@ -86,6 +88,7 @@ class OrderItemTemplate(models.Model):
                                      verbose_name=_('is_deleted'))
     date_added = models.DateTimeField(auto_now_add=True,
                                       verbose_name=_('date added'))
+
 
     class Meta:
         ordering = ('name',)

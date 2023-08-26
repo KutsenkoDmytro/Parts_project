@@ -77,11 +77,18 @@
         <b>{% trans "Comments" %}: </b>{{ order.comments }}
     </li>
     <li>
-        <b>{% trans "Total cost (€) without VAT" %}: </b>{{ order.get_total_cost }}
+        <b>{% trans "Rate" %}: </b>{{ order.rate }}
     </li>
+    <!--<li>
+        <b>{% trans "Total cost (€) without VAT" %}: </b>{{ order.get_total_cost }}
+    </li>-->
     <li>
         <b>{% trans "Total cost (€) with VAT" %}: </b>{{ order.get_total_cost_with_vat }}
     </li>
+    <li>
+        <b>{% trans "Total cost (₴) with VAT" %}: </b>{{ order.get_total_cost_with_vat_ua }}
+    </li>
+
 </ul>
 <p><b>
     {% trans "Products" %}:

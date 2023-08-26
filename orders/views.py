@@ -32,58 +32,58 @@ def order_create(request):
     # Крок 1: Збираємо всі категорії продуктів з корзини.
     categories_in_cart = set(item['product'].category for item in cart)
 
+    if len(categories_in_cart) > 1:
+        # Крок 2: Перевіряємо, чи всі продукти мають однакову категорію.
+        ms_part_1 = _(
+            'Error: All items in your cart must belong to the same category! Categories in your order:')
+        categories_list = ', '.join(
+            [category.name for category in categories_in_cart])
+        messages.error(request, f'{ms_part_1} {categories_list}.')
+        return HttpResponseRedirect(reverse('cart:cart_detail'))
+
     if request.method == 'POST':
         form = OrderCreateForm(data=request.POST, request=request)
         if form.is_valid():
-            # Крок 2: Перевіряємо, чи всі продукти мають однакову категорію.
-            if len(categories_in_cart) == 1:
-                order = form.save(commit=False)
-                order.user = request.user
-                order.email = request.user.email
 
-                rate = cache.get('current_euro_exchange_rate')
-                if not rate:
-                    rate = get_current_euro_exchange_rate()
-                    cache.set('current_euro_exchange_rate', rate, 60 * 60)
+            order = form.save(commit=False)
+            order.user = request.user
+            order.email = request.user.email
 
-                order.rate = rate
-                order = form.save()
+            rate = cache.get('current_euro_exchange_rate')
+            if not rate:
+                rate = get_current_euro_exchange_rate()
+                cache.set('current_euro_exchange_rate', rate, 60 * 60)
 
-                for item in cart:
-                    # Для затвердженого замовлення 'ord_quantity' заповняємо відповідним значенням 'pre_quantity'.
-                    OrderItem.objects.create(order=order,
-                                             product=item['product'],
-                                             price=item['price'],
-                                             pre_quantity=item['quantity'],
-                                             ord_quantity=item['quantity'])
-                # Очищуємо кошик.
-                cart.clear()
+            order.rate = rate
+            order = form.save()
 
-                # Відправляємо листи адміну та користувачу.
-                email = SendingEmail()
-                email.sending_email(type_id=1, email=order.email, order=order)
-                # Використовувати для відпраки листа тільки користувачу.
-                # email.sending_email(type_id=2, email=order.email, order=order)
+            for item in cart:
+                # Для затвердженого замовлення 'ord_quantity' заповняємо відповідним значенням 'pre_quantity'.
+                OrderItem.objects.create(order=order,
+                                         product=item['product'],
+                                         price=item['price'],
+                                         pre_quantity=item['quantity'],
+                                         ord_quantity=item['quantity'])
+            # Очищуємо кошик.
+            cart.clear()
 
-                # Отримання номера замовлення.
-                order_number = order.id
-                # Додання номеру замовлення до повідомлення про успішне створення замовлення.
-                ms_part_1 = _(
-                    'The order has been successfully formed. Your order number:')
-                ms_part_2 = _('Thanks!')
-                success_message = f'{ms_part_1} {order_number}. {ms_part_2}'
-                messages.success(request, success_message)
+            # Відправляємо листи адміну та користувачу.
+            email = SendingEmail()
+            email.sending_email(type_id=1, email=order.email, order=order)
+            # Використовувати для відпраки листа тільки користувачу.
+            # email.sending_email(type_id=2, email=order.email, order=order)
 
-                return HttpResponseRedirect(reverse('orders:orders'))
-            else:
-                # Крок 3: Якщо продукти мають різні категорії, показати повідомлення про помилку.
+            # Отримання номера замовлення.
+            order_number = order.id
+            # Додання номеру замовлення до повідомлення про успішне створення замовлення.
+            ms_part_1 = _(
+                'The order has been successfully formed. Your order number:')
+            ms_part_2 = _('Thanks!')
+            success_message = f'{ms_part_1} {order_number}. {ms_part_2}'
+            messages.success(request, success_message)
 
-                ms_part_1 = _(
-                    'Error: All items in your cart must belong to the same category! Categories in your order:')
-                categories_list = ', '.join(
-                    [category.name for category in categories_in_cart])
-                messages.error(request,
-                               f'{ms_part_1} {categories_list}.')
+            return HttpResponseRedirect(reverse('orders:orders'))
+
         else:
             messages.error(request,
                            _('Error when placing or editing an order, check the form data!'))
@@ -103,50 +103,52 @@ def draft_order_create(request):
     # Крок 1: Збираємо всі категорії продуктів з корзини.
     categories_in_cart = set(item['product'].category for item in cart)
 
+    if len(categories_in_cart) > 1:
+        # Крок 2: Перевіряємо, чи всі продукти мають однакову категорію.
+        ms_part_1 = _(
+            'Error: All items in your cart must belong to the same category! Categories in your order:')
+        categories_list = ', '.join(
+            [category.name for category in categories_in_cart])
+        messages.error(request, f'{ms_part_1} {categories_list}.')
+        return HttpResponseRedirect(reverse('cart:cart_detail'))
+
+
     if request.method == 'POST':
         form = DraftOrderCreateForm(data=request.POST, request=request)
         if form.is_valid():
-            # Крок 2: Перевіряємо, чи всі продукти мають однакову категорію.
-            if len(categories_in_cart) == 1:
-                order = form.save(commit=False)
-                order.user = request.user
-                order.email = request.user.email
 
-                rate = cache.get('current_euro_exchange_rate')
-                if not rate:
-                    rate = get_current_euro_exchange_rate()
-                    cache.set('current_euro_exchange_rate', rate, 60 * 60)
+            order = form.save(commit=False)
+            order.user = request.user
+            order.email = request.user.email
 
-                order.rate = get_current_euro_exchange_rate()
+            rate = cache.get('current_euro_exchange_rate')
+            if not rate:
+                rate = get_current_euro_exchange_rate()
+                cache.set('current_euro_exchange_rate', rate, 60 * 60)
 
-                order = form.save()
+            order.rate = get_current_euro_exchange_rate()
 
-                for item in cart:
-                    # Для чернетки замовлення 'ord_quantity' заповнюємо відповідним значенням 0.
-                    OrderItem.objects.create(order=order,
-                                             product=item['product'],
-                                             price=item['price'],
-                                             pre_quantity=item['quantity'],
-                                             ord_quantity=0)
-                # Очищуємо кошик.
-                cart.clear()
-                # Отримання номера чернетки замовлення.
-                order_number = order.id
-                # Додавання номера чернетки замовлення до повідомлення про успішне створення.
-                ms_part_1 = _(
-                    'The draft order has been successfully formed. Number:')
-                success_message = f'{ms_part_1} {order_number}.'
-                messages.success(request, success_message)
+            order = form.save()
 
-                return HttpResponseRedirect(reverse('orders:orders'))
-            else:
-                # Крок 3: Якщо продукти мають різні категорії, показати повідомлення про помилку.
-                ms_part_1 = _(
-                    'Error: All items in your cart must belong to the same category! Categories in your order:')
-                categories_list = ', '.join(
-                    [category.name for category in categories_in_cart])
-                messages.error(request,
-                               f'{ms_part_1} {categories_list}.')
+            for item in cart:
+                # Для чернетки замовлення 'ord_quantity' заповнюємо відповідним значенням 0.
+                OrderItem.objects.create(order=order,
+                                         product=item['product'],
+                                         price=item['price'],
+                                         pre_quantity=item['quantity'],
+                                         ord_quantity=0)
+            # Очищуємо кошик.
+            cart.clear()
+            # Отримання номера чернетки замовлення.
+            order_number = order.id
+            # Додавання номера чернетки замовлення до повідомлення про успішне створення.
+            ms_part_1 = _(
+                'The draft order has been successfully formed. Number:')
+            success_message = f'{ms_part_1} {order_number}.'
+            messages.success(request, success_message)
+
+            return HttpResponseRedirect(reverse('orders:orders'))
+
         else:
             messages.error(request,
                            _('There was an error while placing or editing the draft order, check the form data!'))

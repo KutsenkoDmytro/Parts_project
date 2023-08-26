@@ -1,5 +1,6 @@
 <!-- File download template .xls -->
 {% extends "shop/base.html" %}
+{% load static %}
 {% load i18n %}
 
 {% block content %}
@@ -13,11 +14,14 @@
                 <hr>
                 <form method="post" action="" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <input type="file" name="file" id="file" >
-                    </div>
-                    <p>
+                    <!--<p>
                          {% trans "The file must be in .xls format only, contain only 1 sheet with table headers: 'id' (empty if the product is new; fill in when changing one of the attributes), 'category', 'name', 'slug' (corresponds to the value 'name'), 'description', 'price', 'is_deleted' ('True' if the product is marked for deletion)." %}
+                    </p>-->
+                    <a href="{% static 'shop/xls/sample_download_to_product.xls' %}" download class="btn btn-primary">{% trans "Upload sample" %}</a>
+                    <p>
+                        <div class="form-group">
+                            <input type="file" name="file" id="file" >
+                        </div>
                     </p>
 
                     <button type="submit" class="btn btn-primary">{% trans "Download" %}</button>

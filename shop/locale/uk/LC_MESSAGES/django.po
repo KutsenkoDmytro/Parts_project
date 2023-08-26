@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,40 +118,40 @@ msgstr "читати повністю"
 msgid "No entries yet."
 msgstr "Записів поки немає."
 
-#: .\shop\templates\shop\navbar.html:27
+#: .\shop\templates\shop\navbar.html:35
 #, python-format
 msgid "Wellcome, %(name)s"
 msgstr "Вітаємо, %(name)s"
 
-#: .\shop\templates\shop\navbar.html:29
+#: .\shop\templates\shop\navbar.html:37
 msgid "Settings menu"
 msgstr "Меню налаштувань"
 
-#: .\shop\templates\shop\navbar.html:31
+#: .\shop\templates\shop\navbar.html:39
 msgid "Edit profile"
 msgstr "Редагування профілю"
 
-#: .\shop\templates\shop\navbar.html:32
+#: .\shop\templates\shop\navbar.html:40
 msgid "Change password"
 msgstr "Зміна паролю"
 
-#: .\shop\templates\shop\navbar.html:34
+#: .\shop\templates\shop\navbar.html:42
 msgid "Administration"
 msgstr "Адміністрування"
 
-#: .\shop\templates\shop\navbar.html:35
+#: .\shop\templates\shop\navbar.html:43
 msgid "Edit products"
 msgstr "Редагування товарів"
 
-#: .\shop\templates\shop\navbar.html:44
+#: .\shop\templates\shop\navbar.html:52
 msgid "Language"
 msgstr "Мова"
 
-#: .\shop\templates\shop\navbar.html:56
+#: .\shop\templates\shop\navbar.html:64
 msgid "Logout"
 msgstr "Вихід"
 
-#: .\shop\templates\shop\navbar.html:58
+#: .\shop\templates\shop\navbar.html:66
 msgid "Log-in"
 msgstr "Вхід"
 
@@ -169,11 +169,11 @@ msgstr "Ціна клієнта (грн) %(price_ua)s"
 msgid "Add to cart"
 msgstr "Додати в кошик"
 
-#: .\shop\templates\shop\product\download_products.html:11
+#: .\shop\templates\shop\product\download_products.html:12
 msgid "Download products into the model Product from file"
 msgstr "Завантаження товарів до моделі Товари з файлу .xls"
 
-#: .\shop\templates\shop\product\download_products.html:20
+#: .\shop\templates\shop\product\download_products.html:18
 msgid ""
 "The file must be in .xls format only, contain only 1 sheet with table "
 "headers: 'id' (empty if the product is new; fill in when changing one of the "
@@ -187,16 +187,21 @@ msgstr ""
 "'name'), 'description', 'price', 'is_deleted' ('True', якщо товар позначено "
 "на видалення)."
 
-#: .\shop\templates\shop\product\download_products.html:23
-#: .\shop\templates\shop\product\download_products_in_cart.html:22
+#: .\shop\templates\shop\product\download_products.html:20
+#: .\shop\templates\shop\product\download_products_in_cart.html:20
+msgid "Upload sample"
+msgstr "Вивантажити зразок"
+
+#: .\shop\templates\shop\product\download_products.html:27
+#: .\shop\templates\shop\product\download_products_in_cart.html:26
 msgid "Download"
 msgstr "Завантажити"
 
-#: .\shop\templates\shop\product\download_products_in_cart.html:11
+#: .\shop\templates\shop\product\download_products_in_cart.html:12
 msgid "Download products into the Cart from file"
 msgstr "Завантаження товарів до кошика з файлу .xls"
 
-#: .\shop\templates\shop\product\download_products_in_cart.html:20
+#: .\shop\templates\shop\product\download_products_in_cart.html:18
 msgid ""
 "The file must be in .xls format only, containing only 1 letter with the "
 "headers of the table 'product' and 'quantity' respectively."
@@ -246,6 +251,10 @@ msgstr "Ціна клієнта (€)"
 msgid "Customer price (₴)"
 msgstr "Ціна клієнта (₴)"
 
+#: .\shop\templates\shop\product\search.html:91
+msgid "Add one"
+msgstr "Додати один"
+
 #: .\shop\templates\shop\product\search.html:103
 msgid "No results found."
 msgstr "Результатів не знайдено."
@@ -258,48 +267,49 @@ msgstr "Попередня"
 msgid "Next"
 msgstr "Наступна"
 
-#: .\shop\templates\shop\sidebar.html:19
+#: .\shop\templates\shop\sidebar.html:51
 msgid "Home"
 msgstr "Головна"
 
-#: .\shop\templates\shop\sidebar.html:27
+#: .\shop\templates\shop\sidebar.html:59
 msgid "Products"
 msgstr "Товари"
 
-#: .\shop\templates\shop\sidebar.html:36
+#: .\shop\templates\shop\sidebar.html:68
 msgid "Orders"
 msgstr "Замовлення"
 
-#: .\shop\templates\shop\sidebar.html:46
+#: .\shop\templates\shop\sidebar.html:78
 msgid "Sets of order details"
 msgstr "Набори реквізитів замовлень"
 
-#: .\shop\templates\shop\sidebar.html:49
+#: .\shop\templates\shop\sidebar.html:81
 msgid "Go to list"
 msgstr "Перейти до списку"
 
-#: .\shop\templates\shop\sidebar.html:50
+#: .\shop\templates\shop\sidebar.html:82
 msgid "Create new"
 msgstr "Створити новий"
 
-#: .\shop\templates\shop\sidebar.html:61
+#: .\shop\templates\shop\sidebar.html:93
 msgid "Your cart"
 msgstr "Кошик"
 
-#: .\shop\templates\shop\sidebar.html:62
+#: .\shop\templates\shop\sidebar.html:94
 #, python-format
 msgid " %(total_items)s ptc., € %(total_price)s "
 msgstr " %(total_items)s шт., € %(total_price)s "
 
-#: .\shop\templates\shop\sidebar.html:65
+#: .\shop\templates\shop\sidebar.html:97
 msgid "Go to cart"
 msgstr "Перейти до кошика"
 
-#: .\shop\templates\shop\sidebar.html:66 .\shop\templates\shop\sidebar.html:79
+#: .\shop\templates\shop\sidebar.html:98
+#: .\shop\templates\shop\sidebar.html:111
 msgid "Download products to the cart"
 msgstr "Завантажити товари до кошика"
 
-#: .\shop\templates\shop\sidebar.html:76
+#: .\shop\templates\shop\sidebar.html:108
 msgid "Your cart is empty."
 msgstr "Кошик порожній"
 

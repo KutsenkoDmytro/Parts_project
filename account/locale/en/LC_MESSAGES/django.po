@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "role name"
 msgstr ""
 
-#: .\account\models.py:13 .\account\models.py:54 .\account\models.py:86
+#: .\account\models.py:13 .\account\models.py:54 .\account\models.py:88
 msgid "is_deleted"
 msgstr ""
 
-#: .\account\models.py:15 .\account\models.py:88
+#: .\account\models.py:15 .\account\models.py:90
 msgid "date added"
 msgstr ""
 
@@ -54,23 +54,23 @@ msgstr ""
 msgid "company"
 msgstr ""
 
-#: .\account\models.py:69
+#: .\account\models.py:71
 msgid "template name"
 msgstr ""
 
-#: .\account\models.py:74
+#: .\account\models.py:76
 msgid "user company"
 msgstr ""
 
-#: .\account\models.py:77
+#: .\account\models.py:79
 msgid "stock"
 msgstr ""
 
-#: .\account\models.py:82
+#: .\account\models.py:84
 msgid "responsible person"
 msgstr ""
 
-#: .\account\models.py:84
+#: .\account\models.py:86
 msgid "adress"
 msgstr ""
 
@@ -175,11 +175,11 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:39
+#: .\account\templates\order_template\template_list.html:40
 msgid "Edit"
 msgstr ""
 
-#: .\account\templates\order_template\template_list.html:50
+#: .\account\templates\order_template\template_list.html:57
 msgid "No sets of order details yet."
 msgstr ""
 
@@ -301,12 +301,10 @@ msgstr ""
 msgid "Error updating profile!"
 msgstr ""
 
-#: .\account\views.py:163
+#: .\account\views.py:151
 msgid "A new set of order details has been successfully created!"
 msgstr ""
 
-#: .\account\views.py:176
-msgid ""
-"Error creating set of order details. The name you entered may already be in "
-"use!"
+#: .\account\views.py:164
+msgid "Error creating set of order details."
 msgstr ""
