@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:34
+#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:35
 msgid "Quantity"
 msgstr "Кількість"
 
@@ -34,16 +34,16 @@ msgid "Product"
 msgstr "Товар"
 
 #: .\cart\templates\cart\detail.html:32
+msgid "Action"
+msgstr "Дії"
+
+#: .\cart\templates\cart\detail.html:33
 msgid "Description"
 msgstr "Назва"
 
-#: .\cart\templates\cart\detail.html:33
+#: .\cart\templates\cart\detail.html:34
 msgid "Category"
 msgstr "Категорія"
-
-#: .\cart\templates\cart\detail.html:35
-msgid "Action"
-msgstr "Дії"
 
 #: .\cart\templates\cart\detail.html:36
 msgid "Price (€)"
@@ -65,11 +65,11 @@ msgstr "Вартість (₴) без ПДВ"
 msgid "Cost (₴) with VAT"
 msgstr "Вартість (₴) з ПДВ"
 
-#: .\cart\templates\cart\detail.html:63
+#: .\cart\templates\cart\detail.html:51
 msgid "Remove"
 msgstr "Видалити"
 
-#: .\cart\templates\cart\detail.html:78
+#: .\cart\templates\cart\detail.html:85
 #, python-format
 msgid ""
 "\n"
@@ -82,7 +82,7 @@ msgstr ""
 "%(total_cost_with_vat)s\n"
 "        "
 
-#: .\cart\templates\cart\detail.html:83
+#: .\cart\templates\cart\detail.html:90
 #, python-format
 msgid ""
 "\n"
@@ -95,15 +95,15 @@ msgstr ""
 "%(total_cost_with_vat_ua)s\n"
 "        "
 
-#: .\cart\templates\cart\detail.html:92
+#: .\cart\templates\cart\detail.html:99
 msgid "Continue shoping"
 msgstr "Продовжити покупки"
 
-#: .\cart\templates\cart\detail.html:93
+#: .\cart\templates\cart\detail.html:100
 msgid "Order draft"
 msgstr "Чернетка замовлення"
 
-#: .\cart\templates\cart\detail.html:94
+#: .\cart\templates\cart\detail.html:101
 msgid "Checkout"
 msgstr "Замовлення"
 

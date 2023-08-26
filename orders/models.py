@@ -71,6 +71,12 @@ class Order(models.Model):
         total_cost_with_vat = sum(item.ord_get_cost() for item in self.items.all())* Decimal('1.2')
         return total_cost_with_vat.quantize(Decimal('0.00'),
                                             rounding=ROUND_HALF_UP)
+    def get_total_cost_with_vat_ua(self):
+        total_cost_with_vat_ua = sum(item.ord_get_cost() for item in self.items.all())* Decimal('1.2')*self.rate
+        return total_cost_with_vat_ua.quantize(Decimal('0.00'),
+                                            rounding=ROUND_HALF_UP)
+
+
 
     def save(self, *args, **kwargs):
         '''

@@ -183,7 +183,7 @@ def download_products_in_cart(request):
 
         if uploading_file:
             result_dict = uploading_file.result_dict
-
+            print(result_dict)
             limit_reached = False
             cart = Cart(request)
             items_in_cart = cart.count_unique_items()

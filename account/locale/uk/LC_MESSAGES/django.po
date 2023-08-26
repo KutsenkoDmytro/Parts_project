@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "role name"
 msgstr "назва ролі"
 
-#: .\account\models.py:13 .\account\models.py:54 .\account\models.py:86
+#: .\account\models.py:13 .\account\models.py:54 .\account\models.py:88
 msgid "is_deleted"
 msgstr "помітка на видалення"
 
-#: .\account\models.py:15 .\account\models.py:88
+#: .\account\models.py:15 .\account\models.py:90
 msgid "date added"
 msgstr "додано"
 
@@ -57,23 +57,23 @@ msgstr "профіль"
 msgid "company"
 msgstr "компанія"
 
-#: .\account\models.py:69
+#: .\account\models.py:71
 msgid "template name"
 msgstr "назва"
 
-#: .\account\models.py:74
+#: .\account\models.py:76
 msgid "user company"
 msgstr "компанія"
 
-#: .\account\models.py:77
+#: .\account\models.py:79
 msgid "stock"
 msgstr "склад"
 
-#: .\account\models.py:82
+#: .\account\models.py:84
 msgid "responsible person"
 msgstr "відповідальна особа"
 
-#: .\account\models.py:84
+#: .\account\models.py:86
 msgid "adress"
 msgstr "адреса"
 
@@ -179,11 +179,11 @@ msgstr "Відповідальна особа"
 msgid "Address"
 msgstr "Адреса"
 
-#: .\account\templates\order_template\template_list.html:39
+#: .\account\templates\order_template\template_list.html:40
 msgid "Edit"
 msgstr "Редагувати"
 
-#: .\account\templates\order_template\template_list.html:50
+#: .\account\templates\order_template\template_list.html:57
 msgid "No sets of order details yet."
 msgstr "Наборів реквізитів замовлень поки немає."
 
@@ -264,7 +264,7 @@ msgid ""
 "used. Please request a new password reset."
 msgstr ""
 "Посилання для скидання пароля стало недійсним, можливо, тому, що воно вже "
-"буловикористано. Будь ласка, надішліть запит на скидання нового пароля."
+"було використано. Будь ласка, надішліть запит на скидання нового пароля."
 
 #: .\account\templates\registration\password_reset_done.html:13
 msgid "We've emailed you instructions for setting your password."
@@ -315,14 +315,10 @@ msgstr "Ваш профіль успішно оновлено!"
 msgid "Error updating profile!"
 msgstr "Помилка оновлення облікового запису!"
 
-#: .\account\views.py:163
+#: .\account\views.py:151
 msgid "A new set of order details has been successfully created!"
 msgstr "Новий набір реквізитів замовлення успішно сформовано!"
 
-#: .\account\views.py:176
-msgid ""
-"Error creating set of order details. The name you entered may already be in "
-"use!"
-msgstr ""
-"Помилка створення набору реквізитів замовлення. Можливо, введене ім'я вже "
-"використовується"
+#: .\account\views.py:164
+msgid "Error creating set of order details."
+msgstr "Помилка створення набору реквізитів замовлення."

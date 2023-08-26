@@ -145,20 +145,8 @@ class CreateOrderItemTemplate(CreateView):
 
     def form_valid(self, form):
         '''Вивід повідомлення при успішному створенні екземпляру набору реквізитів замовлення.'''
-        instance = form.save(commit=False)
-
-        user = instance.user_company.profile.user
-        last_name = user.last_name
-        first_initial = user.first_name[0]
-        name_value = form.cleaned_data[
-                         'name'] + f" ({last_name} {first_initial}.)"
-
-        # Встановлення зміненого значення імені екземпляра.
-        instance.name = name_value
-
         try:
-            # Збереження екземпляра зі зміненим значенням імені.
-            instance.save()
+            form.save()
             messages.success(self.request,
                              _('A new set of order details has been successfully created!'))
         except IntegrityError as e:
@@ -173,7 +161,7 @@ class CreateOrderItemTemplate(CreateView):
         response = super().form_invalid(form)
         error_message = form.errors['__all__'][
             0] if '__all__' in form.errors else _(
-            'Error creating set of order details. The name you entered may already be in use!')
+            'Error creating set of order details.')
         messages.error(self.request, error_message)
         return response
 

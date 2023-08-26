@@ -2,15 +2,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block styles %}
-<style>
-@media (max-width: 767px) {
-    .navbar-collapse.collapse ul.dropdown-menu {
-        background-image: linear-gradient(to right, rgba(205, 205, 205, 0), rgba(205, 205, 205, 0.6));
-    }
-}
-</style>
-{% endblock %}
+
 
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
@@ -18,7 +10,7 @@
             <button type="button" class="navbar-toggle collapsed align-top"
                     data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar"></button>
-            <a class="navbar-brand" href="{% url 'shop:index' %}">
+            <a class="navbar-brand navbar-logo" href="{% url 'shop:index' %}">
                 <img src="{% static 'shop/images/astra-logo-2.png' %}"
                      alt="Your Image" class="img-responsive img-fluid hidden-xs"
                      style="max-width: 200px;">

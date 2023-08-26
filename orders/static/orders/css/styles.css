@@ -90,3 +90,11 @@
         justify-content: space-between;
         margin-bottom: 10px;
     }
+
+    .indent {
+        margin-left: 25px;
+    }
+    .min-width-cell {
+    min-width: 100px;
+    white-space: nowrap;
+    }

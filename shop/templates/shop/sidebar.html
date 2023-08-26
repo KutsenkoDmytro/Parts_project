@@ -2,41 +2,6 @@
 {% load i18n %}
 {% load static %}
 
-{% block styles %}
-<style>
-/* New styles for buttons and icons */
-.button-with-icon svg {
-    vertical-align: middle;
-}
-
-@media (max-width: 767px) {
-    .button-with-icon .button-text {
-        display: none;
-    }
-
-    /* Styles for small screens */
-    .custom-dropdown-menu {
-        right: 0;
-        left: auto;
-    }
-}
-
-@media (min-width: 768px) {
-    .button-with-icon .button-text {
-        display: inline-block;
-        margin-left: 5px;
-    }
-
-    /* Styles for large screens */
-    .custom-dropdown-menu {
-        right: auto;
-        left: 0;
-    }
-}
-</style>
-{% endblock %}
-
-
 
 <div class="sidebar">
     <div class="container-fluid">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:34
+#: .\cart\forms.py:10 .\cart\templates\cart\detail.html:35
 msgid "Quantity"
 msgstr ""
 
@@ -31,15 +31,15 @@ msgid "Product"
 msgstr ""
 
 #: .\cart\templates\cart\detail.html:32
-msgid "Description"
+msgid "Action"
 msgstr ""
 
 #: .\cart\templates\cart\detail.html:33
-msgid "Category"
+msgid "Description"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:35
-msgid "Action"
+#: .\cart\templates\cart\detail.html:34
+msgid "Category"
 msgstr ""
 
 #: .\cart\templates\cart\detail.html:36
@@ -62,11 +62,11 @@ msgstr ""
 msgid "Cost (₴) with VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:63
+#: .\cart\templates\cart\detail.html:51
 msgid "Remove"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:78
+#: .\cart\templates\cart\detail.html:85
 #, python-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:83
+#: .\cart\templates\cart\detail.html:90
 #, python-format
 msgid ""
 "\n"
@@ -84,15 +84,15 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:92
+#: .\cart\templates\cart\detail.html:99
 msgid "Continue shoping"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:93
+#: .\cart\templates\cart\detail.html:100
 msgid "Order draft"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:94
+#: .\cart\templates\cart\detail.html:101
 msgid "Checkout"
 msgstr ""
 

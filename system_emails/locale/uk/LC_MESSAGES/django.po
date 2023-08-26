@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 09:56+0300\n"
+"POT-Creation-Date: 2023-08-26 00:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: uk\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,41 +118,49 @@ msgid "Comments"
 msgstr "Коментарі"
 
 #: .\system_emails\templates\order_notification_admin.html:80
+msgid "Rate"
+msgstr "Курс"
+
+#: .\system_emails\templates\order_notification_admin.html:83
 msgid "Total cost (€) without VAT"
 msgstr "Всього (€) без ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:83
+#: .\system_emails\templates\order_notification_admin.html:86
 msgid "Total cost (€) with VAT"
 msgstr "Всього (€) з ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:87
+#: .\system_emails\templates\order_notification_admin.html:89
+msgid "Total cost (₴) with VAT"
+msgstr "Всього (₴) з ПДВ"
+
+#: .\system_emails\templates\order_notification_admin.html:94
 msgid "Products"
 msgstr "Товари"
 
-#: .\system_emails\templates\order_notification_admin.html:92
+#: .\system_emails\templates\order_notification_admin.html:99
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
-#: .\system_emails\templates\order_notification_admin.html:93
+#: .\system_emails\templates\order_notification_admin.html:100
 msgid "Description"
 msgstr "Назва"
 
-#: .\system_emails\templates\order_notification_admin.html:94
+#: .\system_emails\templates\order_notification_admin.html:101
 msgid "Product"
 msgstr "Товар"
 
-#: .\system_emails\templates\order_notification_admin.html:95
+#: .\system_emails\templates\order_notification_admin.html:102
 msgid "Quantity"
 msgstr "Кількість"
 
-#: .\system_emails\templates\order_notification_admin.html:96
+#: .\system_emails\templates\order_notification_admin.html:103
 msgid "Price"
 msgstr "Ціна"
 
-#: .\system_emails\templates\order_notification_admin.html:97
+#: .\system_emails\templates\order_notification_admin.html:104
 msgid "Cost (€) without VAT"
 msgstr "Вартість (€) без ПДВ"
 
-#: .\system_emails\templates\order_notification_admin.html:98
+#: .\system_emails\templates\order_notification_admin.html:105
 msgid "Cost (€) with VAT"
 msgstr "Вартість (€) з ПДВ"
