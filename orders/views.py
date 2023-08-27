@@ -187,7 +187,7 @@ def get_all_order_header_options(request):
 
     try:
         signatory_of_documents_options_queryset = Employee.objects.filter(
-            stocks_employee__in=stock_queryset, is_deleted=False)
+            stocks_employee__in=stock_queryset, is_deleted=False).distinct()
         signatory_of_documents_options = {
             str(signatory_of_documents.id): signatory_of_documents.get_full_name()
             for signatory_of_documents in

@@ -111,7 +111,7 @@ class CreateOrderItemTemplateForm(forms.ModelForm):
 
         try:
             responsible_person_queryset = Employee.objects.filter(
-                stocks_employee__in=stock_queryset)
+                stocks_employee__in=stock_queryset).distinct()
         except Employee.DoesNotExist:
             stock_queryset = {}
 

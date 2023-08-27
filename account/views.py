@@ -135,7 +135,7 @@ class CreateOrderItemTemplate(CreateView):
             company__in=company_queryset, is_deleted=False)
 
         responsible_person_queryset = Employee.objects.filter(
-            stocks_employee__in=stock_queryset, is_deleted=False)
+            stocks_employee__in=stock_queryset, is_deleted=False).distinct()
 
         form.fields['user_company'].queryset = user_company_queryset
         form.fields['stock'].queryset = stock_queryset
@@ -167,6 +167,8 @@ class CreateOrderItemTemplate(CreateView):
 
     def get_success_url(self):
         return reverse('account:template_list')
+
+
 
 
 @login_required
