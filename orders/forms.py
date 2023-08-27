@@ -55,7 +55,7 @@ class BaseOrderCreateForm(forms.ModelForm):
 
         try:
             responsible_person_queryset = Employee.objects.filter(
-                stocks_employee__in=stock_queryset, is_deleted=False)
+                stocks_employee__in=stock_queryset, is_deleted=False).distinct()
         except Employee.DoesNotExist:
             stock_queryset = {}
 
@@ -137,7 +137,7 @@ class OrderForm(forms.ModelForm):
             company__in=company_queryset)
 
         responsible_person_queryset = Employee.objects.filter(
-            stocks_employee__in=stock_queryset)
+            stocks_employee__in=stock_queryset).distinct()
 
         VIN_code_queryset = Technique.objects.filter(
             company__in=company_queryset)

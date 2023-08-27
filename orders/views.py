@@ -29,6 +29,11 @@ def order_create(request):
     '''Обробник для створення затвердженого замовлення.'''
     cart = Cart(request)
 
+    if not cart:
+        messages.error(request,
+                       _('Your cart is empty. Add items to your cart before placing an order.'))
+        return HttpResponseRedirect(reverse('cart:cart_detail'))
+
     # Крок 1: Збираємо всі категорії продуктів з корзини.
     categories_in_cart = set(item['product'].category for item in cart)
 
@@ -99,6 +104,11 @@ def order_create(request):
 def draft_order_create(request):
     '''Обробник для створення чернетки замовлення.'''
     cart = Cart(request)
+
+    if not cart:
+        messages.error(request,
+                       _('Your cart is empty. Add items to your cart before placing an order draft.'))
+        return HttpResponseRedirect(reverse('cart:cart_detail'))
 
     # Крок 1: Збираємо всі категорії продуктів з корзини.
     categories_in_cart = set(item['product'].category for item in cart)
@@ -187,7 +197,7 @@ def get_all_order_header_options(request):
 
     try:
         signatory_of_documents_options_queryset = Employee.objects.filter(
-            stocks_employee__in=stock_queryset, is_deleted=False)
+            stocks_employee__in=stock_queryset, is_deleted=False).distinct()
         signatory_of_documents_options = {
             str(signatory_of_documents.id): signatory_of_documents.get_full_name()
             for signatory_of_documents in
