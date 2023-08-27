@@ -137,6 +137,9 @@ class CreateOrderItemTemplate(CreateView):
         responsible_person_queryset = Employee.objects.filter(
             stocks_employee__in=stock_queryset, is_deleted=False).distinct()
 
+
+
+
         form.fields['user_company'].queryset = user_company_queryset
         form.fields['stock'].queryset = stock_queryset
         form.fields['responsible_person'].queryset = responsible_person_queryset

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 00:01+0300\n"
+"POT-Creation-Date: 2023-08-26 23:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,40 +115,40 @@ msgstr ""
 msgid "No entries yet."
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:35
+#: .\shop\templates\shop\navbar.html:27
 #, python-format
 msgid "Wellcome, %(name)s"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:37
+#: .\shop\templates\shop\navbar.html:29
 msgid "Settings menu"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:39
+#: .\shop\templates\shop\navbar.html:31
 msgid "Edit profile"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:40
+#: .\shop\templates\shop\navbar.html:32
 msgid "Change password"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:42
+#: .\shop\templates\shop\navbar.html:34
 msgid "Administration"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:43
+#: .\shop\templates\shop\navbar.html:35
 msgid "Edit products"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:52
+#: .\shop\templates\shop\navbar.html:44
 msgid "Language"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:64
+#: .\shop\templates\shop\navbar.html:56
 msgid "Logout"
 msgstr ""
 
-#: .\shop\templates\shop\navbar.html:66
+#: .\shop\templates\shop\navbar.html:58
 msgid "Log-in"
 msgstr ""
 
