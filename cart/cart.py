@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.cache import cache
 
 from shop.models import Product
+from orders.functions import get_time_until_end_of_day
 
 
 class Cart(object):
@@ -59,7 +60,7 @@ class Cart(object):
         rate = cache.get('current_euro_exchange_rate')
         if not rate:
             rate = get_current_euro_exchange_rate()
-            cache.set('current_euro_exchange_rate',rate,60*60)
+            cache.set('current_euro_exchange_rate',rate,get_time_until_end_of_day())
 
         for product in products:
             cart[str(product.id)]['product'] = product
@@ -111,7 +112,7 @@ class Cart(object):
         rate = cache.get('current_euro_exchange_rate')
         if not rate:
             rate = get_current_euro_exchange_rate()
-            cache.set('current_euro_exchange_rate', rate, 60 * 60)
+            cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
         total_cost_ua = sum(
             Decimal(item['price']) * item['quantity']
@@ -126,7 +127,7 @@ class Cart(object):
         rate = cache.get('current_euro_exchange_rate')
         if not rate:
             rate = get_current_euro_exchange_rate()
-            cache.set('current_euro_exchange_rate', rate, 60 * 60)
+            cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
         total_cost_with_vat = sum(
             Decimal(item['price']) * item['quantity'] * settings.VAT_RATE

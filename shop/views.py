@@ -12,6 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from django.http import Http404
 
 from .models import Category, Product, Coefficient,Profile
+from orders.functions import get_time_until_end_of_day
 from cart.forms import CartAddProductForm
 from cart.cart import Cart
 import traceback
@@ -78,7 +79,7 @@ def product_search(request):
     rate = cache.get('current_euro_exchange_rate')
     if not rate:
         rate = get_current_euro_exchange_rate()
-        cache.set('current_euro_exchange_rate', rate, 60 * 60)
+        cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
     # Додаємо цикл, щоб обчислити price_coef для кожного продукту на сторінці.
     for product in page_obj.object_list:
@@ -96,25 +97,6 @@ def product_search(request):
         'category': query_category,  # Передаємо обрану категорію у шаблон
     })
 
-    # Створюємо словник коефіцієнтів за категоріями для подальшого використання у циклі.
-    coefficient_by_category = {coefficient.category_id: coefficient for
-                               coefficient in coefficients}
-
-    # Додаємо цикл, щоб обчислити price_coef для кожного продукту на сторінці.
-    for product in page_obj.object_list:
-        coefficient = coefficient_by_category.get(product.category_id)
-        if coefficient:
-            product.price_coef = round(product.price * coefficient.value, 2)
-            product.price_ua = round(
-                product.price_coef * get_current_euro_exchange_rate(), 2)
-
-    return render(request, 'shop/product/search.html', {
-        'query': query_search,
-        'page_obj': page_obj,
-        'categories': categories,
-        'category': query_category,  # Передаємо обрану категорію у шаблон.
-    })
-
 
 @login_required
 def product_detail(request, id, slug):
@@ -128,7 +110,7 @@ def product_detail(request, id, slug):
     rate = cache.get('current_euro_exchange_rate')
     if not rate:
         rate = get_current_euro_exchange_rate()
-        cache.set('current_euro_exchange_rate', rate, 60 * 60)
+        cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
     product.price_ua = round(
         product.price_coef * rate, 2)

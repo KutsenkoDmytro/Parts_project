@@ -108,7 +108,9 @@
 </div>
 
 <div id="js">
-    {% block js_stuff %}{% endblock js_stuff %}
+    {% block js_stuff %}
+    <script src="{% static 'shop/js/menu_link_highlighter.js' %}"></script>
+    {% endblock js_stuff %}
 </div>
 
 </body>

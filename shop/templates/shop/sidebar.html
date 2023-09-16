@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block styles %}
+
 <style>
 /* New styles for buttons and icons */
 .button-with-icon svg {
@@ -34,14 +34,14 @@
     }
 }
 </style>
-{% endblock %}
+
 
 
 <div class="sidebar">
     <div class="container-fluid">
         {% if user.is_authenticated %}
         <ul class="nav nav-tabs">
-            <li class="active"><a class="button-with-icon" href="{% url 'shop:index' %}">
+            <li><a class="button-with-icon" href="{% url 'shop:index' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
                      height="16" fill="currentColor"
                      class="bi bi-house-door" viewBox="0 0 16 16">
@@ -119,3 +119,25 @@
         {% endif %}
     </div>
 </div>
+
+
+<script>
+    var currentPageUrl = window.location.href;
+    var menuLinks = document.querySelectorAll('.container-fluid ul li a');
+    menuLinks.forEach(function(link) {
+        if (link.href === currentPageUrl) {
+            link.parentElement.classList.add('active');
+        }
+    });
+
+    var dropdownLinks = document.querySelectorAll('.container-fluid ul li.dropdown ul li a');
+    dropdownLinks.forEach(function(link) {
+        if (link.href === currentPageUrl) {
+            link.parentElement.classList.add('active');
+            var parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                parentDropdown.classList.add('active');
+            }
+        }
+    });
+</script>

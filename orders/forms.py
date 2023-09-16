@@ -8,6 +8,7 @@ from django.core.cache import cache
 from django import forms
 from .models import Order, OrderItem, OrderStatus, Stock, Company, Product, OrderItemTemplate, Employee, Technique
 from account.models import UserCompany
+from orders.functions import get_time_until_end_of_day
 
 
 class ReadOnlyTextInput(forms.widgets.TextInput):
@@ -191,7 +192,7 @@ class OrderItemForm(forms.ModelForm):
             rate = cache.get('current_euro_exchange_rate')
             if not rate:
                 rate = get_current_euro_exchange_rate()
-                cache.set('current_euro_exchange_rate', rate, 60 * 60)
+                cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
             readonly_fields = ['product', 'product_name', 'pre_quantity', 'price', 'pre_cost', 'ord_cost','pre_cost_with_vat','ord_cost_with_vat','pre_cost_ua', 'ord_cost_ua', 'pre_cost_with_vat_ua', 'ord_cost_with_vat_ua']
 

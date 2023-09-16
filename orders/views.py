@@ -21,7 +21,7 @@ from .forms import DraftOrderCreateForm, OrderCreateForm, OrderForm, \
 from cart.cart import Cart
 from account.models import Profile, UserCompany
 from utils.emails import SendingEmail
-from .functions import format_date, datetime
+from .functions import format_date, datetime, get_time_until_end_of_day
 
 
 @login_required
@@ -57,7 +57,7 @@ def order_create(request):
             rate = cache.get('current_euro_exchange_rate')
             if not rate:
                 rate = get_current_euro_exchange_rate()
-                cache.set('current_euro_exchange_rate', rate, 60 * 60)
+                cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
             order.rate = rate
             order = form.save()
@@ -134,9 +134,9 @@ def draft_order_create(request):
             rate = cache.get('current_euro_exchange_rate')
             if not rate:
                 rate = get_current_euro_exchange_rate()
-                cache.set('current_euro_exchange_rate', rate, 60 * 60)
+                cache.set('current_euro_exchange_rate', rate, get_time_until_end_of_day())
 
-            order.rate = get_current_euro_exchange_rate()
+            order.rate = rate
 
             order = form.save()
 
@@ -458,7 +458,7 @@ def edit_order(request, order_id):
             rate = cache.get(cache_key)
             if not rate:
                 rate = get_euro_exchange_rate(formatted_date)
-                cache.set(cache_key, rate, 60 * 60)
+                cache.set(cache_key, rate, get_time_until_end_of_day())
 
         total = order.get_total_cost()
         total_with_vat = order.get_total_cost_with_vat()
@@ -578,7 +578,7 @@ def excel_detail(request, order_id):
         rate = cache.get(cache_key)
         if not rate:
             rate = get_euro_exchange_rate(formatted_date)
-            cache.set(cache_key, rate, 60 * 60)
+            cache.set(cache_key, rate, get_time_until_end_of_day())
 
     fields = [
         (str(_('Status')), order.status),
@@ -773,7 +773,7 @@ def excel_create(request, order_id):
         rate = cache.get(cache_key)
         if not rate:
             rate = get_euro_exchange_rate(formatted_date)
-            cache.set(cache_key, rate, 60 * 60)
+            cache.set(cache_key, rate, get_time_until_end_of_day())
 
     fields = [
         (str(_('Status')), order.status),
