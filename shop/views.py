@@ -22,7 +22,7 @@ import traceback
 @login_required
 def index(request):
     '''Обробник доманшьої сторінки.'''
-    entries = Entry.objects.filter(is_active=True)
+    entries = Entry.objects.filter(is_active=True).order_by('-created')
     latest_main_entry = MainEntry.objects.filter(is_active=True).aggregate(
         latest_created=Max('created'))['latest_created']
 
