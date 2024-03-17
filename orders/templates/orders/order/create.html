@@ -86,7 +86,11 @@
                 {% for item in cart %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td>{{ item.product.name }}</td>
+                    {% if item.product.axial %}
+                        <td><a href="{{ url_astra_shop.0 }}{{ item.product.axial }}{{ url_astra_shop.1 }}" title="{% trans 'Check availability' %}">{{ item.product.name }}</a></td>
+                    {% else %}
+                        <td>{{ item.product.name }}</td>
+                    {% endif %}
                     <td>{{ item.product.description }}</td>
                     <td>{{ item.quantity }}</td>
                     <td>{{ item.price }}</td>

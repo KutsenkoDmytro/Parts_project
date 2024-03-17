@@ -38,6 +38,8 @@ class Product(models.Model):
                             verbose_name=_('product name'))
     slug = models.SlugField(max_length=200, db_index=True,
                             verbose_name=_('product slug'))
+    axial = models.CharField(max_length=14, blank=True, default='',
+                             verbose_name='axial')
     # image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     description = models.TextField(blank=True,
                                    verbose_name=_('description'))
@@ -48,6 +50,7 @@ class Product(models.Model):
                                      verbose_name=_('is deleted'))
     created = models.DateTimeField(auto_now_add=True, verbose_name=_('created'))
     updated = models.DateTimeField(auto_now=True, verbose_name=_('updated'))
+
 
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])

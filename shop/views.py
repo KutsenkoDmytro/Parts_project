@@ -16,6 +16,7 @@ from orders.functions import get_time_until_end_of_day
 from cart.forms import CartAddProductForm
 from cart.cart import Cart
 import traceback
+from orders.functions import get_url_astra_shop
 
 
 
@@ -95,6 +96,7 @@ def product_search(request):
         'page_obj': page_obj,
         'categories': categories,
         'category': query_category,  # Передаємо обрану категорію у шаблон
+        'url_astra_shop': get_url_astra_shop()
     })
 
 

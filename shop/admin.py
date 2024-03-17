@@ -27,10 +27,10 @@ class ProductResource(resources.ModelResource):
 @admin.register(Product)
 class ProductAdmin(ImportExportActionModelAdmin):
     resource_class = ProductResource
-    list_display =  ['id','name','slug','description', 'price','category', 'is_deleted', 'created', 'updated']
+    list_display =  ['id','name','slug','axial','description', 'price','category', 'is_deleted', 'created', 'updated']
     list_filter = ['category','is_deleted']
     list_editable = ['price']
-    search_fields = ['id', 'name', 'slug', 'description',
+    search_fields = ['id', 'name', 'slug','axial', 'description',
                      'category__name',]
     ordering = ['-id']
     prepopulated_fields = {'slug': ('name',)}

@@ -34,6 +34,8 @@
     {% blocktrans with confirmation_date=confirmation_date|date:"d.m.Y" rate=euro_rate %} NBU exchange rate ({{confirmation_date}}): {{rate}} {% endblocktrans %}
 </p>
 
+
+
 <div class="table-responsive">
     <form action="." method="post" class="form form-horizontal">
         {% csrf_token %}
@@ -66,6 +68,7 @@
                 <th class="product-item-header">№</th>
                 <th style="display: none;">{% trans "Product ID" %}</th>
                 <th class="product-item-header">{% trans "Product" %}</th>
+
                 <th class="product-item-header">{% trans "Description" %}</th>
                 <th class="product-item-header">{% trans "Price (€)" %}</th>
                 <th class="pre-cost-header">{% trans "Pre-quantity" %}</th>
@@ -86,6 +89,7 @@
                 </th>
                 <th class="order-cost-header">{% trans "Order cost (₴) with VAT" %}
                 </th>
+                <th class="order-cost-header" style="display: none;">Axial</th>
 
             </tr>
             </thead>
@@ -94,7 +98,14 @@
             <tr>
                 <td class="form-field">{{ forloop.counter }}</td>
                 <td style="display: none;">{{ form.id }}{{ form.product }}</td>
-                <td class="form-field-prod">{{ form.id }}{{ form.product_name }}</td>
+
+
+                {% if form.product_axial.value %}
+                        <td class="form-field-prod"><a href="{{ url_astra_shop.0 }}{{ form.product_axial.value }}{{ url_astra_shop.1 }}" title="{% trans 'Check availability' %}">{{ form.id }}{{ form.product_name }}</a></td>
+                {% else %}
+                        <td class="form-field-prod">{{ form.id }}{{ form.product_name }}</td>
+                {% endif %}
+
                 <td class="form-field-prod">{{ form.id }}{{ form.product_description }}</td>
                 <td class="form-field">{{ form.price}}</td>
                 <td class="form-field">{{ form.pre_quantity }}</td>
@@ -175,6 +186,11 @@
                 <input type="hidden"
                        name="{{ form.prefix }}-ord_cost_with_vat_ua"
                        value="{{ form.ord_cost_with_vat_ua.value }}">
+
+                <!--При відправці форми передаємо значення product_axial-->
+                <td style="display: none;">{{ form.id }}{{ form.product_axial }}</td>
+                <input type="hidden" name="{{ form.prefix }}-product_axial" value="{{ form.product_axial.value }}">
+
             </tr>
             {% endfor %}
             {{ order_item_formset.management_form }}
@@ -220,3 +236,4 @@
 <script src="{% static 'orders/js/button-submit.js' %}"></script>
 
 {% endblock js_stuff %}
+

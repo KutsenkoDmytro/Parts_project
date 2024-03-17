@@ -7,6 +7,7 @@ from django.utils.translation import gettext as _
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from orders.functions import get_url_astra_shop
 
 @login_required
 @require_POST
@@ -51,7 +52,7 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(
             initial={'quantity': item['quantity'],
                      'update': True})
-    return render(request, 'cart/detail.html', {'cart': cart})
+    return render(request, 'cart/detail.html', {'cart': cart, 'url_astra_shop':get_url_astra_shop()})
 
 
 

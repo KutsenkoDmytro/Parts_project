@@ -164,6 +164,8 @@ class OrderItemForm(forms.ModelForm):
 
     product_name = forms.CharField(widget=ReadOnlyTextInput)
     product_description = forms.CharField(widget=ReadOnlyTextInput)
+    product_axial = forms.CharField(widget=ReadOnlyTextInput)
+
 
     pre_cost = forms.DecimalField()
     ord_cost = forms.DecimalField()
@@ -210,7 +212,6 @@ class OrderItemForm(forms.ModelForm):
             self.fields['product_name'].initial = self.instance.product.name
             self.fields['product_name'].label = 'Product'
             self.fields['product_description'].initial =  self.instance.product.description
-            self.fields['product_name'].label = 'Product'
             self.fields['pre_cost'].initial = self.instance.pre_get_cost()
             self.fields['ord_cost'].initial = self.instance.ord_get_cost()
             self.fields['pre_cost_with_vat'].initial = self.instance.pre_get_cost_with_vat()
@@ -224,6 +225,7 @@ class OrderItemForm(forms.ModelForm):
             self.fields['pre_cost_with_vat_ua'].initial = Decimal(pre_cost_with_vat_ua_value).quantize(Decimal('0.00'), rounding=ROUND_HALF_UP)
             ord_cost_with_vat_ua_value = self.instance.ord_get_cost_with_vat() * rate
             self.fields['ord_cost_with_vat_ua'].initial = Decimal(ord_cost_with_vat_ua_value).quantize(Decimal('0.00'), rounding=ROUND_HALF_UP)
+            self.fields['product_axial'].initial = self.instance.product.axial
 
     class Meta:
         model = OrderItem

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 23:11+0300\n"
+"POT-Creation-Date: 2024-03-17 11:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,11 +62,15 @@ msgstr ""
 msgid "Cost (₴) with VAT"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:51
+#: .\cart\templates\cart\detail.html:54
 msgid "Remove"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:85
+#: .\cart\templates\cart\detail.html:61 .\cart\templates\cart\detail.html:66
+msgid "Check availability"
+msgstr ""
+
+#: .\cart\templates\cart\detail.html:105
 #, python-format
 msgid ""
 "\n"
@@ -75,7 +79,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:90
+#: .\cart\templates\cart\detail.html:110
 #, python-format
 msgid ""
 "\n"
@@ -84,22 +88,22 @@ msgid ""
 "        "
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:99
+#: .\cart\templates\cart\detail.html:119
 msgid "Continue shoping"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:100
+#: .\cart\templates\cart\detail.html:120
 msgid "Order draft"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:101
+#: .\cart\templates\cart\detail.html:121
 msgid "Checkout"
 msgstr ""
 
-#: .\cart\views.py:26
+#: .\cart\views.py:27
 msgid "Your cart has reached the maximum limit in"
 msgstr ""
 
-#: .\cart\views.py:27
+#: .\cart\views.py:28
 msgid "products. Please proceed to checkout (drafts) or empty your cart!"
 msgstr ""

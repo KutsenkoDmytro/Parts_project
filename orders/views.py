@@ -21,7 +21,7 @@ from .forms import DraftOrderCreateForm, OrderCreateForm, OrderForm, \
 from cart.cart import Cart
 from account.models import Profile, UserCompany
 from utils.emails import SendingEmail
-from .functions import format_date, datetime, get_time_until_end_of_day
+from .functions import format_date, datetime, get_time_until_end_of_day, get_url_astra_shop
 
 
 @login_required
@@ -97,7 +97,7 @@ def order_create(request):
 
     return render(request,
                   'orders/order/create.html',
-                  {'cart': cart, 'form': form})
+                  {'cart': cart, 'form': form, 'url_astra_shop': get_url_astra_shop()})
 
 
 @login_required
@@ -166,7 +166,7 @@ def draft_order_create(request):
         form = DraftOrderCreateForm(request=request)
     return render(request,
                   'orders/order/create.html',
-                  {'cart': cart, 'form': form})
+                  {'cart': cart, 'form': form, 'url_astra_shop': get_url_astra_shop()})
 
 
 @login_required
@@ -530,6 +530,7 @@ def edit_order(request, order_id):
             'euro_rate': rate,
             'total_ua': total_ua,
             'total_with_vat_ua': total_with_vat_ua,
+            'url_astra_shop': get_url_astra_shop()
 
         })
     else:
