@@ -3,3 +3,4 @@ __pycache__/
 *.sqlite3
 pp_cache/*
 parts_project/settings.py
+/information.log

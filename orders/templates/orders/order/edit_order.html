@@ -187,9 +187,16 @@
                        name="{{ form.prefix }}-ord_cost_with_vat_ua"
                        value="{{ form.ord_cost_with_vat_ua.value }}">
 
-                <!--При відправці форми передаємо значення product_axial-->
-                <td style="display: none;">{{ form.id }}{{ form.product_axial }}</td>
-                <input type="hidden" name="{{ form.prefix }}-product_axial" value="{{ form.product_axial.value }}">
+                <!--При відправці форми передаємо значення product_axial. Якщо product_axial немає, - значення записується як пустий рядок.-->
+
+                <td style="display: none;">
+                    {% if form.product_axial %}
+                        {{ form.id }}{{ form.product_axial }}
+                    {% else %}
+                        ''
+                    {% endif %}
+                </td>
+                <input type="hidden" name="{{ form.prefix }}-product_axial" value="{% if form.product_axial %}{{ form.product_axial }}{% else %}{% endif %}">
 
             </tr>
             {% endfor %}

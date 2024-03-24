@@ -1,6 +1,8 @@
 import os
 import sys
 import xlrd
+from django.utils import timezone
+
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'parts_project.settings'
 
@@ -45,6 +47,8 @@ class UploadingProducts(object):
         headers = self.getting_headers()
         existing_product_ids = set(Product.objects.values_list('id', flat=True))
 
+        current_time = timezone.now()
+
         #product_bulk_list = list()
         for row in range(1, s.nrows):
             row_dict = {}
@@ -70,9 +74,11 @@ class UploadingProducts(object):
             # Отримання значення id для пошуку або оновлення
             product_id = row_dict.pop('id', None)
 
-            if product_id in existing_product_ids:
-                # Оновити існуючий запис
+            if product_id != None and product_id in existing_product_ids:
+                # При оновленні з шаблону треба видалити поля "created" та "updated" інакше буде помилка.
+                row_dict['updated'] = current_time
                 Product.objects.filter(id=product_id).update(**row_dict)
+
             else:
 
                 # Створити новий запис

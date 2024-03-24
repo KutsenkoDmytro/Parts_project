@@ -1,0 +1,2 @@
+2024-03-23 14:53:29,747 - ERROR - uploadings - uploadings.py - 3.0
+2024-03-23 16:25:49,076 - ERROR - uploadings - uploadings.py - django.db.models.query.QuerySet.update() got multiple values for keyword argument 'updated'
