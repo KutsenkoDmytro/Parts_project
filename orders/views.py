@@ -366,15 +366,16 @@ def orders(request):
                                           'stock',
                                           'signatory_of_documents').values(
         'status', 'id', 'created', 'company__name', 'first_and_last_name',
-        'formed')
+        'formed', 'comments')
     if query_search:
         orders = orders.filter(
-            Q(status__icontains=query_search) |
-            Q(id__icontains=query_search) |
-            Q(created__icontains=query_search) |
-            Q(company__name__icontains=query_search) |
-            Q(first_and_last_name__icontains=query_search) |
-            Q(formed__icontains=query_search)
+            Q(status__contains=query_search) |
+            Q(id__contains=query_search) |
+            Q(created__contains=query_search) |
+            Q(company__name__contains=query_search) |
+            Q(first_and_last_name__contains=query_search) |
+            Q(formed__contains=query_search)|
+            Q(comments__contains=query_search)
         )
 
     if role == 'user':

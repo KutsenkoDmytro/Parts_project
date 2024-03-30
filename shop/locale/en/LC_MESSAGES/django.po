@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 11:49+0200\n"
+"POT-Creation-Date: 2024-03-30 16:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "category slug"
 msgstr ""
 
-#: .\shop\models.py:36 .\shop\models.py:78
+#: .\shop\models.py:36 .\shop\models.py:81
 msgid "category"
 msgstr ""
 
@@ -42,31 +42,35 @@ msgstr ""
 msgid "product slug"
 msgstr ""
 
-#: .\shop\models.py:45
+#: .\shop\models.py:44
+msgid "cross number"
+msgstr ""
+
+#: .\shop\models.py:48
 msgid "description"
 msgstr ""
 
-#: .\shop\models.py:47
+#: .\shop\models.py:50
 msgid "price"
 msgstr ""
 
-#: .\shop\models.py:50 .\shop\models.py:85
+#: .\shop\models.py:53 .\shop\models.py:88
 msgid "is deleted"
 msgstr ""
 
-#: .\shop\models.py:51 .\shop\models.py:86
+#: .\shop\models.py:54 .\shop\models.py:89
 msgid "created"
 msgstr ""
 
-#: .\shop\models.py:52 .\shop\models.py:87
+#: .\shop\models.py:55 .\shop\models.py:90
 msgid "updated"
 msgstr ""
 
-#: .\shop\models.py:81
+#: .\shop\models.py:84
 msgid "holdind"
 msgstr ""
 
-#: .\shop\models.py:83
+#: .\shop\models.py:86
 msgid "value"
 msgstr ""
 
@@ -226,39 +230,43 @@ msgid "Action"
 msgstr ""
 
 #: .\shop\templates\shop\product\search.html:81
-msgid "Description"
-msgstr ""
-
-#: .\shop\templates\shop\product\search.html:82
 msgid "Category"
 msgstr ""
 
+#: .\shop\templates\shop\product\search.html:82
+msgid "Description"
+msgstr ""
+
 #: .\shop\templates\shop\product\search.html:83
-msgid "Customer price (€)"
+msgid "Cross number"
 msgstr ""
 
 #: .\shop\templates\shop\product\search.html:84
+msgid "Customer price (€)"
+msgstr ""
+
+#: .\shop\templates\shop\product\search.html:85
 msgid "Customer price (₴)"
 msgstr ""
 
-#: .\shop\templates\shop\product\search.html:94
+#: .\shop\templates\shop\product\search.html:95
 msgid "Add one"
 msgstr ""
 
-#: .\shop\templates\shop\product\search.html:101
-#: .\shop\templates\shop\product\search.html:106
+#: .\shop\templates\shop\product\search.html:102
+#: .\shop\templates\shop\product\search.html:107
 msgid "Check availability"
 msgstr ""
 
-#: .\shop\templates\shop\product\search.html:123
+#: .\shop\templates\shop\product\search.html:125
 msgid "No results found."
 msgstr ""
 
-#: .\shop\templates\shop\product\search.html:132
+#: .\shop\templates\shop\product\search.html:134
 msgid "Previous"
 msgstr ""
 
-#: .\shop\templates\shop\product\search.html:136
+#: .\shop\templates\shop\product\search.html:138
 msgid "Next"
 msgstr ""
 

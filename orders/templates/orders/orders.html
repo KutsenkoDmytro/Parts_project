@@ -51,6 +51,7 @@
             <th class="item-header">{% trans "Formed" %}</th>
             <th class="item-header">{% trans "Total (€) with VAT" %}</th>
             <th class="item-header">{% trans "Product category" %}</th>
+            <th class="item-header">{% trans "Comments" %}</th>
             <th class="item-header">{% trans "Products in order" %}</th>
         </tr>
         </thead>
@@ -102,6 +103,13 @@
                 {% with category_name=item.products.0.product__category__name %}
                 {{ category_name }}
                 {% endwith %}
+            </td>
+            <td>
+                {% if item.comments|length > 20 %}
+                    {{ item.comments|slice:":20" }} ...
+                {% else %}
+                    {{ item.comments }}
+                {% endif %}
             </td>
             <td>
                 {% if item.total_products > 5 and item.status == 'order'%}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 11:49+0200\n"
+"POT-Creation-Date: 2024-03-30 16:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -262,24 +262,24 @@ msgstr ""
 msgid "Order cost (₴) with VAT"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:202
+#: .\orders\templates\orders\order\edit_order.html:211
 msgid "Total (€) without VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:203
-#: .\orders\templates\orders\order\edit_order.html:205
+#: .\orders\templates\orders\order\edit_order.html:212
+#: .\orders\templates\orders\order\edit_order.html:214
 msgid "with VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:205
+#: .\orders\templates\orders\order\edit_order.html:214
 msgid "Total (₴) without VAT: "
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:216
+#: .\orders\templates\orders\order\edit_order.html:225
 msgid "Quantity from Template"
 msgstr ""
 
-#: .\orders\templates\orders\order\edit_order.html:218
+#: .\orders\templates\orders\order\edit_order.html:227
 msgid "Save"
 msgstr ""
 
@@ -293,12 +293,12 @@ msgid "Search"
 msgstr ""
 
 #: .\orders\templates\orders\orders.html:31
-#: .\orders\templates\orders\orders.html:135
+#: .\orders\templates\orders\orders.html:143
 msgid "Previous"
 msgstr ""
 
 #: .\orders\templates\orders\orders.html:35
-#: .\orders\templates\orders\orders.html:139
+#: .\orders\templates\orders\orders.html:147
 msgid "Next"
 msgstr ""
 
@@ -345,29 +345,34 @@ msgstr ""
 msgid "Product category"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:54
+#: .\orders\templates\orders\orders.html:54 .\orders\views.py:608
+#: .\orders\views.py:803
+msgid "Comments"
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:55
 msgid "Products in order"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:64
+#: .\orders\templates\orders\orders.html:65
 msgid "Edit"
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:71
+#: .\orders\templates\orders\orders.html:72
 msgid "View"
-msgstr ""
-
-#: .\orders\templates\orders\orders.html:109
-#, python-format
-msgid " in order %(total_products)s items "
 msgstr ""
 
 #: .\orders\templates\orders\orders.html:117
 #, python-format
+msgid " in order %(total_products)s items "
+msgstr ""
+
+#: .\orders\templates\orders\orders.html:125
+#, python-format
 msgid " %(name)s (%(description)s) : %(ord_quantity)s pcs "
 msgstr ""
 
-#: .\orders\templates\orders\orders.html:127
+#: .\orders\templates\orders\orders.html:135
 msgid "No orders yet."
 msgstr ""
 
@@ -458,10 +463,6 @@ msgstr ""
 
 #: .\orders\views.py:607 .\orders\views.py:802
 msgid "Services description"
-msgstr ""
-
-#: .\orders\views.py:608 .\orders\views.py:803
-msgid "Comments"
 msgstr ""
 
 #: .\orders\views.py:623 .\orders\views.py:819 .\orders\views.py:885

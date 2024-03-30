@@ -10,7 +10,6 @@ from django.db.models import ExpressionWrapper, DecimalField, F
 
 class SendingEmail(object):
     from_email = 'PartsProject <%s>' % FROM_EMAIL
-    reply_to_emails = ['damhp@astra-group.ua']
     target_emails = []
     bcc_emails = [] #
 
@@ -24,9 +23,11 @@ class SendingEmail(object):
         #if not email:
         #    email = EMAIL_ADMIN
 
+        reply_to_emails = ['damhp@astra-group.ua'] # Reset the list every time the sending_email method is called.
+
         target_emails = [email, EMAIL_ADMIN]
         if order.email:
-            self.reply_to_emails.append(order.email)
+            reply_to_emails.append(order.email)
 
         vars = {
         }
@@ -52,7 +53,7 @@ class SendingEmail(object):
 
         msg = EmailMessage(
             subject, message, from_email=self.from_email, to=target_emails,
-            bcc=self.bcc_emails, reply_to=self.reply_to_emails)
+            bcc=self.bcc_emails, reply_to=reply_to_emails)
 
         msg.content_subtype = 'html'
         msg.mixed_subtype = 'related'

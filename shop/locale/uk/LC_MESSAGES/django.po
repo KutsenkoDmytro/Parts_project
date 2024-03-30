@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-17 11:49+0200\n"
+"POT-Creation-Date: 2024-03-30 16:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,6 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-
 #: .\shop\admin.py:56 .\shop\admin.py:57
 msgid "Parts Project administration"
 msgstr "Parts Project адміністрування"
@@ -33,7 +32,7 @@ msgstr "категорія"
 msgid "category slug"
 msgstr "слаг категорії"
 
-#: .\shop\models.py:36 .\shop\models.py:78
+#: .\shop\models.py:36 .\shop\models.py:81
 msgid "category"
 msgstr "категорія"
 
@@ -45,31 +44,35 @@ msgstr "товар"
 msgid "product slug"
 msgstr "слаг товару"
 
-#: .\shop\models.py:45
+#: .\shop\models.py:44
+msgid "cross number"
+msgstr "cross number"
+
+#: .\shop\models.py:48
 msgid "description"
 msgstr "назва"
 
-#: .\shop\models.py:47
+#: .\shop\models.py:50
 msgid "price"
 msgstr "ціна"
 
-#: .\shop\models.py:50 .\shop\models.py:85
+#: .\shop\models.py:53 .\shop\models.py:88
 msgid "is deleted"
 msgstr "помітка на видалення"
 
-#: .\shop\models.py:51 .\shop\models.py:86
+#: .\shop\models.py:54 .\shop\models.py:89
 msgid "created"
 msgstr "сформовано"
 
-#: .\shop\models.py:52 .\shop\models.py:87
+#: .\shop\models.py:55 .\shop\models.py:90
 msgid "updated"
 msgstr "оновлено"
 
-#: .\shop\models.py:81
+#: .\shop\models.py:84
 msgid "holdind"
 msgstr "холдинг"
 
-#: .\shop\models.py:83
+#: .\shop\models.py:86
 msgid "value"
 msgstr "значення"
 
@@ -236,39 +239,43 @@ msgid "Action"
 msgstr "Дії"
 
 #: .\shop\templates\shop\product\search.html:81
-msgid "Description"
-msgstr "Назва"
-
-#: .\shop\templates\shop\product\search.html:82
 msgid "Category"
 msgstr "Категорія"
 
+#: .\shop\templates\shop\product\search.html:82
+msgid "Description"
+msgstr "Назва"
+
 #: .\shop\templates\shop\product\search.html:83
+msgid "Cross number"
+msgstr "Крос номер"
+
+#: .\shop\templates\shop\product\search.html:84
 msgid "Customer price (€)"
 msgstr "Ціна клієнта (€)"
 
-#: .\shop\templates\shop\product\search.html:84
+#: .\shop\templates\shop\product\search.html:85
 msgid "Customer price (₴)"
 msgstr "Ціна клієнта (₴)"
 
-#: .\shop\templates\shop\product\search.html:94
+#: .\shop\templates\shop\product\search.html:95
 msgid "Add one"
 msgstr "Додати один"
 
-#: .\shop\templates\shop\product\search.html:101
-#: .\shop\templates\shop\product\search.html:106
+#: .\shop\templates\shop\product\search.html:102
+#: .\shop\templates\shop\product\search.html:107
 msgid "Check availability"
 msgstr "Перевірити наявність"
 
-#: .\shop\templates\shop\product\search.html:123
+#: .\shop\templates\shop\product\search.html:125
 msgid "No results found."
 msgstr "Результатів не знайдено."
 
-#: .\shop\templates\shop\product\search.html:132
+#: .\shop\templates\shop\product\search.html:134
 msgid "Previous"
 msgstr "Попередня"
 
-#: .\shop\templates\shop\product\search.html:136
+#: .\shop\templates\shop\product\search.html:138
 msgid "Next"
 msgstr "Наступна"
 
@@ -309,8 +316,7 @@ msgstr " %(total_items)s шт., € %(total_price)s "
 msgid "Go to cart"
 msgstr "Перейти до кошика"
 
-#: .\shop\templates\shop\sidebar.html:97
-#: .\shop\templates\shop\sidebar.html:110
+#: .\shop\templates\shop\sidebar.html:97 .\shop\templates\shop\sidebar.html:110
 msgid "Download products to the cart"
 msgstr "Завантажити товари до кошика"
 

@@ -7,7 +7,7 @@ from utils.rates import get_current_euro_exchange_rate
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.cache import cache
 from management_area.models import Entry, MainEntry
-from django.db.models import Max
+from django.db.models import Max, Q
 from django.utils.translation import gettext_lazy as _
 from django.http import Http404
 
@@ -49,7 +49,7 @@ def product_search(request):
     products = Product.objects.filter(is_deleted=False)
 
     if query_search:
-        products = products.filter(name__contains=query_search)
+        products = products.filter(Q(name__contains=query_search) | Q(cross_number__contains=query_search))
 
     if query_category:
         products = products.filter(category__slug=query_category)

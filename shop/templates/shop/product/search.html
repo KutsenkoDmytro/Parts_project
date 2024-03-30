@@ -78,8 +78,9 @@
             <tr>
                 <th class="item-header" >{% trans "Product name" %}</th>
                 <th class="item-header" >{% trans "Action" %}</th>
-                <th class="item-header" >{% trans "Description" %}</th>
                 <th class="item-header" >{% trans "Category" %}</th>
+                <th class="item-header" >{% trans "Description" %}</th>
+                <th class="item-header" >{% trans "Cross number" %}</th>
                 <th class="item-header" >{% trans "Customer price (€)" %}</th>
                 <th class="item-header" data-sortable="true">{% trans "Customer price (₴)" %}</th>
             </tr>
@@ -113,8 +114,9 @@
 
                     </td>
 
-                    <td>{{ product.description }}</td>
                     <td>{{ product.category }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.cross_number }}</td>
                     <td>{{ product.price_coef}}</td>
                     <td>{{ product.price_ua}}</td>
                 </tr>

@@ -40,6 +40,9 @@ class Product(models.Model):
                             verbose_name=_('product slug'))
     axial = models.CharField(max_length=14, blank=True, default='',
                              verbose_name='axial')
+    cross_number = models.TextField(db_index=True, blank=True, default='',
+                            verbose_name=_('cross number'))
+
     # image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     description = models.TextField(blank=True,
                                    verbose_name=_('description'))
